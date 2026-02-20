@@ -1,4 +1,3 @@
-"use client"
 
 import React, { useState } from 'react'
 import { ScrollObserver } from "@/components/ui/scroll-observer"
@@ -150,7 +149,7 @@ export default function FeaturesSection() {
           ].map((fact, i) => (
             <div key={i} className="flex flex-col items-center text-center gap-2">
               <div className="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center mb-2">
-                {React.cloneElement(fact.icon as React.ReactElement, { size: 20 })}
+                {React.cloneElement(fact.icon as any, { size: 20 })}
               </div>
               <div className="font-bold text-lg">{fact.label}</div>
               <div className="text-blue-100 text-xs uppercase tracking-widest">{fact.sub}</div>

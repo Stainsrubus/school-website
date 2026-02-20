@@ -1,8 +1,7 @@
-"use client"
 
 import { useState } from "react"
 import { Facebook, Twitter, Instagram, Linkedin, Heart, ArrowUp, Mail } from "lucide-react"
-import Link from "next/link"
+import { Link } from "@tanstack/react-router"
 
 export default function Footer() {
   const currentYear = new Date().getFullYear()
@@ -56,7 +55,7 @@ export default function Footer() {
           {/* Brand + Socials */}
           <div className="lg:col-span-2 space-y-8">
             <div>
-              <Link href="/" className="flex items-center gap-4">
+              <Link to="/" className="flex items-center gap-4">
                 <img
                   src="/st_pius/LOGO-St-pius.png"
                   alt="St. Pius X Logo"
@@ -97,7 +96,7 @@ export default function Footer() {
                 {column.links.map((link, i) => (
                   <li key={i}>
                     <Link
-                      href={link.href}
+                      to={link.href}
                       className="text-gray-700 hover:text-indigo-700 transition-colors hover:translate-x-1.5 inline-block duration-200"
                     >
                       {link.label}

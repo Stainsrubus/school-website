@@ -1,9 +1,9 @@
-"use client"
 
 import type React from "react"
 import { useState, useEffect, useRef } from "react"
 import { motion, AnimatePresence } from "framer-motion"
 import { Mail, Phone, MapPin, Send, Clock, MessageSquare, User, ArrowRight, Sparkles, CheckCircle } from "lucide-react"
+import MapComponent from "@/components/ui/map-component"
 
 export default function ContactSection() {
   const [formData, setFormData] = useState({
@@ -411,13 +411,12 @@ export default function ContactSection() {
                 <ArrowRight className="w-4 h-4" />
               </button>
             </div>
-            <div className="bg-gradient-to-br from-blue-500/10 to-cyan-500/10 rounded-2xl p-6 border border-blue-100">
-              <div className="aspect-video bg-gradient-to-br from-blue-100 to-cyan-100 rounded-xl flex items-center justify-center">
-                <div className="text-center">
-                  <MapPin className="w-12 h-12 text-blue-600 mx-auto mb-3" />
-                  <p className="text-gray-700 font-semibold">St. Pius X High School Campus</p>
-                  <p className="text-gray-500 text-sm mt-2">Mulund West, Mumbai</p>
-                </div>
+            <div className="bg-gradient-to-br from-blue-500/10 to-cyan-500/10 rounded-3xl p-4 border border-blue-100 shadow-inner h-[400px]">
+              <div className="w-full h-full overflow-hidden rounded-2xl">
+                <MapComponent
+                  position={[19.1666893, 72.9472618]}
+                  googleMapsUrl="https://www.google.com/maps/place/St.+Pius+X+High+School,+Mulund/@19.1666893,72.9472618,17z/data=!3m1!4b1!4m6!3m5!1s0x3be7b8f5e593f299:0xc96059fd45df2518!8m2!3d19.1666893!4d72.9472618!16s%2Fm%2F010fb5x7!17m2!4m1!1e3!18m1!1e1?entry=ttu&g_ep=EgoyMDI2MDIxNy4wIKXMDSoASAFQAw%3D%3D"
+                />
               </div>
             </div>
           </div>

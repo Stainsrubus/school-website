@@ -1,4 +1,3 @@
-"use client"
 import { useEffect, useState } from "react"
 import { ChevronLeft, ChevronRight } from "lucide-react"
 
@@ -46,9 +45,8 @@ export function ImageCarousel({ images, autoPlay = true, interval = 5000, classN
         {images.map((image, index) => (
           <div
             key={index}
-            className={`absolute inset-0 transition-opacity duration-500 ${
-              index === currentIndex ? "opacity-100" : "opacity-0"
-            }`}
+            className={`absolute inset-0 transition-opacity duration-500 ${index === currentIndex ? "opacity-100" : "opacity-0"
+              }`}
           >
             <img src={image.src || "/placeholder.svg"} alt={image.alt} className="w-full h-full object-cover" />
             {image.title && (
@@ -84,9 +82,8 @@ export function ImageCarousel({ images, autoPlay = true, interval = 5000, classN
               <button
                 key={index}
                 onClick={() => goToSlide(index)}
-                className={`w-2 h-2 rounded-full transition-all ${
-                  index === currentIndex ? "bg-white w-8" : "bg-white/50 hover:bg-white/75"
-                }`}
+                className={`w-2 h-2 rounded-full transition-all ${index === currentIndex ? "bg-white w-8" : "bg-white/50 hover:bg-white/75"
+                  }`}
                 aria-label={`Go to slide ${index + 1}`}
               />
             ))}

@@ -1,7 +1,7 @@
-"use client"
 
 import { useState } from "react"
 import { Menu, X, ChevronDown } from "lucide-react"
+import { Link } from "@tanstack/react-router"
 import TopBar from "./topbar"
 
 export default function Navigation() {
@@ -19,12 +19,13 @@ export default function Navigation() {
   ]
 
   const navItems = [
-    { label: "Home", href: "/" },
-    { label: "About", href: "/about", hasSubmenu: true },
-    { label: "Admissions", href: "https://creativesaints.com/st-pius-x-high-school/login", isExternal: true, },
-    { label: "Academics", href: "/gallery" },
-    { label: "Gallery", href: "/gallery" },
-    { label: "Contact", href: "/contact" },
+    { label: "Home", to: "/" },
+    { label: "About", to: "/about", hasSubmenu: true },
+    { label: "Admissions", to: "https://creativesaints.com/st-pius-x-high-school/login", isExternal: true, },
+    { label: "Academics", to: "/" },
+    { label: "Facilities", to: "/" },
+    { label: "Gallery", to: "/gallery" },
+    { label: "Contact", to: "/contact" },
   ]
 
   return (
@@ -34,9 +35,9 @@ export default function Navigation() {
         <div className="flex items-center justify-between h-20">
           {/* Logo */}
           <div className="flex-shrink-0">
-            <a href="/">
+            <Link to="/">
               <img src="/st_pius/LOGO-St-pius.png" className="h-20" alt="St. Pius X Logo" />
-            </a>
+            </Link>
           </div>
 
           {/* Desktop Navigation */}
@@ -63,26 +64,26 @@ export default function Navigation() {
                         onMouseLeave={() => setAboutDropdownOpen(false)}
                       >
                         {aboutSubmenu.map((subItem) => (
-                          <a
+                          <Link
                             key={subItem.label}
-                            href={subItem.href}
+                            to={subItem.href as any}
                             className="block px-4 py-2 text-sm text-gray-700 hover:bg-blue-50 hover:text-blue-600 transition-colors"
                           >
                             {subItem.label}
-                          </a>
+                          </Link>
                         ))}
                       </div>
                     </>
                   ) : (
-                    <a
-                      href={item.href}
+                    <Link
+                      to={item.to as any}
                       {...(item.isExternal
                         ? { target: "_blank", rel: "noopener noreferrer" }
                         : {})}
                       className="px-3 py-2 rounded-md text-sm font-medium text-foreground hover:text-primary hover:bg-primary/5 transition-colors"
                     >
                       {item.label}
-                    </a>
+                    </Link>
                   )}
                 </div>
               ))}
@@ -92,9 +93,9 @@ export default function Navigation() {
           {/* CTA Button */}
           <div className="hidden md:block">
             <button className="px-6 py-2 bg-gradient-to-r from-blue-600 to-cyan-500 text-white rounded-full hover:shadow-lg transition-shadow font-semibold">
-              <a href="/#contact">
+              <Link to="/contact">
                 Apply Now
-              </a>
+              </Link>
             </button>
           </div>
 
@@ -129,26 +130,26 @@ export default function Navigation() {
                       {aboutDropdownOpen && (
                         <div className="pl-4 mt-1 space-y-1">
                           {aboutSubmenu.map((subItem) => (
-                            <a
+                            <Link
                               key={subItem.label}
-                              href={subItem.href}
+                              to={subItem.href as any}
                               className="block px-3 py-2 rounded-md text-sm font-medium text-gray-600 hover:text-primary hover:bg-primary/5"
                               onClick={() => setIsOpen(false)}
                             >
                               {subItem.label}
-                            </a>
+                            </Link>
                           ))}
                         </div>
                       )}
                     </>
                   ) : (
-                    <a
-                      href={item.href}
+                    <Link
+                      to={item.to as any}
                       className="block px-3 py-2 rounded-md text-base font-medium text-foreground hover:text-primary hover:bg-primary/5"
                       onClick={() => setIsOpen(false)}
                     >
                       {item.label}
-                    </a>
+                    </Link>
                   )}
                 </div>
               ))}

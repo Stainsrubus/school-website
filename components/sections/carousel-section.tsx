@@ -1,4 +1,3 @@
-"use client"
 
 import { ScrollObserver } from "@/components/ui/scroll-observer"
 import { ImageCarousel } from "@/components/ui/image-carousel"

@@ -1,4 +1,3 @@
-"use client"
 
 import { useState, useRef, useEffect } from "react"
 import { CreditCard, ChevronDown, ChevronUp, Bell, X } from "lucide-react"

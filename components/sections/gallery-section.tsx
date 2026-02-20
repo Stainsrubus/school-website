@@ -1,7 +1,4 @@
-"use client"
-
 import { useEffect, useRef, useState } from "react"
-import Image from "next/image"
 import { Calendar, MapPin } from "lucide-react"
 
 const galleryItems = [
@@ -164,8 +161,8 @@ export default function GalleryPage() {
                 key={cat.id}
                 onClick={() => setActiveCategory(cat.id)}
                 className={`px-6 py-2.5 rounded-full text-sm md:text-base font-medium transition-all duration-300 ${activeCategory === cat.id
-                    ? "bg-indigo-700 text-white shadow-lg shadow-indigo-700/30 scale-105"
-                    : "bg-white text-gray-700 border border-gray-200 hover:border-indigo-400 hover:text-indigo-700"
+                  ? "bg-indigo-700 text-white shadow-lg shadow-indigo-700/30 scale-105"
+                  : "bg-white text-gray-700 border border-gray-200 hover:border-indigo-400 hover:text-indigo-700"
                   }`}
               >
                 {cat.label}
@@ -187,13 +184,10 @@ export default function GalleryPage() {
                 }}
               >
                 <div className="aspect-[4/3] relative">
-                  <Image
+                  <img
                     src={item.image}
                     alt={item.title}
-                    fill
-                    className="object-cover transition-transform duration-700 group-hover:scale-110"
-                    sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
-                    quality={80}
+                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
                   />
 
                   {/* Overlay */}
