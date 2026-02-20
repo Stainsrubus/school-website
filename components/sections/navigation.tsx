@@ -2,6 +2,7 @@
 
 import { useState } from "react"
 import { Menu, X, ChevronDown } from "lucide-react"
+import TopBar from "./topbar"
 
 export default function Navigation() {
   const [isOpen, setIsOpen] = useState(false)
@@ -20,12 +21,15 @@ export default function Navigation() {
   const navItems = [
     { label: "Home", href: "/" },
     { label: "About", href: "/about", hasSubmenu: true },
+    { label: "Admissions", href: "https://creativesaints.com/st-pius-x-high-school/login", isExternal: true, },
+    { label: "Academics", href: "/gallery" },
     { label: "Gallery", href: "/gallery" },
     { label: "Contact", href: "/contact" },
   ]
 
   return (
     <nav className="fixed top-0 w-full bg-white/95 backdrop-blur-md z-50 shadow-sm">
+      <TopBar />
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-20">
           {/* Logo */}
@@ -72,6 +76,9 @@ export default function Navigation() {
                   ) : (
                     <a
                       href={item.href}
+                      {...(item.isExternal
+                        ? { target: "_blank", rel: "noopener noreferrer" }
+                        : {})}
                       className="px-3 py-2 rounded-md text-sm font-medium text-foreground hover:text-primary hover:bg-primary/5 transition-colors"
                     >
                       {item.label}

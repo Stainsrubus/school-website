@@ -56,6 +56,7 @@ export default function RootLayout({
   return (
     <html lang="en" className={_playfairDisplay.variable}>
       <body className={`font-sans antialiased`}>
+        
         <Navigation />
         <section className="pt-16">
           {children}
