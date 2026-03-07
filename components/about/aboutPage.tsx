@@ -223,6 +223,27 @@ const AboutPage: React.FC = () => {
     return () => observers.forEach(o => o.disconnect());
   }, []);
 
+  // Handle incoming hash links and offset
+  useEffect(() => {
+    const handleHashScroll = () => {
+      const hash = window.location.hash;
+      if (hash) {
+        const id = hash.replace('#', '');
+        setTimeout(() => {
+          const el = document.getElementById(id);
+          if (el) {
+            const y = el.getBoundingClientRect().top + window.scrollY - 180;
+            window.scrollTo({ top: y, behavior: 'smooth' });
+          }
+        }, 150); // Small delay to let the page render properly
+      }
+    };
+
+    handleHashScroll();
+    window.addEventListener('hashchange', handleHashScroll);
+    return () => window.removeEventListener('hashchange', handleHashScroll);
+  }, []);
+
   return (
     <div className="min-h-screen bg-white dark:bg-slate-950 transition-colors duration-500 overflow-hidden">
       {/* Background Orbs */}

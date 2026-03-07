@@ -41,16 +41,22 @@ export default function HeroSection() {
       {/* Parallax Background */}
       <div
         ref={bgRef}
-        className="absolute inset-0 z-0"
+        className="absolute inset-0 z-0 overflow-hidden"
         style={{
-          backgroundImage: "url('/st_pius/school.jpeg')",
-          backgroundSize: "cover",
-          backgroundPosition: "center",
           willChange: "transform",
           transform: "translate3d(0, 0, 0)",
           backfaceVisibility: "hidden",
         }}
       >
+        <video
+          autoPlay
+          loop
+          muted
+          playsInline
+          className="absolute inset-0 w-full h-full object-cover"
+        >
+          <source src="/hero-video.mp4" type="video/mp4" />
+        </video>
         {/* Overlay gradient */}
         <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-black/20 to-black/60" />
       </div>

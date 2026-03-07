@@ -9,13 +9,13 @@ export default function Navigation() {
   const [aboutDropdownOpen, setAboutDropdownOpen] = useState(false)
 
   const aboutSubmenu = [
-    { label: "Overview", href: "/about#overview" },
-    { label: "Vision & Mission", href: "/about#vision-mission" },
-    { label: "Principal's Message", href: "/about#principal-message" },
-    { label: "Core Values", href: "/about#core-values" },
-    { label: "Leadership Team", href: "/about#leadership" },
-    { label: "Facilities", href: "/about#facilities" },
-    { label: "History & Milestones", href: "/about#history-milestones" },
+    { label: "Overview", to: "/about", hash: "overview" },
+    { label: "Vision & Mission", to: "/about", hash: "vision-mission" },
+    { label: "Principal's Message", to: "/about", hash: "principal-message" },
+    { label: "Core Values", to: "/about", hash: "core-values" },
+    { label: "Leadership Team", to: "/about", hash: "leadership" },
+    { label: "Facilities", to: "/about", hash: "facilities" },
+    { label: "History & Milestones", to: "/about", hash: "history-milestones" },
   ]
 
   const navItems = [
@@ -35,7 +35,7 @@ export default function Navigation() {
         <div className="flex items-center justify-between h-16 sm:h-20">
           {/* Logo */}
           <div className="flex-shrink-0">
-            <Link to="/">
+            <Link to="/" onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}>
               <img src="/st_pius/LOGO-St-pius.png" className="h-14 sm:h-20" alt="St. Pius X Logo" />
             </Link>
           </div>
@@ -66,7 +66,19 @@ export default function Navigation() {
                         {aboutSubmenu.map((subItem) => (
                           <Link
                             key={subItem.label}
-                            to={subItem.href as any}
+                            to={subItem.to as any}
+                            hash={subItem.hash}
+                            onClick={(e) => {
+                              if (window.location.pathname === '/about') {
+                                setTimeout(() => {
+                                  const el = document.getElementById(subItem.hash);
+                                  if (el) {
+                                    const y = el.getBoundingClientRect().top + window.scrollY - 180;
+                                    window.scrollTo({ top: y, behavior: 'smooth' });
+                                  }
+                                }, 100);
+                              }
+                            }}
                             className="block px-4 py-2 text-lg text-gray-700 hover:bg-blue-50 hover:text-blue-600 transition-colors"
                           >
                             {subItem.label}
@@ -133,9 +145,21 @@ export default function Navigation() {
                           {aboutSubmenu.map((subItem) => (
                             <Link
                               key={subItem.label}
-                              to={subItem.href as any}
+                              to={subItem.to as any}
+                              hash={subItem.hash}
                               className="block px-3 py-2 rounded-md text-lg font-medium text-gray-600 hover:text-primary hover:bg-primary/5"
-                              onClick={() => setIsOpen(false)}
+                              onClick={(e) => {
+                                setIsOpen(false);
+                                if (window.location.pathname === '/about') {
+                                  setTimeout(() => {
+                                    const el = document.getElementById(subItem.hash);
+                                    if (el) {
+                                      const y = el.getBoundingClientRect().top + window.scrollY - 180;
+                                      window.scrollTo({ top: y, behavior: 'smooth' });
+                                    }
+                                  }, 100);
+                                }
+                              }}
                             >
                               {subItem.label}
                             </Link>

@@ -11,21 +11,23 @@ export default function Footer() {
     {
       title: "About School",
       links: [
-        { label: "Overview", href: "/about#overview" },
-        { label: "Vision & Mission", href: "/about#vision-mission" },
-        { label: "Principal's Message", href: "/about#principal-message" },
-        { label: "Leadership", href: "/about#leadership" },
-        { label: "Facilities & Campus", href: "/about#facilities" },
+        { label: "Overview", to: "/about", hash: "overview" },
+        { label: "Vision & Mission", to: "/about", hash: "vision-mission" },
+        { label: "Principal's Message", to: "/about", hash: "principal-message" },
+        { label: "Core Values", to: "/about", hash: "core-values" },
+        { label: "Leadership Team", to: "/about", hash: "leadership" },
+        { label: "History & Milestones", to: "/about", hash: "history-milestones" },
       ],
     },
     {
       title: "Quick Links",
       links: [
-        { label: "Gallery", href: "/gallery" },
-        { label: "Events & Calendar", href: "/events" },
-        { label: "Contact Us", href: "/contact" },
-        { label: "Parent Portal", href: "/parent-portal" },
-        { label: "Student Portal", href: "/student-portal" },
+        { label: "Home", to: "/" },
+        { label: "Admissions", to: "https://creativesaints.com/st-pius-x-high-school/login", isExternal: true },
+        { label: "Academics", to: "/academics" },
+        { label: "Facilities", to: "/facilities" },
+        { label: "Gallery", to: "/gallery" },
+        { label: "Contact", to: "/contact" },
       ],
     },
   ]
@@ -55,7 +57,7 @@ export default function Footer() {
           {/* Brand + Socials */}
           <div className="lg:col-span-2 space-y-8">
             <div>
-              <Link to="/" className="flex items-center gap-3 sm:gap-4 flex-wrap">
+              <Link to="/" onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })} className="flex items-center gap-3 sm:gap-4 flex-wrap">
                 <img
                   src="/st_pius/LOGO-St-pius.png"
                   alt="St. Pius X Logo"
@@ -96,7 +98,24 @@ export default function Footer() {
                 {column.links.map((link, i) => (
                   <li key={i}>
                     <Link
-                      to={link.href}
+                      to={((link as any).to || (link as any).href) as any}
+                      hash={(link as any).hash}
+                      onClick={(e) => {
+                        if ((link as any).hash) {
+                           if (window.location.pathname === '/about') {
+                             setTimeout(() => {
+                               const el = document.getElementById((link as any).hash);
+                               if (el) {
+                                 const y = el.getBoundingClientRect().top + window.scrollY - 180;
+                                 window.scrollTo({ top: y, behavior: 'smooth' });
+                               }
+                             }, 100);
+                           }
+                        } else if (!(link as any).isExternal) {
+                           window.scrollTo({ top: 0, behavior: "smooth" });
+                        }
+                      }}
+                      {...((link as any).isExternal ? { target: "_blank", rel: "noopener noreferrer" } : {})}
                       className="text-gray-700 hover:text-indigo-700 transition-colors hover:translate-x-1.5 inline-block duration-200"
                     >
                       {link.label}
