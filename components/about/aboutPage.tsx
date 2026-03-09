@@ -425,7 +425,7 @@ const AboutPage: React.FC = () => {
         </div>
 
         {/* STATS SECTION */}
-        <div ref={statsRef} className={`mb-32 transition-all duration-1000 ${isVisible[0] ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
+        <div ref={statsRef} className={`mb-16 md:mb-32 transition-all duration-1000 ${isVisible[0] ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-6 gap-6">
             {animatedStats.map((stat, i) => (
               <div key={stat.id} className="group bg-white dark:bg-slate-900/40 p-6 rounded-2xl border border-slate-100 dark:border-slate-800 shadow-xl hover:-translate-y-2 transition-all duration-300">
@@ -440,7 +440,7 @@ const AboutPage: React.FC = () => {
             ))}
           </div>
         </div>
-        <div id="principal-message" className="mb-32 relative">
+        <div id="principal-message" className="mb-12 md:mb-32 relative">
           {/* Background Elements */}
           <div className="absolute inset-0 overflow-hidden pointer-events-none">
             <div className="absolute top-1/2 left-0 w-96 h-96 bg-blue-200/20 rounded-full blur-[120px] -translate-y-1/2" />
@@ -697,7 +697,7 @@ const AboutPage: React.FC = () => {
         </div>
 
         {/* FACILITIES */}
-        <div id="facilities" ref={facilitiesRef} className={`mb-32 transition-all duration-1000 ${isVisible[3] ? 'opacity-100' : 'opacity-0'}`}>
+        <div id="facilities" ref={facilitiesRef} className={`mb-16 md:mb-32 transition-all duration-1000 ${isVisible[3] ? 'opacity-100' : 'opacity-0'}`}>
           <div className="text-center mb-16">
             <h2 className="text-4xl font-bold text-slate-900 dark:text-white mb-4">Our <span className="text-blue-600">Facilities</span></h2>
           </div>
@@ -722,7 +722,7 @@ const AboutPage: React.FC = () => {
           </div>
         </div>
 
-        <div id="history-milestones" className="relative py-20">
+        <div id="history-milestones" className="relative md:py-20">
           {/* Background Elements */}
           <div className="absolute inset-0 overflow-hidden pointer-events-none">
             <div className="absolute top-0 left-1/4 w-96 h-96 bg-amber-200/20 rounded-full blur-[120px]" />
@@ -761,7 +761,7 @@ const AboutPage: React.FC = () => {
                   className="bg-white rounded-[2.5rem] shadow-2xl border border-gray-100 overflow-hidden h-full"
                 >
                   {/* Card Header */}
-                  <div className="bg-gradient-to-br from-blue-600 via-blue-700 to-indigo-800 p-8 relative overflow-hidden">
+                  <div className="bg-gradient-to-br from-blue-600 via-blue-700 to-indigo-800 p-4 sm:p-8 relative overflow-hidden">
                     <div className="absolute top-0 right-0 w-64 h-64 bg-white/5 rounded-full -translate-y-1/2 translate-x-1/2" />
                     <div className="absolute bottom-0 left-0 w-48 h-48 bg-white/5 rounded-full translate-y-1/2 -translate-x-1/2" />
                     <div className="relative flex items-center gap-4">
@@ -776,10 +776,10 @@ const AboutPage: React.FC = () => {
                   </div>
 
                   {/* Timeline Content */}
-                  <div className="p-8 lg:p-10">
-                    <div className="space-y-8 relative">
+                  <div className="p-3 sm:p-8 lg:p-10">
+                    <div className="space-y-6 sm:space-y-12 relative">
                       {/* Timeline Line */}
-                      <div className="absolute left-8 top-8 bottom-8 w-0.5 bg-gradient-to-b from-blue-200 via-amber-200 to-blue-200" />
+                      <div className="absolute left-6 sm:left-8 top-6 sm:top-8 bottom-6 sm:bottom-8 w-0.5 -translate-x-1/2 bg-gradient-to-b from-blue-200 via-amber-200 to-blue-200" />
 
                       {[
                         {
@@ -824,23 +824,23 @@ const AboutPage: React.FC = () => {
                           whileInView={{ opacity: 1, x: 0 }}
                           viewport={{ once: true }}
                           transition={{ delay: idx * 0.1 }}
-                          className="relative pl-14 sm:pl-20 group"
+                          className="relative md:pl-16 pl-8  group"
                         >
                           {/* Timeline Node */}
                           <div className="absolute left-0 top-0 flex items-center gap-3">
-                            <div className={`w-10 h-10 sm:w-16 sm:h-16 rounded-xl sm:rounded-2xl bg-gradient-to-br ${item.color} flex items-center justify-center shadow-lg transform group-hover:scale-110 group-hover:rotate-3 transition-all duration-300`}>
-                              <span className="text-base sm:text-2xl">{item.icon}</span>
+                            <div className={`w-12 h-12 sm:w-16 sm:h-16 rounded-xl sm:rounded-2xl bg-gradient-to-br ${item.color} flex items-center justify-center shadow-lg transform group-hover:scale-110 group-hover:rotate-3 transition-all duration-300`}>
+                              <span className="text-lg sm:text-2xl">{item.icon}</span>
                             </div>
                           </div>
 
-                          <div className="bg-gray-50 rounded-2xl p-4 sm:p-6 border border-gray-100 group-hover:border-blue-200 group-hover:shadow-lg transition-all duration-300">
-                            <div className="flex items-baseline gap-2 sm:gap-3 mb-2 whitespace-nowrap">
+                          <div className="bg-gray-50 rounded-2xl pl-6 p-2 md:p-6 border border-gray-100 group-hover:border-blue-200 group-hover:shadow-lg transition-all duration-300">
+                            <div className="flex flex-wrap items-baseline gap-2 sm:gap-3 mb-2">
                               <span className={`text-xl sm:text-2xl font-black flex-shrink-0 text-transparent bg-clip-text bg-gradient-to-r ${item.color}`}>
                                 {item.year}
                               </span>
-                              <h4 className="text-base sm:text-xl font-bold text-gray-900">{item.title}</h4>
+                              <h4 className="text-lg sm:text-xl font-bold text-gray-900">{item.title}</h4>
                             </div>
-                            <p className="text-sm sm:text-base text-gray-600 leading-relaxed">{item.desc}</p>
+                            <p className="text-base sm:text-lg text-gray-600 leading-relaxed">{item.desc}</p>
                           </div>
                         </motion.div>
                       ))}
@@ -864,7 +864,7 @@ const AboutPage: React.FC = () => {
                     <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-48 h-48 border-4 border-white/30 rounded-full" />
                   </div>
 
-                  <div className="relative p-8 lg:p-10 h-full flex flex-col">
+                  <div className="relative p-4 sm:p-8 lg:p-10 h-full flex flex-col">
                     {/* Header */}
                     <div className="mb-8">
                       <div className="w-16 h-16 rounded-2xl bg-white/20 backdrop-blur-sm flex items-center justify-center border border-white/30 mb-4">
