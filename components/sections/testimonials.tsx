@@ -224,7 +224,7 @@ export default function TestimonialSection() {
         >
           <div className="inline-flex items-center gap-2 px-5 py-3 rounded-full bg-gradient-to-r from-blue-50 to-cyan-50 dark:from-blue-900/30 dark:to-cyan-900/30 border border-blue-100 dark:border-blue-800 text-blue-600 dark:text-blue-400 font-bold uppercase tracking-widest mb-6 animate-pulse-slow">
             <ShieldCheck size={16} />
-            <span>A Legacy of Excellence</span>
+<span data-cms="testimonials:title">A Legacy of Excellence</span>
             <Sparkles size={14} />
           </div>
           <motion.h2
@@ -233,11 +233,9 @@ export default function TestimonialSection() {
             transition={{ duration: 0.8, delay: 0.2 }}
             viewport={{ once: true }}
             className="text-3xl sm:text-4xl md:text-6xl font-black text-slate-900 dark:text-white mb-6"
+            data-cms="testimonials:subtitle"
           >
-            Trusted by <span className="relative">
-              <span className="relative z-10">Generations</span>
-              <span className="absolute bottom-2 left-0 right-0 h-3 bg-gradient-to-r from-blue-500/30 to-cyan-500/30 blur-md"></span>
-            </span> in <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 via-cyan-500 to-blue-800 animate-gradient-x">Mulund</span>
+            Trusted by Generations in Mulund
           </motion.h2>
           <motion.p
             initial={{ opacity: 0, y: 20 }}
@@ -245,6 +243,7 @@ export default function TestimonialSection() {
             transition={{ duration: 0.8, delay: 0.4 }}
             viewport={{ once: true }}
             className="text-lg text-slate-600 dark:text-slate-400 max-w-2xl mx-auto leading-relaxed"
+            data-cms="testimonials:description"
           >
             From 100% SSC results to state-level sports, see how we empower the youth of tomorrow with excellence and innovation.
           </motion.p>
@@ -292,12 +291,12 @@ export default function TestimonialSection() {
                     </div>
 
                     {/* Label */}
-                    <div className="text-sm font-bold text-slate-600 dark:text-slate-400 uppercase tracking-wider mb-1">
+                    <div className="text-sm font-bold text-slate-600 dark:text-slate-400 uppercase tracking-wider mb-1" data-cms={`stat_${index}:label`}>
                       {stat.label}
                     </div>
 
                     {/* Description */}
-                    <div className="text-xs text-slate-500 dark:text-slate-500 font-medium">
+                    <div className="text-xs text-slate-500 dark:text-slate-500 font-medium" data-cms={`stat_${index}:description`}>
                       {stat.description}
                     </div>
 

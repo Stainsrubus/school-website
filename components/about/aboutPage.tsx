@@ -245,7 +245,7 @@ const AboutPage: React.FC = () => {
   }, []);
 
   return (
-    <div className="min-h-screen bg-white dark:bg-slate-950 transition-colors duration-500 overflow-hidden">
+    <div className="min-h-screen bg-white dark:bg-slate-950 transition-colors duration-500 overflow-hidden" data-cms-page="about">
       {/* Background Orbs */}
       <div className="absolute inset-0 -z-10">
         <div className="absolute top-0 right-0 w-[250px] h-[250px] sm:w-[350px] sm:h-[350px] md:w-[500px] md:h-[500px] bg-blue-500/5 rounded-full blur-[120px] animate-pulse"></div>
@@ -255,22 +255,21 @@ const AboutPage: React.FC = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-16 pb-24 md:pt-24">
         {/* HERO SECTION */}
         <div id="overview" className="text-center mb-20">
-          <div className="inline-flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-blue-600 to-cyan-500 text-white text-sm font-semibold rounded-full mb-6 shadow-xl shadow-blue-500/20">
+          <div className="inline-flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-blue-600 to-cyan-500 text-white text-sm font-semibold rounded-full mb-6 shadow-xl shadow-blue-500/20" data-cms="about:established_badge">
             <SchoolIcon className="w-4 h-4" />
             Established 1970
           </div>
-          <h1 className="text-3xl sm:text-5xl md:text-7xl font-bold text-slate-900 dark:text-white mb-6">
+          <h1 className="text-3xl sm:text-5xl md:text-7xl font-bold text-slate-900 dark:text-white mb-6" data-cms="about:welcome_title">
             Welcome to<br />
             <span className="font-serif bg-clip-text text-transparent bg-gradient-to-r from-blue-600 via-cyan-500 to-blue-400">
               St. Pius X High School
             </span>
           </h1>
-          <p className="font-serif text-xl md:text-2xl font-medium text-blue-600 dark:text-cyan-400 mb-10 italic">
+          <p className="font-serif text-xl md:text-2xl font-medium text-blue-600 dark:text-cyan-400 mb-10 italic" data-cms="about:motto">
             " LIGHTED TO ENLIGHTEN "
           </p>
-          <p className="text-lg font-serif md:text-xl font-medium text-slate-700 dark:text-slate-300 mb-10">
+          <p className="text-lg font-serif md:text-xl font-medium text-slate-700 dark:text-slate-300 mb-10" data-cms="about:intro_paragraph">
             St. Pius X High School is a Christian School administered by the Roman Catholic Archdiocese of Mumbai. The School is under the religious jurisdiction of the Roman Catholic Archbishop of Mumbai. The primary purpose of the School is to provide Catholic Education for Catholic boys. However, pupils of other faiths are also admitted and their religious feelings and freedom of conscience are duly respected without sacrificing the Christian character of the Institution.
-
           </p>
           {/* VISION & MISSION - ENHANCED ANIMATIONS */}
           <div id="vision-mission" className="relative mt-20">
@@ -336,14 +335,14 @@ const AboutPage: React.FC = () => {
                       </div>
                       <div className="transform transition-all duration-500 group-hover:translate-y-1">
                         <h2 className="text-sm font-black uppercase tracking-[0.2em] text-blue-600 dark:text-blue-400 animate-pulse-slow">Our Future</h2>
-                        <h3 className="text-3xl font-bold text-slate-900 dark:text-white font-serif">The Vision</h3>
+                        <h3 className="text-3xl font-bold text-slate-900 dark:text-white font-serif" data-cms="about:vision_title">The Vision</h3>
                       </div>
                     </div>
 
                     <div className="relative transform transition-transform duration-500 group-hover:translate-y-1">
                       <span className="absolute -top-4 -left-2 text-6xl font-serif text-blue-600/10 select-none animate-pulse">"</span>
-                      <p className="text-xl font-serif md:text-2xl leading-relaxed text-slate-700 dark:text-slate-300 font-medium italic transform transition-all duration-500 group-hover:translate-x-1">
-                        Striving for <span className="text-blue-600 dark:text-blue-400 font-bold not-italic underline decoration-blue-500/30 underline-offset-8 animate-pulse-slow">Excellence Today</span> to prepare students to succeed in a challenging world of tomorrow.
+                      <p className="text-xl font-serif md:text-2xl leading-relaxed text-slate-700 dark:text-slate-300 font-medium italic transform transition-all duration-500 group-hover:translate-x-1" data-cms="about:vision_quote">
+                        Striving for Excellence Today to prepare students to succeed in a challenging world of tomorrow.
                       </p>
                     </div>
 
@@ -396,19 +395,14 @@ const AboutPage: React.FC = () => {
                       </div>
                       <div className="transform transition-all duration-500 group-hover:translate-y-1">
                         <h2 className="text-sm font-black uppercase tracking-[0.2em] text-cyan-600 dark:text-cyan-400 animate-pulse-slow-delayed">Our Purpose</h2>
-                        <h3 className="text-3xl font-bold text-slate-900 dark:text-white font-serif">The Mission</h3>
+                        <h3 className="text-3xl font-bold text-slate-900 dark:text-white font-serif" data-cms="about:mission_title">The Mission</h3>
                       </div>
                     </div>
 
                     <div className="relative transform transition-transform duration-500 group-hover:translate-y-1">
                       <span className="absolute -top-4 -left-2 text-6xl font-serif text-blue-600/10 select-none animate-pulse">"</span>
-                      <p className="text-xl font-serif md:text-2xl leading-relaxed text-slate-700 dark:text-slate-300 font-medium italic transform transition-all duration-500 group-hover:translate-x-1">
-                        To be a  <span className="text-blue-600 dark:text-blue-400 font-bold not-italic underline decoration-blue-500/30 underline-offset-8 animate-pulse-slow">catalyst </span>
-                        in unlocking the potentials of the
-
-                        students and creating an awareness of his
-
-                        intellectual, creative and spiritual capabilities.
+                      <p className="text-xl font-serif md:text-2xl leading-relaxed text-slate-700 dark:text-slate-300 font-medium italic transform transition-all duration-500 group-hover:translate-x-1" data-cms="about:mission_quote">
+                        To be a catalyst in unlocking the potentials of the students and creating an awareness of his intellectual, creative and spiritual capabilities.
                       </p>
                     </div>
 
@@ -496,8 +490,8 @@ const AboutPage: React.FC = () => {
 
                     {/* Name & Title */}
                     <div className="relative text-center space-y-2">
-                      <h3 className="text-2xl font-black text-gray-900">Rev Fr Norbert D'souza</h3>
-                      <p className="text-blue-600 font-bold text-sm uppercase tracking-wider">Principal</p>
+                      <h3 className="text-2xl font-black text-gray-900" data-cms="about:principal_name">Rev Fr Norbert D'souza</h3>
+                      <p className="text-blue-600 font-bold text-sm uppercase tracking-wider" data-cms="about:principal_title">Principal</p>
                       <div className="flex items-center justify-center gap-2 text-gray-600 text-sm">
                         <Award className="w-4 h-4 text-amber-500" />
                         <span className="font-semibold">25+ Years in Education</span>
@@ -549,51 +543,42 @@ const AboutPage: React.FC = () => {
                   <div className="relative mb-6">
                     <span className="absolute -top-4 -left-2 text-8xl font-serif text-blue-600/10 select-none leading-none">"</span>
                     <div className="relative pl-8">
-                      <p className="text-2xl md:text-3xl font-serif italic text-gray-900 leading-relaxed mb-8">
-                        <span className="text-blue-600 font-bold not-italic">Dear Students, Parents, and Friends,</span>
+                      <p className="text-2xl md:text-3xl font-serif italic text-gray-900 leading-relaxed mb-8" data-cms="about:principal_greeting">
+                        Dear Students, Parents, and Friends,
                       </p>
                     </div>
                   </div>
 
                   {/* Message Body */}
                   <div className="space-y-6 relative z-10">
-                    <p className="text-lg text-gray-700 leading-relaxed">
-                      It gives me immense pleasure to welcome you to <span className="font-bold text-blue-600">St. Pius X High School</span>,
-                      where we have been nurturing young minds and shaping futures for over five decades. Our journey has been one of
-                      unwavering commitment to <span className="font-semibold">academic excellence, moral integrity, and holistic development</span>.
+                    <p className="text-lg text-gray-700 leading-relaxed" data-cms="about:principal_para_1">
+                      It gives me immense pleasure to welcome you to St. Pius X High School, where we have been nurturing young minds and shaping futures for over five decades. Our journey has been one of unwavering commitment to academic excellence, moral integrity, and holistic development.
                     </p>
 
-                    <p className="text-lg text-gray-700 leading-relaxed">
-                      At St. Pius X, we believe that education extends far beyond textbooks and examinations. We strive to create an
-                      environment where every student discovers their unique talents, develops critical thinking skills, and builds the
-                      confidence to face tomorrow's challenges. Our dedicated faculty works tirelessly to ensure that each child receives
-                      personalized attention and guidance.
+                    <p className="text-lg text-gray-700 leading-relaxed" data-cms="about:principal_para_2">
+                      At St. Pius X, we believe that education extends far beyond textbooks and examinations. We strive to create an environment where every student discovers their unique talents, develops critical thinking skills, and builds the confidence to face tomorrow's challenges. Our dedicated faculty works tirelessly to ensure that each child receives personalized attention and guidance.
                     </p>
 
-                    <p className="text-lg text-gray-700 leading-relaxed">
-                      We take pride in our rich tradition of fostering <span className="font-semibold text-amber-600">spiritual growth,
-                        academic achievement, and social responsibility</span>. Our students are not just prepared for successful careers,
-                      but are also equipped to become compassionate leaders who contribute positively to society.
+                    <p className="text-lg text-gray-700 leading-relaxed" data-cms="about:principal_para_3">
+                      We take pride in our rich tradition of fostering spiritual growth, academic achievement, and social responsibility. Our students are not just prepared for successful careers, but are also equipped to become compassionate leaders who contribute positively to society.
                     </p>
 
                     {/* Highlighted Quote */}
                     <div className="my-8 p-6 bg-gradient-to-r from-blue-50 to-amber-50 rounded-2xl border-l-4 border-blue-600">
-                      <p className="text-xl font-serif italic text-gray-800 leading-relaxed">
-                        "Education is not the filling of a vessel, but the kindling of a flame. At St. Pius X High School, we ignite the flame of
-                        curiosity, passion, and purpose in every student."
+                      <p className="text-xl font-serif italic text-gray-800 leading-relaxed" data-cms="about:principal_quote">
+                        "Education is not the filling of a vessel, but the kindling of a flame. At St. Pius X High School, we ignite the flame of curiosity, passion, and purpose in every student."
                       </p>
                     </div>
 
-                    <p className="text-lg text-gray-700 leading-relaxed">
-                      I invite you to be part of our vibrant community where tradition meets innovation, and where every student is
-                      valued, supported, and empowered to achieve their fullest potential.
+                    <p className="text-lg text-gray-700 leading-relaxed" data-cms="about:principal_para_4">
+                      I invite you to be part of our vibrant community where tradition meets innovation, and where every student is valued, supported, and empowered to achieve their fullest potential.
                     </p>
 
                     {/* Signature Section */}
                     <div className="mt-10 pt-6 border-t border-gray-200 flex items-end justify-between flex-wrap gap-6">
                       <div>
                         <p className="text-xl font-bold text-gray-900 mb-1">With warm regards,</p>
-                        <p className="text-3xl font-black text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-amber-600 font-serif">
+                        <p className="text-3xl font-black text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-amber-600 font-serif" data-cms="about:principal_signature_name">
                           Rev Fr Norbert D'souza
                         </p>
                         <p className="text-sm text-gray-600 font-semibold mt-1">Principal</p>
@@ -661,8 +646,8 @@ const AboutPage: React.FC = () => {
                 <div className={`w-16 h-16 rounded-2xl ${v.color} text-white flex items-center justify-center mb-6 shadow-xl group-hover:scale-110 transition-transform`}>
                   {v.icon}
                 </div>
-                <h3 className="text-2xl font-bold text-slate-900 dark:text-white mb-3">{v.title}</h3>
-                <p className="text-slate-600 dark:text-slate-400 leading-relaxed">{v.description}</p>
+                <h3 className="text-2xl font-bold text-slate-900 dark:text-white mb-3" data-cms={`value_${i}:title`}>{v.title}</h3>
+                <p className="text-slate-600 dark:text-slate-400 leading-relaxed" data-cms={`value_${i}:description`}>{v.description}</p>
               </div>
             ))}
           </div>
@@ -671,8 +656,8 @@ const AboutPage: React.FC = () => {
         {/* LEADERSHIP TEAM */}
         <div id="leadership" ref={leadershipRef} className={`mb-32 transition-all duration-1000 ${isVisible[2] ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
           <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-slate-900 dark:text-white mb-4">Educational <span className="text-cyan-500">Leadership</span></h2>
-            <p className="text-slate-600 dark:text-slate-400">Guided by visionaries and experienced educators</p>
+            <h2 className="text-4xl font-bold text-slate-900 dark:text-white mb-4" data-cms="about:leadership_title">Educational Leadership</h2>
+            <p className="text-slate-600 dark:text-slate-400" data-cms="about:leadership_subtitle">Guided by visionaries and experienced educators</p>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             {leadership.map((leader, i) => (
@@ -682,8 +667,8 @@ const AboutPage: React.FC = () => {
                   <div className={`w-20 h-20 mx-auto mb-6 bg-gradient-to-br ${leader.color} rounded-full flex items-center justify-center text-white text-2xl font-bold shadow-lg`}>
                     {leader.name.split(' ').map(n => n[0]).join('')}
                   </div>
-                  <h3 className="text-xl font-bold text-slate-900 dark:text-white text-center mb-1">{leader.name}</h3>
-                  <p className="text-blue-600 dark:text-cyan-400 font-bold text-sm text-center mb-4">{leader.position}</p>
+                  <h3 className="text-xl font-bold text-slate-900 dark:text-white text-center mb-1" data-cms={`leader_${i}:name`}>{leader.name}</h3>
+                  <p className="text-blue-600 dark:text-cyan-400 font-bold text-sm text-center mb-4" data-cms={`leader_${i}:position`}>{leader.position}</p>
                   <div className="flex flex-wrap gap-2 justify-center mb-6">
                     {leader.specialty.map((s, idx) => (
                       <span key={idx} className="text-[10px] px-2 py-1 bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-400 rounded-md font-bold uppercase">
@@ -691,7 +676,7 @@ const AboutPage: React.FC = () => {
                       </span>
                     ))}
                   </div>
-                  <p className="text-slate-500 dark:text-slate-400 italic text-sm text-center border-t dark:border-slate-800 pt-4">"{leader.quote}"</p>
+                  <p className="text-slate-500 dark:text-slate-400 italic text-sm text-center border-t dark:border-slate-800 pt-4" data-cms={`leader_${i}:quote`}>"{leader.quote}"</p>
                 </div>
               </div>
             ))}

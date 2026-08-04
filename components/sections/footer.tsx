@@ -63,9 +63,9 @@ export default function Footer() {
                   alt="St. Pius X Logo"
                   className="h-16 w-auto"
                 />
-                <span className="text-xl sm:text-2xl md:text-3xl font-bold text-indigo-950 tracking-tight">St. Pius X High School</span>
+<span className="text-xl sm:text-2xl md:text-3xl font-bold text-indigo-950 tracking-tight" data-cms="st-pius-hero:headline">St. Pius X High School</span>
               </Link>
-              <p className="mt-5 text-gray-700 leading-relaxed text-base">
+              <p className="mt-5 text-gray-700 leading-relaxed text-base" data-cms="footer:about_description">
                 St. Pius X High School has been dedicated to Excellence in Education, Character Building, and Holistic Development since 1975. Our mission is to be a catalyst in unlocking every student's potential and fostering their intellectual, creative, and spiritual capabilities to prepare them to succeed in a challenging world of tomorrow.
               </p>
             </div>
@@ -130,7 +130,7 @@ export default function Footer() {
         {/* Bottom Bar */}
         <div className="py-10 border-t border-gray-200/80 flex flex-col md:flex-row justify-between items-center gap-2 text-sm text-gray-600">
 
-          <p>© {currentYear} <span className="text-black"> St. Pius X High School, Mulund.</span> All rights reserved.</p>
+          <p>© {currentYear} <span data-cms="st-pius-hero:headline"> St. Pius X High School</span>, Mulund. All rights reserved.</p>
           <p className="flex items-center gap-2 mb-2 md:mb-0 text-center">
             Powered by
             <a className="underline text-black" href="https://creoleap.com">Creoleap Technologies Private Limited</a>

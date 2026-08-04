@@ -155,7 +155,7 @@ export default function AcademicsPage() {
     ];
 
     return (
-        <div className="min-h-screen bg-white dark:bg-slate-950 overflow-hidden">
+        <div className="min-h-screen bg-white dark:bg-slate-950 overflow-hidden" data-cms-page="academics">
             {/* Background Orbs */}
             <div className="fixed inset-0 -z-10 pointer-events-none">
                 <div className="absolute top-0 right-0 w-[300px] h-[300px] md:w-[500px] md:h-[500px] bg-blue-500/5 rounded-full blur-[120px] animate-pulse"></div>
@@ -190,7 +190,7 @@ export default function AcademicsPage() {
                             className="inline-flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-blue-600 to-cyan-500 text-white text-sm font-semibold rounded-full mb-6 shadow-xl shadow-blue-500/20"
                         >
                             <GraduationCap className="w-4 h-4" />
-                            Academic Excellence Since 1970
+                            <span data-cms="academics:badge">Academic Excellence Since 1970</span>
                         </motion.div>
 
                         <motion.h1
@@ -198,6 +198,7 @@ export default function AcademicsPage() {
                             animate={{ opacity: 1, y: 0 }}
                             transition={{ duration: 0.5, delay: 0.1 }}
                             className="text-3xl sm:text-5xl md:text-7xl font-bold text-slate-900 dark:text-white mb-6"
+                            data-cms="academics:title"
                         >
                             Shaping Futures Through<br />
                             <span className="font-serif bg-clip-text text-transparent bg-gradient-to-r from-blue-600 via-cyan-500 to-blue-400">

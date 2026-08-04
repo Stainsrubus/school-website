@@ -1,0 +1,139 @@
+- generic [ref=e28]:
+  - complementary [ref=e29]:
+    - generic [ref=e30]:
+      - generic [ref=e32]:
+        - paragraph [ref=e33]: St. Pius X High School
+        - paragraph [ref=e34]: CMS Dashboard
+      - button [ref=e35]:
+        - img [ref=e36]
+    - generic [ref=e38]:
+      - link "Dashboard" [ref=e39] [cursor=pointer]:
+        - /url: /dashboard
+        - img [ref=e40]
+        - generic [ref=e45]: Dashboard
+      - link "Pages" [ref=e46] [cursor=pointer]:
+        - /url: /pages
+        - img [ref=e47]
+        - generic [ref=e50]: Pages
+      - link "Gallery" [ref=e51] [cursor=pointer]:
+        - /url: /gallery
+        - img [ref=e52]
+        - generic [ref=e57]: Gallery
+      - link "Media Library" [ref=e58] [cursor=pointer]:
+        - /url: /media
+        - img [ref=e59]
+        - generic [ref=e63]: Media Library
+      - link "Navigation" [ref=e64] [cursor=pointer]:
+        - /url: /navigation
+        - img [ref=e65]
+        - generic [ref=e67]: Navigation
+      - link "Team Members" [ref=e68] [cursor=pointer]:
+        - /url: /team
+        - img [ref=e69]
+        - generic [ref=e74]: Team Members
+      - link "News" [ref=e75] [cursor=pointer]:
+        - /url: /news
+        - img [ref=e76]
+        - generic [ref=e79]: News
+      - link "Settings" [ref=e80] [cursor=pointer]:
+        - /url: /settings
+        - img [ref=e81]
+        - generic [ref=e84]: Settings
+    - combobox [ref=e86]:
+      - option "St. Pius X High School" [selected]
+      - option "Sree Narayana Guru Public School"
+  - generic [ref=e87]:
+    - banner [ref=e88]:
+      - heading "Pages" [level=1] [ref=e90]
+      - generic [ref=e91]:
+        - button "View Site" [ref=e92]:
+          - img
+          - text: View Site
+        - button "3" [ref=e93]:
+          - img
+          - generic [ref=e94]: "3"
+        - button "AD" [ref=e95]:
+          - generic [ref=e97]: AD
+    - main [ref=e98]:
+      - generic [ref=e99]:
+        - generic [ref=e100]:
+          - generic [ref=e101]:
+            - button "← Back" [ref=e102]
+            - heading "Home" [level=2] [ref=e103]
+            - generic [ref=e104]: /
+            - generic [ref=e105]: Modified from default
+          - generic [ref=e106]:
+            - button "Reset to Defaults" [ref=e107]:
+              - img
+              - text: Reset to Defaults
+            - button "View Site" [ref=e108]
+            - button "Publish" [ref=e109]
+        - generic [ref=e111]:
+          - generic [ref=e112]:
+            - generic [ref=e113]:
+              - generic [ref=e114]:
+                - paragraph [ref=e115]: Sections (4)
+                - button "+ Add Section" [ref=e116]
+              - generic [ref=e117]:
+                - generic [ref=e118] [cursor=pointer]:
+                  - button [ref=e119]:
+                    - img [ref=e120]
+                  - generic [ref=e127]:
+                    - img [ref=e128]
+                    - generic [ref=e130]:
+                      - paragraph [ref=e131]: Hero Section
+                      - paragraph [ref=e132]: "headline: St. Pius X High School - CMS E · tagline: Shaping Tomorrow's Leaders Tod"
+                  - generic [ref=e133]:
+                    - button [ref=e134]:
+                      - img [ref=e135]
+                    - button [ref=e138]:
+                      - img [ref=e139]
+                    - button [ref=e142]:
+                      - img [ref=e143]
+                - generic [ref=e146] [cursor=pointer]:
+                  - button [ref=e147]:
+                    - img [ref=e148]
+                  - generic [ref=e155]:
+                    - img [ref=e156]
+                    - generic [ref=e158]:
+                      - paragraph [ref=e159]: About Section
+                      - paragraph [ref=e160]: "title: About Our School · description: St. Pius X High School, establ"
+                  - generic [ref=e161]:
+                    - button [ref=e162]:
+                      - img [ref=e163]
+                    - button [ref=e166]:
+                      - img [ref=e167]
+                    - button [ref=e170]:
+                      - img [ref=e171]
+                - generic [ref=e174] [cursor=pointer]:
+                  - button [ref=e175]:
+                    - img [ref=e176]
+                  - generic [ref=e183]:
+                    - img [ref=e184]
+                    - generic [ref=e189]:
+                      - paragraph [ref=e190]: Features Grid
+                      - paragraph [ref=e191]: "title: Our Pillars of Excellence · subtitle: We focus on holistic developme"
+                  - generic [ref=e192]:
+                    - button [ref=e193]:
+                      - img [ref=e194]
+                    - button [ref=e197]:
+                      - img [ref=e198]
+                    - button [ref=e201]:
+                      - img [ref=e202]
+                - generic [ref=e205] [cursor=pointer]:
+                  - button [ref=e206]:
+                    - img [ref=e207]
+                  - generic [ref=e214]:
+                    - img [ref=e215]
+                    - generic [ref=e217]:
+                      - paragraph [ref=e218]: Testimonials
+                      - paragraph [ref=e219]: "title: What Parents Say · 1 items"
+                  - generic [ref=e220]:
+                    - button [ref=e221]:
+                      - img [ref=e222]
+                    - button [ref=e225]:
+                      - img [ref=e226]
+                    - button [ref=e229]:
+                      - img [ref=e230]
+            - status [ref=e233]
+          - generic [ref=e235]: Select a section to edit

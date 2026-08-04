@@ -1,0 +1,452 @@
+- generic [ref=e2]:
+  - navigation [ref=e3]:
+    - generic [ref=e5]:
+      - button "Toggle fee payment notice" [ref=e7] [cursor=pointer]:
+        - img [ref=e8]
+        - generic [ref=e11]: ONLINE FEE PAYMENT
+        - img [ref=e12]
+      - generic [ref=e15]: "🔔 NOTICE: ONLINE FEE PAYMENT FOR PRIMARY SECTION — Fee payments for Classes 2, 3, and 4 can now be made online. Have your child's GR number ready."
+      - link "Pay Fees" [ref=e16] [cursor=pointer]:
+        - /url: https://formbuilder.ccavenue.com/live/st-pius-x-high-school
+        - img [ref=e17]
+        - generic [ref=e19]: Pay Fees
+    - generic [ref=e21]:
+      - link "St. Pius X Logo" [ref=e23] [cursor=pointer]:
+        - /url: /
+        - img "St. Pius X Logo" [ref=e24]
+      - generic [ref=e26]:
+        - link "Home" [ref=e28] [cursor=pointer]:
+          - /url: /
+        - button "About" [ref=e30]:
+          - text: About
+          - img [ref=e31]
+        - link "Admissions" [ref=e34] [cursor=pointer]:
+          - /url: https://creativesaints.com/st-pius-x-high-school/login
+        - link "Academics" [ref=e36] [cursor=pointer]:
+          - /url: /academics
+        - link "Facilities" [ref=e38] [cursor=pointer]:
+          - /url: /facilities
+        - link "Gallery" [ref=e40] [cursor=pointer]:
+          - /url: /gallery
+        - link "Contact" [ref=e42] [cursor=pointer]:
+          - /url: /contact
+      - button "Admissions Open for 2026-2027" [ref=e44]:
+        - link "Admissions Open for 2026-2027" [ref=e45] [cursor=pointer]:
+          - /url: /contact
+  - main [ref=e47]:
+    - generic [ref=e48]:
+      - generic [ref=e52]:
+        - generic [ref=e53]:
+          - paragraph [ref=e54]: मुलुंड येथील सेंट पायस द टेन्थ हायस्कूल
+          - generic [ref=e55]:
+            - generic [ref=e56]: "Udise Number : 27230400358"
+            - generic [ref=e57]: "|"
+            - generic [ref=e58]: "Index Number : 33.06.061"
+          - heading "Excellence in Education" [level=1] [ref=e59]
+          - paragraph [ref=e60]: Join St. Pius X High School for world-class education, holistic development, and character building
+          - paragraph [ref=e61]: मुलुंड येथील सेंट पायस द टेन्थ हायस्कूल महाराष्ट्र बोर्डाच्या एसएससी बोर्ड अभ्यासक्रमाशी संलग्न आहे. मुलांसाठी शाळा.
+        - generic [ref=e62]:
+          - link "Apply for Admission" [ref=e63] [cursor=pointer]:
+            - /url: /#contact
+          - link "Learn More" [ref=e64] [cursor=pointer]:
+            - /url: /about
+      - img [ref=e66]
+      - img [ref=e69]
+    - generic [ref=e76]:
+      - generic [ref=e77]:
+        - img [ref=e78]
+        - text: Established 1970
+      - heading "Welcome to St. Pius X High School" [level=1] [ref=e83]:
+        - text: Welcome to
+        - text: St. Pius X High School
+      - paragraph [ref=e84]: "\" LIGHTED TO ENLIGHTEN \""
+      - generic [ref=e87]:
+        - generic [ref=e96]:
+          - generic [ref=e97]:
+            - img [ref=e99]
+            - generic [ref=e102]:
+              - heading "Our Future" [level=2] [ref=e103]
+              - heading "The Vision" [level=3] [ref=e104]
+          - generic [ref=e105]:
+            - generic [ref=e106]: "\""
+            - paragraph [ref=e107]: Striving for Excellence Today to prepare students to succeed in a challenging world of tomorrow.
+          - img [ref=e110]
+        - generic [ref=e120]:
+          - generic [ref=e121]:
+            - img [ref=e123]
+            - generic [ref=e127]:
+              - heading "Our Purpose" [level=2] [ref=e128]
+              - heading "The Mission" [level=3] [ref=e129]
+          - generic [ref=e130]:
+            - generic [ref=e131]: "\""
+            - paragraph [ref=e132]: To be a catalyst in unlocking the potentials of the students and creating an awareness of his intellectual, creative and spiritual capabilities.
+          - img [ref=e135]
+    - generic [ref=e140]:
+      - generic [ref=e141]:
+        - generic [ref=e142]:
+          - img [ref=e143]
+          - text: Empowering Our Students
+        - heading "Why Choose St. Pius X High School?" [level=2] [ref=e145]
+        - paragraph [ref=e146]: We provide a nurturing environment where academic rigor meets creative freedom, ensuring every student finds their unique path to success.
+      - generic [ref=e147]:
+        - generic [ref=e148]:
+          - img [ref=e151]
+          - heading "Academic Excellence" [level=3] [ref=e153]
+          - paragraph [ref=e154]: A world-class curriculum focusing on STEM and humanities, designed to prepare students for global challenges.
+        - generic [ref=e155]:
+          - img [ref=e158]
+          - heading "Holistic Development" [level=3] [ref=e163]
+          - paragraph [ref=e164]: "Beyond textbooks: nurturing well-rounded personalities through arts, leadership, and emotional intelligence."
+        - generic [ref=e165]:
+          - img [ref=e168]
+          - heading "Expert Faculty" [level=3] [ref=e171]
+          - paragraph [ref=e172]: Our educators are mentors with advanced qualifications and a deep-seated passion for shaping young minds.
+        - generic [ref=e173]:
+          - img [ref=e176]
+          - heading "Modern Infrastructure" [level=3] [ref=e179]
+          - paragraph [ref=e180]: Digital classrooms, advanced science labs, and a comprehensive sports complex for the 21st-century learner.
+      - generic [ref=e184]:
+        - generic [ref=e185]:
+          - heading "Begin Your Child's Journey to Excellence" [level=3] [ref=e186]
+          - paragraph [ref=e187]: Join our vibrant community of learners. Applications for the upcoming academic year are now being processed.
+        - link "Apply Now" [ref=e189] [cursor=pointer]:
+          - /url: /contact
+    - generic [ref=e191]:
+      - generic [ref=e193]:
+        - generic [ref=e194]:
+          - generic [ref=e195]:
+            - img [ref=e196]
+            - text: Our Pillars of Excellence
+          - heading "Nurturing Minds, Enlightening Souls." [level=2] [ref=e198]:
+            - text: Nurturing Minds,
+            - text: Enlightening Souls.
+        - paragraph [ref=e199]: "\" THOU SHALT LOVE THE LORD THY GOD WITH THY WHOLE HEART AND WITH THY WHOLE SOUL AND WITH THY WHOLE MIND : AND THOU SHALT LOVE THY NEIGHBOURS AS THYSELF. \""
+      - generic [ref=e200]:
+        - generic [ref=e202]:
+          - img "Smart Learning" [ref=e204]
+          - generic [ref=e206]:
+            - img [ref=e208]
+            - generic [ref=e210]: Technology
+            - heading "Smart Learning" [level=3] [ref=e211]
+            - generic:
+              - paragraph: Equipped with Next-Gen Smart Boards and a state-of-the-art Computer Lab to foster technical literacy from a young age.
+          - img [ref=e213]
+        - generic [ref=e217]:
+          - img "Scouts, Guides & RSP" [ref=e219]
+          - generic [ref=e221]:
+            - img [ref=e223]
+            - generic [ref=e226]: Leadership
+            - heading "Scouts, Guides & RSP" [level=3] [ref=e227]
+            - generic:
+              - paragraph: Character building through Road Safety Patrol (RSP) and Scouting, instilling discipline and civic responsibility.
+          - img [ref=e229]
+        - generic [ref=e233]:
+          - img "Sporting Legacy" [ref=e235]
+          - generic [ref=e237]:
+            - img [ref=e239]
+            - generic [ref=e245]: Physical
+            - heading "Sporting Legacy" [level=3] [ref=e246]
+            - generic:
+              - paragraph: From inter-school football tournaments to specialized basketball coaching, we nurture the champions of tomorrow.
+          - img [ref=e248]
+        - generic [ref=e252]:
+          - img "Holistic Humanities" [ref=e254]
+          - generic [ref=e256]:
+            - img [ref=e258]
+            - generic [ref=e264]: Arts
+            - heading "Holistic Humanities" [level=3] [ref=e265]
+            - generic:
+              - paragraph: Celebrating creativity through the 'Pius Fest', elocution competitions, and a rich performing arts.
+          - img [ref=e267]
+      - generic [ref=e270]:
+        - generic [ref=e271]:
+          - img [ref=e273]
+          - generic [ref=e276]: SSC Board
+          - generic [ref=e277]: 100% Results
+        - generic [ref=e278]:
+          - img [ref=e280]
+          - generic [ref=e282]: Founded
+          - generic [ref=e283]: Since 1970
+        - generic [ref=e284]:
+          - img [ref=e286]
+          - generic [ref=e289]: Boys School
+          - generic [ref=e290]: Jesuit Run
+        - generic [ref=e291]:
+          - img [ref=e293]
+          - generic [ref=e295]: Campus
+          - generic [ref=e296]: Tech Enabled
+    - generic [ref=e297]:
+      - generic:
+        - img
+        - img
+        - img
+        - img
+      - generic [ref=e298]:
+        - generic [ref=e299]:
+          - generic [ref=e300]:
+            - img [ref=e301]
+            - generic [ref=e304]: A Legacy of Excellence
+            - img [ref=e305]
+          - heading "Trusted by Generations in Mulund" [level=2] [ref=e307]:
+            - text: Trusted by
+            - generic [ref=e308]: Generations
+            - text: in Mulund
+          - paragraph [ref=e310]: From 100% SSC results to state-level sports, see how we empower the youth of tomorrow with excellence and innovation.
+        - generic [ref=e311]:
+          - generic [ref=e313]:
+            - generic [ref=e316]:
+              - img [ref=e318]
+              - generic [ref=e322]: 0%
+              - generic [ref=e323]: SSC Results
+              - generic [ref=e324]: Consistent Excellence
+            - generic [ref=e332]:
+              - img [ref=e334]
+              - generic [ref=e340]: 0+ Yrs
+              - generic [ref=e341]: Legacy Years
+              - generic [ref=e342]: Since 1970
+            - generic [ref=e350]:
+              - img [ref=e352]
+              - generic [ref=e355]: 0+
+              - generic [ref=e356]: Student Clubs
+              - generic [ref=e357]: Activities
+            - generic [ref=e365]:
+              - img [ref=e367]
+              - generic [ref=e373]: 0+
+              - generic [ref=e374]: Successful Alumni
+              - generic [ref=e375]: Global Network
+          - generic [ref=e381]:
+            - generic [ref=e382]:
+              - generic [ref=e383]:
+                - img [ref=e386]
+                - generic [ref=e389]: 100% Pass Rate
+              - generic [ref=e390]:
+                - img [ref=e393]
+                - generic [ref=e399]: Consistently Top Ranked
+              - generic [ref=e400]:
+                - img [ref=e403]
+                - generic [ref=e405]: State-of-the-Art Facilities
+            - generic [ref=e408]:
+              - img [ref=e409]
+              - generic [ref=e413]:
+                - generic [ref=e414]:
+                  - generic [ref=e415]:
+                    - img [ref=e417]
+                    - generic:
+                      - img
+                    - generic:
+                      - img
+                    - generic:
+                      - img
+                    - generic:
+                      - img
+                  - generic [ref=e419]:
+                    - button [ref=e420]:
+                      - img [ref=e421]
+                    - button [ref=e423]:
+                      - img [ref=e424]
+                - blockquote [ref=e426]: "\"Best school in Mulund. Faculties are very professional. Environment is very peaceful. I am very happy that I got chance to study in St. Pius X High School.\""
+                - generic [ref=e427]:
+                  - generic [ref=e428]: R
+                  - generic [ref=e430]:
+                    - heading "Ruchit Chandan" [level=4] [ref=e431]
+                    - paragraph [ref=e432]: Alumni
+                    - generic [ref=e433]:
+                      - img [ref=e434]
+                      - text: Ex-Student
+        - generic [ref=e438]:
+          - img [ref=e442]
+          - img [ref=e444]
+          - generic [ref=e448]:
+            - heading "Be Part of the Pius Legacy" [level=3] [ref=e449]
+            - paragraph [ref=e450]: Join thousands of successful alumni who started their journey here. Shape your future with excellence.
+          - link "Enquire for Admission" [ref=e452] [cursor=pointer]:
+            - /url: /contact
+            - text: Enquire for Admission
+            - img [ref=e454]
+    - generic [ref=e458]:
+      - generic [ref=e459]:
+        - generic [ref=e460]:
+          - img [ref=e461]
+          - generic [ref=e463]: Get Connected
+          - img [ref=e464]
+        - heading "Let's Start Your Journey" [level=2] [ref=e466]:
+          - generic [ref=e467]: Let's Start
+          - text: Your Journey
+        - paragraph [ref=e469]: Have questions about admissions, facilities, or programs? Our team is here to help you every step of the way.
+      - generic [ref=e470]:
+        - generic [ref=e471]:
+          - generic [ref=e474]:
+            - generic [ref=e475]:
+              - img [ref=e477]
+              - generic [ref=e480]:
+                - heading "Campus Location" [level=3] [ref=e481]
+                - paragraph [ref=e482]: St Pius Rd, opp. St Pius Colony, Mulund West, Mumbai, Maharashtra 400080
+                - paragraph [ref=e483]: Visit our beautiful campus
+            - img [ref=e485]
+          - generic [ref=e489]:
+            - generic [ref=e490]:
+              - img [ref=e492]
+              - generic [ref=e494]:
+                - heading "Contact Number" [level=3] [ref=e495]
+                - paragraph [ref=e496]: +91 (22) 2561-XXXX
+                - paragraph [ref=e497]: Available 8 AM - 4 PM
+            - img [ref=e499]
+          - generic [ref=e503]:
+            - generic [ref=e504]:
+              - img [ref=e506]
+              - generic [ref=e509]:
+                - heading "Email Address" [level=3] [ref=e510]
+                - paragraph [ref=e511]: admissions@stpiusmulund.com
+                - paragraph [ref=e512]: Quick response guaranteed
+            - img [ref=e514]
+        - generic [ref=e518]:
+          - generic [ref=e520]:
+            - img [ref=e522]
+            - generic [ref=e524]:
+              - heading "Send Us a Message" [level=3] [ref=e525]
+              - paragraph [ref=e526]: We typically respond within 24 hours
+          - generic [ref=e528]:
+            - generic [ref=e529]:
+              - generic [ref=e530]:
+                - generic [ref=e532]:
+                  - img [ref=e533]
+                  - generic [ref=e536]: Full Name
+                - textbox "Full Name" [ref=e538]:
+                  - /placeholder: Enter your full name
+              - generic [ref=e539]:
+                - generic [ref=e541]:
+                  - img [ref=e542]
+                  - generic [ref=e545]: Email Address
+                - textbox "Email Address" [ref=e547]:
+                  - /placeholder: your@email.com
+            - generic [ref=e548]:
+              - generic [ref=e550]:
+                - img [ref=e551]
+                - generic [ref=e553]: Phone Number
+              - textbox "Phone Number" [ref=e555]:
+                - /placeholder: +91 XXXXXXXXXX
+            - generic [ref=e556]:
+              - generic [ref=e558]:
+                - img [ref=e559]
+                - generic [ref=e561]: Your Message
+              - textbox "Your Message" [ref=e563]:
+                - /placeholder: Tell us about your inquiry...
+            - button "Send Message" [ref=e564]:
+              - generic [ref=e566]: Send Message
+              - img [ref=e567]
+            - paragraph [ref=e571]:
+              - text: By submitting, you agree to our
+              - link "Privacy Policy" [ref=e572] [cursor=pointer]:
+                - /url: "#"
+              - text: . We respect your privacy and never share your information.
+      - generic [ref=e574]:
+        - generic [ref=e575]:
+          - generic [ref=e576]:
+            - heading "Visit Our Campus" [level=3] [ref=e577]
+            - paragraph [ref=e578]: Experience our state-of-the-art facilities firsthand. Our campus is designed to foster creativity, innovation, and holistic development for all students.
+          - generic [ref=e579]:
+            - generic [ref=e580]:
+              - img [ref=e582]
+              - generic [ref=e585]:
+                - heading "Location" [level=4] [ref=e586]
+                - paragraph [ref=e587]:
+                  - text: St Pius Rd, opp. St Pius Colony,
+                  - text: Mulund West, Mumbai, Maharashtra 400080
+            - generic [ref=e588]:
+              - img [ref=e590]
+              - generic [ref=e593]:
+                - heading "Visiting Hours" [level=4] [ref=e594]
+                - paragraph [ref=e595]:
+                  - text: "Monday to Friday: 9:00 AM - 3:00 PM"
+                  - text: "Saturday: 9:00 AM - 12:00 PM (By appointment)"
+        - generic [ref=e600] [cursor=pointer]:
+          - generic [ref=e601]:
+            - button "Marker" [ref=e602]
+            - generic:
+              - generic [ref=e603]:
+                - button "Zoom in" [ref=e604]: +
+                - button "Zoom out" [ref=e605]: −
+              - generic [ref=e606]:
+                - link "Leaflet" [ref=e607]:
+                  - /url: https://leafletjs.com
+                  - img [ref=e608]
+                  - text: Leaflet
+                - text: "| © Google Maps"
+          - generic [ref=e614]: Click to view in Google Maps
+  - contentinfo [ref=e615]:
+    - generic:
+      - img
+    - generic [ref=e616]:
+      - generic [ref=e617]:
+        - generic [ref=e618]:
+          - generic [ref=e619]:
+            - link "St. Pius X Logo St. Pius X High School" [ref=e620] [cursor=pointer]:
+              - /url: /
+              - img "St. Pius X Logo" [ref=e621]
+              - generic [ref=e622]: St. Pius X High School
+            - paragraph [ref=e623]: St. Pius X High School has been dedicated to Excellence in Education, Character Building, and Holistic Development since 1975. Our mission is to be a catalyst in unlocking every student's potential and fostering their intellectual, creative, and spiritual capabilities to prepare them to succeed in a challenging world of tomorrow.
+          - generic [ref=e624]:
+            - heading "Stay Connected" [level=4] [ref=e625]
+            - generic [ref=e626]:
+              - link "Facebook" [ref=e627] [cursor=pointer]:
+                - /url: "#"
+                - img [ref=e628]
+              - link "Twitter" [ref=e630] [cursor=pointer]:
+                - /url: "#"
+                - img [ref=e631]
+              - link "Instagram" [ref=e633] [cursor=pointer]:
+                - /url: "#"
+                - img [ref=e634]
+              - link "LinkedIn" [ref=e637] [cursor=pointer]:
+                - /url: "#"
+                - img [ref=e638]
+        - generic [ref=e642]:
+          - heading "About School" [level=4] [ref=e643]
+          - list [ref=e644]:
+            - listitem [ref=e645]:
+              - link "Overview" [ref=e646] [cursor=pointer]:
+                - /url: /about#overview
+            - listitem [ref=e647]:
+              - link "Vision & Mission" [ref=e648] [cursor=pointer]:
+                - /url: /about#vision-mission
+            - listitem [ref=e649]:
+              - link "Principal's Message" [ref=e650] [cursor=pointer]:
+                - /url: /about#principal-message
+            - listitem [ref=e651]:
+              - link "Core Values" [ref=e652] [cursor=pointer]:
+                - /url: /about#core-values
+            - listitem [ref=e653]:
+              - link "Leadership Team" [ref=e654] [cursor=pointer]:
+                - /url: /about#leadership
+            - listitem [ref=e655]:
+              - link "History & Milestones" [ref=e656] [cursor=pointer]:
+                - /url: /about#history-milestones
+        - generic [ref=e657]:
+          - heading "Quick Links" [level=4] [ref=e658]
+          - list [ref=e659]:
+            - listitem [ref=e660]:
+              - link "Home" [ref=e661] [cursor=pointer]:
+                - /url: /
+            - listitem [ref=e662]:
+              - link "Admissions" [ref=e663] [cursor=pointer]:
+                - /url: https://creativesaints.com/st-pius-x-high-school/login
+            - listitem [ref=e664]:
+              - link "Academics" [ref=e665] [cursor=pointer]:
+                - /url: /academics
+            - listitem [ref=e666]:
+              - link "Facilities" [ref=e667] [cursor=pointer]:
+                - /url: /facilities
+            - listitem [ref=e668]:
+              - link "Gallery" [ref=e669] [cursor=pointer]:
+                - /url: /gallery
+            - listitem [ref=e670]:
+              - link "Contact" [ref=e671] [cursor=pointer]:
+                - /url: /contact
+      - generic [ref=e672]:
+        - paragraph [ref=e673]: © 2026 St. Pius X High School, Mulund. All rights reserved.
+        - paragraph [ref=e674]:
+          - text: Powered by
+          - link "Creoleap Technologies Private Limited" [ref=e675] [cursor=pointer]:
+            - /url: https://creoleap.com
+    - button "Back to top" [ref=e676]:
+      - img [ref=e677]

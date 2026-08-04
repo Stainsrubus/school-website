@@ -55,7 +55,7 @@ export default function HeroSection() {
           playsInline
           className="absolute inset-0 w-full h-full object-cover"
         >
-          <source src="/hero-video.mp4" type="video/mp4" />
+          <source src="/hero-video.mp4" type="video/mp4" data-cms-src="st-pius-hero:bg_video" />
         </video>
         {/* Overlay gradient */}
         <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-black/20 to-black/60" />
@@ -66,32 +66,29 @@ export default function HeroSection() {
         <div className="scale-in">
 
           {/* ── Marathi School Name ── */}
-          <p className="text-base sm:text-xl md:text-2xl font-bold text-blue-100 mb-1 tracking-wide">
+          <p className="text-base sm:text-xl md:text-2xl font-bold text-blue-100 mb-1 tracking-wide" data-cms="hero:marathi_name">
             मुलुंड येथील सेंट पायस द टेन्थ हायस्कूल
           </p>
 
           {/* ── Registration & Index Numbers ── */}
           <div className="flex flex-wrap items-center justify-center gap-x-4 gap-y-1 mb-5 text-sm text-white/70">
-            <span>Udise Number : 27230400358</span>
+            <span data-cms="hero:udise_number">Udise Number : 27230400358</span>
             <span className="hidden sm:inline text-white/40">|</span>
-            <span>Index Number : 33.06.061</span>
+            <span data-cms="hero:index_number">Index Number : 33.06.061</span>
           </div>
 
           {/* ── Main English Heading ── */}
-          <h1 className="text-3xl sm:text-5xl md:text-7xl font-playfair font-bold mb-4 leading-tight">
-            Excellence in{" "}
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-300 via-cyan-300 to-blue-200">
-              Education
-            </span>
+          <h1 className="text-3xl sm:text-5xl md:text-7xl font-playfair font-bold mb-4 leading-tight" data-cms="hero:title">
+            Excellence in Education
           </h1>
 
           {/* ── English Subheading ── */}
-          <p className="text-base sm:text-xl md:text-2xl mb-4 font-light max-w-2xl mx-auto text-gray-100">
+          <p data-cms="st-pius-hero:tagline" className="text-base sm:text-xl md:text-2xl mb-4 font-light max-w-2xl mx-auto text-gray-100">
             Join St. Pius X High School for world-class education, holistic development, and character building
           </p>
 
           {/* ── Marathi Affiliation Line ── */}
-          <p className="text-sm md:text-base text-blue-100/80 max-w-2xl mx-auto mb-2 leading-relaxed">
+          <p className="text-sm md:text-base text-blue-100/80 max-w-2xl mx-auto mb-2 leading-relaxed" data-cms="hero:marathi_description">
             मुलुंड येथील सेंट पायस द टेन्थ हायस्कूल महाराष्ट्र बोर्डाच्या एसएससी बोर्ड अभ्यासक्रमाशी संलग्न आहे. मुलांसाठी शाळा.
           </p>
 
@@ -104,14 +101,14 @@ export default function HeroSection() {
             hash="contact"
             className="px-6 sm:px-8 py-3 sm:py-4 bg-gradient-to-r from-blue-600 to-cyan-500 text-white rounded-full font-semibold hover-lift shadow-lg text-sm sm:text-base inline-block text-center"
           >
-            Apply for Admission
+            <span data-cms="st-pius-hero:cta_text">Apply for Admission</span>
           </Link>
           <Link
             to="/about"
             className="px-6 sm:px-8 py-3 sm:py-4 bg-white/10 backdrop-blur-sm text-white border border-white/30 rounded-full font-semibold hover:bg-white/20 transition-colors text-sm sm:text-base inline-block text-center"
             onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
           >
-            Learn More
+<span data-cms="st-pius-hero:cta_secondary_text">Learn More</span>
           </Link>
         </div>
       </div>

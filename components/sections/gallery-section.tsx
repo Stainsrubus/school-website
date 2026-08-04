@@ -157,7 +157,7 @@ export default function GalleryPage() {
   }, [])
 
   return (
-    <div className="min-h-screen bg-gray-50/70 relative">
+    <div className="min-h-screen bg-gray-50/70 relative" data-cms-page="gallery">
       {/* Glassmorphism Floating Filter Bar */}
       <div
         className={`fixed top-0 left-0 right-0 z-[90] transition-all duration-500 ease-out ${showFloatingBar
@@ -197,7 +197,7 @@ export default function GalleryPage() {
         </div>
 
         <div className="relative max-w-7xl mx-auto px-6 text-center">
-          <h1 className="text-5xl sm:text-6xl md:text-7xl font-extrabold tracking-tight mb-5">
+          <h1 className="text-5xl sm:text-6xl md:text-7xl font-extrabold tracking-tight mb-5" data-cms="gallery:title">
             <span className="relative inline-block">
               <span className="relative z-10 bg-gradient-to-r from-blue-200 via-white to-cyan-200 bg-clip-text text-transparent">
                 School Gallery

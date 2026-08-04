@@ -60,21 +60,15 @@ export default function FeaturesSection() {
             <div className="max-w-2xl">
               <div className="flex items-center gap-2 text-blue-600 dark:text-cyan-400 font-bold tracking-widest uppercase text-sm mb-4">
                 <Zap size={18} className="fill-current" />
-                Our Pillars of Excellence
+<span data-cms="features-grid:title">Our Pillars of Excellence</span>
               </div>
-              <h2 className="font-serif text-3xl sm:text-4xl md:text-6xl font-bold text-slate-900 dark:text-white leading-tight">
-                Nurturing Minds, <br />
-                <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-cyan-500">
-                  Enlightening Souls.
-                </span>
+              <h2 className="font-serif text-3xl sm:text-4xl md:text-6xl font-bold text-slate-900 dark:text-white leading-tight" data-cms="features:subtitle">
+                Nurturing Minds, Enlightening Souls.
               </h2>
             </div>
-            <p className="text-lg text-slate-600 dark:text-slate-400 max-w-sm border-l-2 border-blue-600 pl-6">
-              " THOU SHALT LOVE THE LORD THY GOD WITH THY WHOLE HEART AND WITH THY
-
-              WHOLE SOUL AND WITH THY WHOLE MIND : AND THOU SHALT LOVE THY
-
-              NEIGHBOURS AS THYSELF. "</p>
+            <p className="text-lg text-slate-600 dark:text-slate-400 max-w-sm border-l-2 border-blue-600 pl-6" data-cms="features:scripture_quote">
+              " THOU SHALT LOVE THE LORD THY GOD WITH THY WHOLE HEART AND WITH THY WHOLE SOUL AND WITH THY WHOLE MIND : AND THOU SHALT LOVE THY NEIGHBOURS AS THYSELF. "
+            </p>
           </div>
         </ScrollObserver>
 
@@ -106,28 +100,19 @@ export default function FeaturesSection() {
                     {feature.icon}
                   </div>
 
-                  <span className="text-cyan-400 font-bold text-xs uppercase tracking-[0.2em] mb-2 block">
+                  <span className="text-cyan-400 font-bold text-xs uppercase tracking-[0.2em] mb-2 block" data-cms={`feature_${index}:tag`}>
                     {feature.tag}
                   </span>
 
-                  <h3 className="font-serif text-xl sm:text-2xl md:text-3xl font-bold text-white mb-4">
+                  <h3 className="font-serif text-xl sm:text-2xl md:text-3xl font-bold text-white mb-4" data-cms={`feature_${index}:title`}>
                     {feature.title}
                   </h3>
 
                   <div className={`grid transition-all duration-500 ease-in-out ${hoveredIndex === index ? 'grid-rows-[1fr] opacity-100' : 'grid-rows-[0fr] opacity-0'}`}>
-                    <p className="overflow-hidden text-slate-300 text-lg leading-relaxed">
+                    <p className="overflow-hidden text-slate-300 text-lg leading-relaxed" data-cms={`feature_${index}:description`}>
                       {feature.description}
                     </p>
                   </div>
-
-                  {/* <div className="mt-6 flex items-center gap-4">
-                    <button className="flex items-center gap-2 text-white font-bold group/btn">
-                      Explore Program 
-                      <div className="w-8 h-8 rounded-full border border-white/30 flex items-center justify-center group-hover/btn:bg-white group-hover/btn:text-slate-900 transition-all">
-                        <ArrowUpRight size={16} />
-                      </div>
-                    </button>
-                  </div> */}
                 </div>
 
                 {/* Corner Decorative Element */}
@@ -151,8 +136,8 @@ export default function FeaturesSection() {
               <div className="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center mb-2">
                 {React.cloneElement(fact.icon as any, { size: 20 })}
               </div>
-              <div className="font-bold text-lg">{fact.label}</div>
-              <div className="text-blue-100 text-xs uppercase tracking-widest">{fact.sub}</div>
+              <div className="font-bold text-lg" data-cms={`quick_fact_${i}:label`}>{fact.label}</div>
+              <div className="text-blue-100 text-xs uppercase tracking-widest" data-cms={`quick_fact_${i}:sub`}>{fact.sub}</div>
             </div>
           ))}
         </ScrollObserver>

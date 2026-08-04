@@ -86,7 +86,7 @@ export default function TopBar() {
 
                     {/* Scrolling marquee */}
                     <div className="flex-1 overflow-hidden relative h-full flex items-center">
-                        <div ref={marqueeRef} className="marquee-track text-xs sm:text-sm font-medium text-white/90">
+                        <div ref={marqueeRef} className="marquee-track text-xs sm:text-sm font-medium text-white/90" data-cms="topbar:notice_text">
                             {noticeText}
                         </div>
                     </div>
@@ -99,7 +99,7 @@ export default function TopBar() {
                         className="flex-shrink-0 flex items-center gap-1.5 bg-white text-blue-700 hover:bg-yellow-300 hover:text-blue-900 transition-all duration-200 rounded-full px-3 py-1 text-xs font-bold shadow-md"
                     >
                         <CreditCard size={12} />
-                        <span>Pay Fees</span>
+                        <span data-cms="topbar:pay_fees_text">Pay Fees</span>
                     </a>
                 </div>
             </div>

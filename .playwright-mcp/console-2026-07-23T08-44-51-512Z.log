@@ -1,0 +1,7 @@
+[      71ms] [INFO] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold @ http://localhost:5175/node_modules/.vite/deps/react-dom_client.js?v=af1b1d4c:20102
+[      85ms] [WARNING] motion() is deprecated. Use motion.create() instead. @ http://localhost:5175/node_modules/.vite/deps/framer-motion.js?v=af1b1d4c:195
+[    2044ms] [LOG] [SchoolPress Bridge] Patched 7 text nodes with CMS content @ http://localhost:5174/bridge.js?school=st-pius:68
+[  504994ms] [LOG] [vite] server connection lost. Polling for restart... @ http://localhost:5175/@vite/client:864
+[  507636ms] [INFO] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold @ http://localhost:5175/node_modules/.vite/deps/react-dom_client.js?v=af1b1d4c:20102
+[  507684ms] [WARNING] motion() is deprecated. Use motion.create() instead. @ http://localhost:5175/node_modules/.vite/deps/framer-motion.js?v=af1b1d4c:195
+[  509510ms] [LOG] [SchoolPress Bridge] Patched 7 text nodes with CMS content @ http://localhost:5174/bridge.js?school=st-pius:68

@@ -107,7 +107,7 @@ export default function Navigation() {
           <div className="hidden md:block">
             <button className="px-4 lg:px-6 py-2 bg-gradient-to-r from-blue-600 to-cyan-500 text-white rounded-full hover:shadow-lg transition-shadow font-semibold text-xs sm:text-sm lg:text-lg whitespace-nowrap">
               <Link to="/contact">
-                Admissions Open for 2026-2027
+                <span data-cms="st-pius-hero:cta_text">Admissions Open for 2026-2027</span>
               </Link>
             </button>
           </div>
@@ -184,7 +184,7 @@ export default function Navigation() {
 
               {/* Mobile CTA */}
               <button className="w-full mt-4 px-6 py-2 bg-gradient-to-r from-blue-600 to-cyan-500 text-white rounded-full hover:shadow-lg transition-shadow font-semibold text-lg">
-                Admissions Open for 2026-2027
+                <span data-cms="st-pius-hero:cta_text">Admissions Open for 2026-2027</span>
               </button>
             </div>
           </div>

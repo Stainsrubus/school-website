@@ -1,0 +1,149 @@
+- generic [ref=e28]:
+  - complementary [ref=e29]:
+    - generic [ref=e30]:
+      - generic [ref=e32]:
+        - paragraph [ref=e33]: St. Pius X High School
+        - paragraph [ref=e34]: CMS Dashboard
+      - button [ref=e35]:
+        - img [ref=e36]
+    - generic [ref=e38]:
+      - link "Dashboard" [ref=e39] [cursor=pointer]:
+        - /url: /dashboard
+        - img [ref=e40]
+        - generic [ref=e45]: Dashboard
+      - link "Pages" [ref=e46] [cursor=pointer]:
+        - /url: /pages
+        - img [ref=e47]
+        - generic [ref=e50]: Pages
+      - link "Gallery" [ref=e51] [cursor=pointer]:
+        - /url: /gallery
+        - img [ref=e52]
+        - generic [ref=e57]: Gallery
+      - link "Media Library" [ref=e58] [cursor=pointer]:
+        - /url: /media
+        - img [ref=e59]
+        - generic [ref=e63]: Media Library
+      - link "Navigation" [ref=e64] [cursor=pointer]:
+        - /url: /navigation
+        - img [ref=e65]
+        - generic [ref=e67]: Navigation
+      - link "Team Members" [ref=e68] [cursor=pointer]:
+        - /url: /team
+        - img [ref=e69]
+        - generic [ref=e74]: Team Members
+      - link "News" [ref=e75] [cursor=pointer]:
+        - /url: /news
+        - img [ref=e76]
+        - generic [ref=e79]: News
+      - link "Settings" [ref=e80] [cursor=pointer]:
+        - /url: /settings
+        - img [ref=e81]
+        - generic [ref=e84]: Settings
+    - combobox [ref=e86]:
+      - option "St. Pius X High School" [selected]
+      - option "Sree Narayana Guru Public School"
+  - generic [ref=e87]:
+    - banner [ref=e88]:
+      - heading "Dashboard" [level=1] [ref=e90]
+      - generic [ref=e91]:
+        - button "View Site" [ref=e92]:
+          - img
+          - text: View Site
+        - button "3" [ref=e93]:
+          - img
+          - generic [ref=e94]: "3"
+        - button "AD" [ref=e95]:
+          - generic [ref=e97]: AD
+    - main [ref=e98]:
+      - generic [ref=e99]:
+        - generic [ref=e100]:
+          - generic [ref=e101]:
+            - generic [ref=e102]:
+              - heading "Welcome back" [level=2] [ref=e103]
+              - generic [ref=e104]: 1 local edit
+            - paragraph [ref=e105]: St. Pius X High School
+          - generic [ref=e106]:
+            - button "View Site" [ref=e107]:
+              - img
+              - text: View Site
+            - button "Reset All" [ref=e108]:
+              - img
+              - text: Reset All
+        - generic [ref=e109]:
+          - generic [ref=e112] [cursor=pointer]:
+            - generic [ref=e113]:
+              - paragraph [ref=e114]: Published Pages
+              - paragraph [ref=e115]: 6/6
+            - img [ref=e117]
+          - generic [ref=e122] [cursor=pointer]:
+            - generic [ref=e123]:
+              - paragraph [ref=e124]: Gallery Images
+              - paragraph [ref=e125]: "6"
+              - paragraph [ref=e126]: 3 categories
+            - img [ref=e128]
+          - generic [ref=e134] [cursor=pointer]:
+            - generic [ref=e135]:
+              - paragraph [ref=e136]: Team Members
+              - paragraph [ref=e137]: "3"
+            - img [ref=e139]
+          - generic [ref=e146] [cursor=pointer]:
+            - generic [ref=e147]:
+              - paragraph [ref=e148]: Nav Items
+              - paragraph [ref=e149]: "6"
+            - img [ref=e151]
+        - generic [ref=e153]:
+          - generic [ref=e154]:
+            - generic [ref=e156]: Recent Activity
+            - generic [ref=e157]:
+              - generic [ref=e158]:
+                - img [ref=e160]
+                - generic [ref=e163]:
+                  - paragraph [ref=e164]: Updated Home hero section
+                  - paragraph [ref=e165]: Just now
+                - img [ref=e166]
+              - generic [ref=e169]:
+                - img [ref=e171]
+                - generic [ref=e175]:
+                  - paragraph [ref=e176]: Added 6 gallery images
+                  - paragraph [ref=e177]: 2 hours ago
+                - img [ref=e178]
+              - generic [ref=e181]:
+                - img [ref=e183]
+                - generic [ref=e188]:
+                  - paragraph [ref=e189]: 3 team members configured
+                  - paragraph [ref=e190]: 5 hours ago
+                - img [ref=e191]
+              - generic [ref=e194]:
+                - img [ref=e196]
+                - generic [ref=e198]:
+                  - paragraph [ref=e199]: 6 navigation items
+                  - paragraph [ref=e200]: 1 day ago
+                - img [ref=e201]
+          - generic [ref=e204]:
+            - generic [ref=e206]: Quick Actions
+            - generic [ref=e207]:
+              - button "Edit Homepage Update hero, about, and feature sections" [ref=e208]:
+                - generic [ref=e209]:
+                  - paragraph [ref=e210]: Edit Homepage
+                  - paragraph [ref=e211]: Update hero, about, and feature sections
+                - img [ref=e212]
+              - button "Manage Gallery Organize gallery images by category" [ref=e215]:
+                - generic [ref=e216]:
+                  - paragraph [ref=e217]: Manage Gallery
+                  - paragraph [ref=e218]: Organize gallery images by category
+                - img [ref=e219]
+              - button "Update Team Edit staff profiles and photos" [ref=e222]:
+                - generic [ref=e223]:
+                  - paragraph [ref=e224]: Update Team
+                  - paragraph [ref=e225]: Edit staff profiles and photos
+                - img [ref=e226]
+              - button "Edit Navigation Change menu structure and links" [ref=e229]:
+                - generic [ref=e230]:
+                  - paragraph [ref=e231]: Edit Navigation
+                  - paragraph [ref=e232]: Change menu structure and links
+                - img [ref=e233]
+              - button "View Live Site See how your content looks on the school website" [ref=e236]:
+                - generic [ref=e237]:
+                  - paragraph [ref=e238]: View Live Site
+                  - paragraph [ref=e239]: See how your content looks on the school website
+                - img [ref=e240]

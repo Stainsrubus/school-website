@@ -44,12 +44,12 @@ export default function AdmissionSection() {
         <ScrollObserver className="text-center mb-20">
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-50 dark:bg-blue-900/30 border border-blue-100 dark:border-blue-800 text-blue-600 dark:text-blue-400 text-xs font-bold uppercase tracking-widest mb-6">
             <Sparkles size={14} />
-            Empowering Our Students
+<span data-cms="features-grid:title">Empowering Our Students</span>
           </div>
           <h2 className="font-serif text-3xl sm:text-4xl md:text-6xl font-bold text-slate-900 dark:text-white mb-6 tracking-tight">
-            Why Choose <span className="bg-clip-text text-transparent bg-gradient-to-r from-blue-600 to-cyan-500">St. Pius X High School?</span>
+            Why Choose <span className="bg-clip-text text-transparent bg-gradient-to-r from-blue-600 to-cyan-500"><span data-cms="st-pius-hero:headline">St. Pius X High School</span>?</span>
           </h2>
-          <p className="text-lg text-slate-600 dark:text-slate-400 max-w-2xl mx-auto leading-relaxed">
+          <p className="text-lg text-slate-600 dark:text-slate-400 max-w-2xl mx-auto leading-relaxed" data-cms="admissions:description">
             We provide a nurturing environment where academic rigor meets creative freedom, ensuring every student finds their unique path to success.
           </p>
         </ScrollObserver>
@@ -90,10 +90,10 @@ export default function AdmissionSection() {
 
           <div className="relative z-10 flex flex-col md:flex-row items-center justify-between gap-10">
             <div className="max-w-xl">
-              <h3 className="text-3xl md:text-4xl font-bold text-white mb-4">
-                Begin Your Child's <span className="text-cyan-400 font-serif">Journey to Excellence</span>
+              <h3 className="text-3xl md:text-4xl font-bold text-white mb-4" data-cms="admissions:cta_title">
+                Begin Your Child's Journey to Excellence
               </h3>
-              <p className="text-blue-100/70 text-lg leading-relaxed">
+              <p className="text-blue-100/70 text-lg leading-relaxed" data-cms="admissions:cta_description">
                 Join our vibrant community of learners. Applications for the upcoming academic year are now being processed.
               </p>
             </div>

@@ -70,6 +70,7 @@ export default function ContactSection() {
       id="contact"
       ref={sectionRef}
       className="relative py-12 sm:py-16 md:py-24 bg-white overflow-hidden"
+      data-cms-page="contact"
     >
       {/* Animated Background Elements */}
       <div className="absolute inset-0 pointer-events-none">
@@ -102,19 +103,13 @@ export default function ContactSection() {
         >
           <div className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-gradient-to-r from-blue-50 to-cyan-50 border border-blue-100 text-blue-600 font-bold uppercase tracking-widest text-sm mb-6">
             <MessageSquare size={14} />
-            <span>Get Connected</span>
+<span data-cms="contact-section:title">Get Connected</span>
             <Sparkles size={12} />
           </div>
-          <h2 className="text-3xl sm:text-4xl md:text-6xl font-bold text-gray-900 mb-6">
-            <span className="relative">
-              <span className="relative z-10">Let's Start</span>
-              <span className="absolute -bottom-2 left-0 right-0 h-3 bg-gradient-to-r from-blue-500/20 to-cyan-500/20 blur-md"></span>
-            </span>{" "}
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 via-cyan-500 to-blue-800">
-              Your Journey
-            </span>
+          <h2 className="text-3xl sm:text-4xl md:text-6xl font-bold text-gray-900 mb-6" data-cms="contact:subtitle">
+            Let's Start Your Journey
           </h2>
-          <p className="text-xl text-gray-600 max-w-2xl mx-auto leading-relaxed">
+          <p className="text-xl text-gray-600 max-w-2xl mx-auto leading-relaxed" data-cms="contact:description">
             Have questions about admissions, facilities, or programs? Our team is here to help you every step of the way.
           </p>
         </motion.div>

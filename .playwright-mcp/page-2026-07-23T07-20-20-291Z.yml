@@ -1,0 +1,25 @@
+- generic [ref=e3]:
+  - generic [ref=e5]:
+    - generic [ref=e6]:
+      - generic [ref=e8]: SP
+      - generic [ref=e9]: SchoolPress CMS
+      - generic [ref=e10]: Sign in to manage your school website
+    - generic [ref=e12]:
+      - generic [ref=e13]:
+        - text: School
+        - combobox [ref=e14]:
+          - option "St. Pius X High School" [selected]
+          - option "Sree Narayana Guru Public School"
+      - generic [ref=e15]:
+        - text: Email
+        - textbox "admin@school.edu" [ref=e16]
+      - generic [ref=e17]:
+        - text: Password
+        - textbox "••••••••" [ref=e18]
+      - button "Sign In" [ref=e19]
+  - generic [ref=e21]:
+    - generic [ref=e23]:
+      - img "St. Pius X High School" [ref=e24]
+      - img "Sree Narayana Guru Public School" [ref=e25]
+    - heading "Manage Multiple Schools" [level=2] [ref=e26]
+    - paragraph [ref=e27]: Each school has its own content, pages, and design. Log in with your school credentials to manage your website.
