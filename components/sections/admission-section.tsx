@@ -10,25 +10,29 @@ export default function AdmissionSection() {
       icon: BookOpen,
       title: "Academic Excellence",
       description: "A world-class curriculum focusing on STEM and humanities, designed to prepare students for global challenges.",
-      gradient: "from-blue-600 to-indigo-600"
+      gradient: "from-blue-600 to-indigo-600",
+      cmsKey: "admissions:reason_0"
     },
     {
       icon: Users,
       title: "Holistic Development",
       description: "Beyond textbooks: nurturing well-rounded personalities through arts, leadership, and emotional intelligence.",
-      gradient: "from-cyan-500 to-blue-500"
+      gradient: "from-cyan-500 to-blue-500",
+      cmsKey: "admissions:reason_1"
     },
     {
       icon: Award,
       title: "Expert Faculty",
       description: "Our educators are mentors with advanced qualifications and a deep-seated passion for shaping young minds.",
-      gradient: "from-indigo-500 to-purple-500"
+      gradient: "from-indigo-500 to-purple-500",
+      cmsKey: "admissions:reason_2"
     },
     {
       icon: CheckCircle,
       title: "Modern Infrastructure",
       description: "Digital classrooms, advanced science labs, and a comprehensive sports complex for the 21st-century learner.",
-      gradient: "from-blue-500 to-cyan-400"
+      gradient: "from-blue-500 to-cyan-400",
+      cmsKey: "admissions:reason_3"
     },
   ]
 
@@ -71,10 +75,10 @@ export default function AdmissionSection() {
                   <Icon size={28} />
                 </div>
 
-                <h3 className="font-serif text-xl font-bold text-slate-900 dark:text-white mb-4 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">
+                <h3 className="font-serif text-xl font-bold text-slate-900 dark:text-white mb-4 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors" data-cms={`${reason.cmsKey}:title`}>
                   {reason.title}
                 </h3>
-                <p className="text-slate-600 dark:text-slate-400 leading-relaxed text-sm">
+                <p className="text-slate-600 dark:text-slate-400 leading-relaxed text-sm" data-cms={`${reason.cmsKey}:description`}>
                   {reason.description}
                 </p>
               </ScrollObserver>
@@ -103,6 +107,7 @@ export default function AdmissionSection() {
                 to="/contact"
                 className="px-10 py-4 bg-gradient-to-r from-blue-500 to-cyan-500 text-white font-bold rounded-2xl shadow-xl shadow-blue-500/25 hover:shadow-blue-500/40 hover:scale-105 active:scale-95 transition-all duration-300 inline-block text-center"
                 onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+                data-cms="admissions:cta_button"
               >
                 Apply Now
               </Link>

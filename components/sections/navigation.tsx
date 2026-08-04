@@ -9,23 +9,23 @@ export default function Navigation() {
   const [aboutDropdownOpen, setAboutDropdownOpen] = useState(false)
 
   const aboutSubmenu = [
-    { label: "Overview", to: "/about", hash: "overview" },
-    { label: "Vision & Mission", to: "/about", hash: "vision-mission" },
-    { label: "Principal's Message", to: "/about", hash: "principal-message" },
-    { label: "Core Values", to: "/about", hash: "core-values" },
-    { label: "Leadership Team", to: "/about", hash: "leadership" },
-    { label: "Facilities", to: "/about", hash: "facilities" },
-    { label: "History & Milestones", to: "/about", hash: "history-milestones" },
+    { label: "Overview", to: "/about", hash: "overview", cmsKey: "nav:about_0:label" },
+    { label: "Vision & Mission", to: "/about", hash: "vision-mission", cmsKey: "nav:about_1:label" },
+    { label: "Principal's Message", to: "/about", hash: "principal-message", cmsKey: "nav:about_2:label" },
+    { label: "Core Values", to: "/about", hash: "core-values", cmsKey: "nav:about_3:label" },
+    { label: "Leadership Team", to: "/about", hash: "leadership", cmsKey: "nav:about_4:label" },
+    { label: "Facilities", to: "/about", hash: "facilities", cmsKey: "nav:about_5:label" },
+    { label: "History & Milestones", to: "/about", hash: "history-milestones", cmsKey: "nav:about_6:label" },
   ]
 
   const navItems = [
-    { label: "Home", to: "/" },
-    { label: "About", to: "/about", hasSubmenu: true },
-    { label: "Admissions", to: "https://creativesaints.com/st-pius-x-high-school/login", isExternal: true, },
-    { label: "Academics", to: "/academics" },
-    { label: "Facilities", to: "/facilities" },
-    { label: "Gallery", to: "/gallery" },
-    { label: "Contact", to: "/contact" },
+    { label: "Home", to: "/", cmsKey: "nav:home:label" },
+    { label: "About", to: "/about", hasSubmenu: true, cmsKey: "nav:about:label" },
+    { label: "Admissions", to: "https://creativesaints.com/st-pius-x-high-school/login", isExternal: true, cmsKey: "nav:admissions:label" },
+    { label: "Academics", to: "/academics", cmsKey: "nav:academics:label" },
+    { label: "Facilities", to: "/facilities", cmsKey: "nav:facilities:label" },
+    { label: "Gallery", to: "/gallery", cmsKey: "nav:gallery:label" },
+    { label: "Contact", to: "/contact", cmsKey: "nav:contact:label" },
   ]
 
   return (
@@ -36,7 +36,7 @@ export default function Navigation() {
           {/* Logo */}
           <div className="flex-shrink-0">
             <Link to="/" onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}>
-              <img src="/st_pius/LOGO-St-pius.png" className="h-14 sm:h-20" alt="St. Pius X Logo" />
+              <img src="/st_pius/LOGO-St-pius.png" className="h-14 sm:h-20" alt="St. Pius X Logo" data-cms="nav:logo:alt" />
             </Link>
           </div>
 
@@ -51,6 +51,7 @@ export default function Navigation() {
                         className="px-3 py-2 rounded-md text-lg font-medium text-foreground hover:text-primary hover:bg-primary/5 transition-colors flex items-center gap-1"
                         onMouseEnter={() => setAboutDropdownOpen(true)}
                         onMouseLeave={() => setAboutDropdownOpen(false)}
+                        data-cms={item.cmsKey}
                       >
                         {item.label}
                         <ChevronDown className="w-4 h-4" />
@@ -80,6 +81,7 @@ export default function Navigation() {
                               }
                             }}
                             className="block px-4 py-2 text-lg text-gray-700 hover:bg-blue-50 hover:text-blue-600 transition-colors"
+                            data-cms={subItem.cmsKey}
                           >
                             {subItem.label}
                           </Link>
@@ -94,6 +96,7 @@ export default function Navigation() {
                         : {})}
                       className="px-3 py-2 rounded-md text-lg font-medium text-foreground hover:text-primary hover:bg-primary/5 transition-colors"
                       onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+                      data-cms={item.cmsKey}
                     >
                       {item.label}
                     </Link>
@@ -134,6 +137,7 @@ export default function Navigation() {
                       <button
                         onClick={() => setAboutDropdownOpen(!aboutDropdownOpen)}
                         className="w-full text-left px-3 py-2 rounded-md text-lg font-medium text-foreground hover:text-primary hover:bg-primary/5 flex items-center justify-between"
+                        data-cms={item.cmsKey}
                       >
                         {item.label}
                         <ChevronDown className={`w-4 h-4 transition-transform ${aboutDropdownOpen ? 'rotate-180' : ''}`} />
@@ -160,6 +164,7 @@ export default function Navigation() {
                                   }, 100);
                                 }
                               }}
+                              data-cms={subItem.cmsKey}
                             >
                               {subItem.label}
                             </Link>
@@ -175,6 +180,7 @@ export default function Navigation() {
                         window.scrollTo({ top: 0, behavior: "smooth" });
                         setIsOpen(false);
                       }}
+                      data-cms={item.cmsKey}
                     >
                       {item.label}
                     </Link>

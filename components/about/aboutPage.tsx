@@ -40,6 +40,7 @@ interface Stat {
   suffix: string;
   color: string;
   description: string;
+  cmsKey: string;
 }
 
 interface Leader {
@@ -50,6 +51,7 @@ interface Leader {
   specialty: string[];
   color: string;
   quote: string;
+  cmsKey: string;
 }
 
 interface Value {
@@ -58,6 +60,7 @@ interface Value {
   description: string;
   icon: React.ReactNode;
   color: string;
+  cmsKey: string;
 }
 
 interface Facility {
@@ -67,6 +70,7 @@ interface Facility {
   icon: React.ReactNode;
   image: string;
   clipPath: string;
+  cmsKey: string;
 }
 
 const AboutPage: React.FC = () => {
@@ -76,12 +80,12 @@ const AboutPage: React.FC = () => {
 
   // Statistics with animation targets
   const initialStats: Stat[] = [
-    { id: 1, number: 0, target: 1200, label: "Students Enrolled", icon: <Users className="w-6 h-6" />, suffix: "+", color: "from-blue-600 to-cyan-500", description: "From diverse backgrounds across the region" },
-    { id: 2, number: 0, target: 95, label: "Graduation Rate", icon: <GraduationCap className="w-6 h-6" />, suffix: "%", color: "from-cyan-500 to-blue-700", description: "Consistently high year after year" },
-    { id: 3, number: 0, target: 75, label: "Expert Faculty", icon: <Star className="w-6 h-6" />, suffix: "+", color: "from-blue-600 to-cyan-500", description: "Highly qualified and experienced educators" },
-    { id: 4, number: 0, target: 54, label: "Years of Excellence", icon: <Calendar className="w-6 h-6" />, suffix: "+", color: "from-cyan-500 to-blue-700", description: "Established tradition of quality education" },
-    { id: 5, number: 0, target: 25, label: "National Awards", icon: <Award className="w-6 h-6" />, suffix: "+", color: "from-blue-600 to-cyan-500", description: "Recognized for academic excellence" },
-    { id: 6, number: 0, target: 20, label: "Student Clubs", icon: <Activity className="w-6 h-6" />, suffix: "+", color: "from-cyan-500 to-blue-700", description: "Extracurricular activities and organizations" }
+    { id: 1, number: 0, target: 1200, label: "Students Enrolled", icon: <Users className="w-6 h-6" />, suffix: "+", color: "from-blue-600 to-cyan-500", description: "From diverse backgrounds across the region", cmsKey: "about:stat_0" },
+    { id: 2, number: 0, target: 95, label: "Graduation Rate", icon: <GraduationCap className="w-6 h-6" />, suffix: "%", color: "from-cyan-500 to-blue-700", description: "Consistently high year after year", cmsKey: "about:stat_1" },
+    { id: 3, number: 0, target: 75, label: "Expert Faculty", icon: <Star className="w-6 h-6" />, suffix: "+", color: "from-blue-600 to-cyan-500", description: "Highly qualified and experienced educators", cmsKey: "about:stat_2" },
+    { id: 4, number: 0, target: 54, label: "Years of Excellence", icon: <Calendar className="w-6 h-6" />, suffix: "+", color: "from-cyan-500 to-blue-700", description: "Established tradition of quality education", cmsKey: "about:stat_3" },
+    { id: 5, number: 0, target: 25, label: "National Awards", icon: <Award className="w-6 h-6" />, suffix: "+", color: "from-blue-600 to-cyan-500", description: "Recognized for academic excellence", cmsKey: "about:stat_4" },
+    { id: 6, number: 0, target: 20, label: "Student Clubs", icon: <Activity className="w-6 h-6" />, suffix: "+", color: "from-cyan-500 to-blue-700", description: "Extracurricular activities and organizations", cmsKey: "about:stat_5" }
   ];
 
   const [animatedStats, setAnimatedStats] = useState<Stat[]>(initialStats);
@@ -96,20 +100,20 @@ const AboutPage: React.FC = () => {
 
   // Core Values
   const values: Value[] = [
-    { id: 1, title: "Excellence", description: "Striving for the highest standards in academics and character development", icon: <TargetIcon className="w-8 h-8" />, color: "bg-gradient-to-br from-blue-600 to-blue-800" },
-    { id: 2, title: "Integrity", description: "Cultivating honesty, responsibility, and ethical behavior in all we do", icon: <Shield className="w-8 h-8" />, color: "bg-gradient-to-br from-cyan-500 to-cyan-700" },
-    { id: 3, title: "Innovation", description: "Embracing creativity and forward-thinking approaches to learning", icon: <Lightbulb className="w-8 h-8" />, color: "bg-gradient-to-br from-blue-600 to-blue-800" },
-    { id: 4, title: "Community", description: "Building strong relationships and supporting one another's growth", icon: <HeartHandshake className="w-8 h-8" />, color: "bg-gradient-to-br from-cyan-500 to-cyan-700" },
-    { id: 5, title: "Global Citizenship", description: "Preparing students to contribute positively to the world", icon: <Globe className="w-8 h-8" />, color: "bg-gradient-to-br from-blue-600 to-blue-800" },
-    { id: 6, title: "Spiritual Growth", description: "Nurturing faith, values, and moral development in every student", icon: <BookHeart className="w-8 h-8" />, color: "bg-gradient-to-br from-cyan-500 to-cyan-700" }
+    { id: 1, title: "Excellence", description: "Striving for the highest standards in academics and character development", icon: <TargetIcon className="w-8 h-8" />, color: "bg-gradient-to-br from-blue-600 to-blue-800", cmsKey: "about:value_0" },
+    { id: 2, title: "Integrity", description: "Cultivating honesty, responsibility, and ethical behavior in all we do", icon: <Shield className="w-8 h-8" />, color: "bg-gradient-to-br from-cyan-500 to-cyan-700", cmsKey: "about:value_1" },
+    { id: 3, title: "Innovation", description: "Embracing creativity and forward-thinking approaches to learning", icon: <Lightbulb className="w-8 h-8" />, color: "bg-gradient-to-br from-blue-600 to-blue-800", cmsKey: "about:value_2" },
+    { id: 4, title: "Community", description: "Building strong relationships and supporting one another's growth", icon: <HeartHandshake className="w-8 h-8" />, color: "bg-gradient-to-br from-cyan-500 to-cyan-700", cmsKey: "about:value_3" },
+    { id: 5, title: "Global Citizenship", description: "Preparing students to contribute positively to the world", icon: <Globe className="w-8 h-8" />, color: "bg-gradient-to-br from-blue-600 to-blue-800", cmsKey: "about:value_4" },
+    { id: 6, title: "Spiritual Growth", description: "Nurturing faith, values, and moral development in every student", icon: <BookHeart className="w-8 h-8" />, color: "bg-gradient-to-br from-cyan-500 to-cyan-700", cmsKey: "about:value_5" }
   ];
 
   // Leadership team
   const leadership: Leader[] = [
-    { id: 1, name: "Rev. Fr. John Mathew", position: "Principal & Director", experience: "25 Years Experience", specialty: ["Spiritual Leadership", "Academic Administration"], color: "from-blue-600 to-blue-800", quote: "Education is the kindling of a flame, not the filling of a vessel." },
-    { id: 2, name: "Mrs. Susan Rodrigues", position: "Vice Principal", experience: "18 Years Experience", specialty: ["Curriculum Development", "Student Welfare"], color: "from-cyan-500 to-cyan-700", quote: "Every child deserves a champion who believes in them." },
-    { id: 3, name: "Mr. Thomas Kurien", position: "Academic Dean", experience: "15 Years Experience", specialty: ["Science Education", "Research Programs"], color: "from-blue-600 to-blue-800", quote: "Learning is not attained by chance, it must be sought with ardor." },
-    { id: 4, name: "Ms. Mary Thomas", position: "Head of Student Affairs", experience: "12 Years Experience", specialty: ["Student Development", "Extra-curricular"], color: "from-cyan-500 to-cyan-700", quote: "The goal of education is not to increase knowledge but to create possibilities." }
+    { id: 1, name: "Rev. Fr. John Mathew", position: "Principal & Director", experience: "25 Years Experience", specialty: ["Spiritual Leadership", "Academic Administration"], color: "from-blue-600 to-blue-800", quote: "Education is the kindling of a flame, not the filling of a vessel.", cmsKey: "about:leader_0" },
+    { id: 2, name: "Mrs. Susan Rodrigues", position: "Vice Principal", experience: "18 Years Experience", specialty: ["Curriculum Development", "Student Welfare"], color: "from-cyan-500 to-cyan-700", quote: "Every child deserves a champion who believes in them.", cmsKey: "about:leader_1" },
+    { id: 3, name: "Mr. Thomas Kurien", position: "Academic Dean", experience: "15 Years Experience", specialty: ["Science Education", "Research Programs"], color: "from-blue-600 to-blue-800", quote: "Learning is not attained by chance, it must be sought with ardor.", cmsKey: "about:leader_2" },
+    { id: 4, name: "Ms. Mary Thomas", position: "Head of Student Affairs", experience: "12 Years Experience", specialty: ["Student Development", "Extra-curricular"], color: "from-cyan-500 to-cyan-700", quote: "The goal of education is not to increase knowledge but to create possibilities.", cmsKey: "about:leader_3" }
   ];
 
   // Facilities
@@ -120,7 +124,8 @@ const AboutPage: React.FC = () => {
       description: "State-of-the-art laboratories equipped with modern technology for physics, chemistry, biology, and robotics. Features include 3D printers and VR learning stations.",
       icon: <Brain className="w-6 h-6" />,
       image: "/st_pius/IMG_8389.JPG",
-      clipPath: "polygon(0% 0%, 100% 0%, 100% 85%, 0% 100%)"
+      clipPath: "polygon(0% 0%, 100% 0%, 100% 85%, 0% 100%)",
+      cmsKey: "about:facility_0"
     },
     {
       id: 2,
@@ -128,7 +133,8 @@ const AboutPage: React.FC = () => {
       description: "Advanced computer laboratories with latest hardware and software. Equipped with high-speed internet, coding platforms, and digital learning tools for technology education and innovation.",
       icon: <Monitor className="w-6 h-6" />,
       image: "/st_pius/ict.JPG",
-      clipPath: "polygon(0% 15%, 100% 0%, 100% 100%, 0% 85%)"
+      clipPath: "polygon(0% 15%, 100% 0%, 100% 100%, 0% 85%)",
+      cmsKey: "about:facility_1"
     },
     {
       id: 3,
@@ -136,7 +142,8 @@ const AboutPage: React.FC = () => {
       description: "A vast collection of over 15,000 books, digital resources, e-journals, and quiet study spaces. Features reading rooms, research zones, and a digital library with online databases.",
       icon: <BookOpen className="w-6 h-6" />,
       image: "st_pius/library.JPG",
-      clipPath: "polygon(0% 0%, 100% 15%, 100% 100%, 0% 85%)"
+      clipPath: "polygon(0% 0%, 100% 15%, 100% 100%, 0% 85%)",
+      cmsKey: "about:facility_2"
     },
     {
       id: 4,
@@ -144,7 +151,8 @@ const AboutPage: React.FC = () => {
       description: "Technology-integrated learning spaces with interactive whiteboards, projectors, and audio-visual systems. Enables digital content delivery and collaborative learning experiences.",
       icon: <Laptop className="w-6 h-6" />,
       image: "st_pius/smart.JPG",
-      clipPath: "polygon(0% 15%, 100% 0%, 100% 85%, 0% 100%)"
+      clipPath: "polygon(0% 15%, 100% 0%, 100% 85%, 0% 100%)",
+      cmsKey: "about:facility_3"
     },
     {
       id: 5,
@@ -152,7 +160,8 @@ const AboutPage: React.FC = () => {
       description: "A magnificent 500-seat auditorium with professional lighting, sound systems, and stage facilities. Hosts cultural programs, annual functions, drama, music concerts and inter-school competitions.",
       icon: <Music className="w-6 h-6" />,
       image: "st_pius/culturals3.jpeg",
-      clipPath: "polygon(0% 0%, 100% 15%, 100% 100%, 0% 85%)"
+      clipPath: "polygon(0% 0%, 100% 15%, 100% 100%, 0% 85%)",
+      cmsKey: "about:facility_4"
     },
     {
       id: 6,
@@ -160,7 +169,8 @@ const AboutPage: React.FC = () => {
       description: "Dedicated spaces for visual arts, music practice, and performing arts. Equipped with instruments, art supplies, practice rooms, and recording facilities to nurture creative talents.",
       icon: <Palette className="w-6 h-6" />,
       image: "st_pius/art2.jpeg",
-      clipPath: "polygon(0% 15%, 100% 0%, 100% 100%, 0% 85%)"
+      clipPath: "polygon(0% 15%, 100% 0%, 100% 100%, 0% 85%)",
+      cmsKey: "about:facility_5"
     },
     {
       id: 7,
@@ -168,7 +178,8 @@ const AboutPage: React.FC = () => {
       description: "Comprehensive sports facilities including football, basketball, tennis, badminton courts, running tracks, kabaddi, cricket grounds. Indoor games like table tennis, carrom, and chess help develop teamwork and well-balanced individuals.",
       icon: <Activity className="w-6 h-6" />,
       image: "/st_pius/sport1.jpg",
-      clipPath: "polygon(0% 15%, 100% 0%, 100% 100%, 0% 85%)"
+      clipPath: "polygon(0% 15%, 100% 0%, 100% 100%, 0% 85%)",
+      cmsKey: "about:facility_6"
     },
     {
       id: 8,
@@ -176,7 +187,8 @@ const AboutPage: React.FC = () => {
       description: "Spacious, hygienic dining facility serving nutritious meals prepared under strict quality standards. Offers diverse menu options catering to different dietary requirements and preferences.",
       icon: <UtensilsCrossed className="w-6 h-6" />,
       image: "/st_pius/culturals4.jpeg",
-      clipPath: "polygon(0% 0%, 100% 15%, 100% 100%, 0% 85%)"
+      clipPath: "polygon(0% 0%, 100% 15%, 100% 100%, 0% 85%)",
+      cmsKey: "about:facility_7"
     }
   ];
 
@@ -430,7 +442,7 @@ const AboutPage: React.FC = () => {
                   <div className="text-3xl font-bold text-slate-900 dark:text-white">
                     {stat.number}{stat.suffix}
                   </div>
-                  <div className="text-sm font-bold text-blue-600 dark:text-cyan-400 uppercase tracking-wider mt-1">{stat.label}</div>
+                  <div className="text-sm font-bold text-blue-600 dark:text-cyan-400 uppercase tracking-wider mt-1" data-cms={`${stat.cmsKey}:label`}>{stat.label}</div>
                 </div>
               </div>
             ))}
@@ -646,8 +658,8 @@ const AboutPage: React.FC = () => {
                 <div className={`w-16 h-16 rounded-2xl ${v.color} text-white flex items-center justify-center mb-6 shadow-xl group-hover:scale-110 transition-transform`}>
                   {v.icon}
                 </div>
-                <h3 className="text-2xl font-bold text-slate-900 dark:text-white mb-3" data-cms={`value_${i}:title`}>{v.title}</h3>
-                <p className="text-slate-600 dark:text-slate-400 leading-relaxed" data-cms={`value_${i}:description`}>{v.description}</p>
+                <h3 className="text-2xl font-bold text-slate-900 dark:text-white mb-3" data-cms={`${v.cmsKey}:title`}>{v.title}</h3>
+                <p className="text-slate-600 dark:text-slate-400 leading-relaxed" data-cms={`${v.cmsKey}:description`}>{v.description}</p>
               </div>
             ))}
           </div>
@@ -667,8 +679,8 @@ const AboutPage: React.FC = () => {
                   <div className={`w-20 h-20 mx-auto mb-6 bg-gradient-to-br ${leader.color} rounded-full flex items-center justify-center text-white text-2xl font-bold shadow-lg`}>
                     {leader.name.split(' ').map(n => n[0]).join('')}
                   </div>
-                  <h3 className="text-xl font-bold text-slate-900 dark:text-white text-center mb-1" data-cms={`leader_${i}:name`}>{leader.name}</h3>
-                  <p className="text-blue-600 dark:text-cyan-400 font-bold text-sm text-center mb-4" data-cms={`leader_${i}:position`}>{leader.position}</p>
+                  <h3 className="text-xl font-bold text-slate-900 dark:text-white text-center mb-1" data-cms={`${leader.cmsKey}:name`}>{leader.name}</h3>
+                  <p className="text-blue-600 dark:text-cyan-400 font-bold text-sm text-center mb-4" data-cms={`${leader.cmsKey}:position`}>{leader.position}</p>
                   <div className="flex flex-wrap gap-2 justify-center mb-6">
                     {leader.specialty.map((s, idx) => (
                       <span key={idx} className="text-[10px] px-2 py-1 bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-400 rounded-md font-bold uppercase">
@@ -676,7 +688,7 @@ const AboutPage: React.FC = () => {
                       </span>
                     ))}
                   </div>
-                  <p className="text-slate-500 dark:text-slate-400 italic text-sm text-center border-t dark:border-slate-800 pt-4" data-cms={`leader_${i}:quote`}>"{leader.quote}"</p>
+                  <p className="text-slate-500 dark:text-slate-400 italic text-sm text-center border-t dark:border-slate-800 pt-4" data-cms={`${leader.cmsKey}:quote`}>"{leader.quote}"</p>
                 </div>
               </div>
             ))}
@@ -698,8 +710,8 @@ const AboutPage: React.FC = () => {
                   <div className={`w-14 h-14 rounded-2xl bg-gradient-to-br ${i % 2 === 0 ? 'from-blue-600 to-cyan-500' : 'from-cyan-500 to-blue-600'} text-white flex items-center justify-center mb-6 shadow-lg`}>
                     {facility.icon}
                   </div>
-                  <h3 className="text-xl sm:text-2xl md:text-3xl font-bold text-slate-900 dark:text-white mb-4">{facility.name}</h3>
-                  <p className="text-slate-600 dark:text-slate-400 text-lg leading-relaxed mb-6">{facility.description}</p>
+                  <h3 className="text-xl sm:text-2xl md:text-3xl font-bold text-slate-900 dark:text-white mb-4" data-cms={`${facility.cmsKey}:name`}>{facility.name}</h3>
+                  <p className="text-slate-600 dark:text-slate-400 text-lg leading-relaxed mb-6" data-cms={`${facility.cmsKey}:description`}>{facility.description}</p>
                   {/* <button className="text-blue-600 dark:text-cyan-400 font-bold flex items-center gap-2 hover:gap-4 transition-all">
                     Explore Space <ChevronDown className="-rotate-90 w-5 h-5" />
                   </button> */}
@@ -919,10 +931,10 @@ const AboutPage: React.FC = () => {
               className="grid grid-cols-2 md:grid-cols-4 gap-6"
             >
               {[
-                { number: "15,000+", label: "Alumni Worldwide", icon: "👥" },
-                { number: "100+", label: "Expert Faculty", icon: "👨‍🏫" },
-                { number: "2,500+", label: "Current Students", icon: "📚" },
-                { number: "40+", label: "Countries Represented", icon: "🌍" }
+                { number: "15,000+", label: "Alumni Worldwide", icon: "👥", cmsKey: "about:bottom_stat_0" },
+                { number: "100+", label: "Expert Faculty", icon: "👨‍🏫", cmsKey: "about:bottom_stat_1" },
+                { number: "2,500+", label: "Current Students", icon: "📚", cmsKey: "about:bottom_stat_2" },
+                { number: "40+", label: "Countries Represented", icon: "🌍", cmsKey: "about:bottom_stat_3" }
               ].map((stat, idx) => (
                 <motion.div
                   key={idx}
@@ -931,7 +943,7 @@ const AboutPage: React.FC = () => {
                 >
                   <div className="text-4xl mb-3 group-hover:scale-110 transition-transform">{stat.icon}</div>
                   <div className="text-2xl sm:text-3xl font-black text-gray-900 mb-1">{stat.number}</div>
-                  <div className="text-sm font-semibold text-gray-500 uppercase tracking-wide">{stat.label}</div>
+                  <div className="text-sm font-semibold text-gray-500 uppercase tracking-wide" data-cms={`${stat.cmsKey}:label`}>{stat.label}</div>
                 </motion.div>
               ))}
             </motion.div>

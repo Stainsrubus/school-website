@@ -42,6 +42,7 @@ export default function TestimonialSection() {
       content: "Best school in Mulund. Faculties are very professional. Environment is very peaceful. I am very happy that I got chance to study in St. Pius X High School.",
       rating: 5,
       avatarColor: "from-blue-500 to-indigo-500",
+      cmsKey: "testimonials:testimonial_0"
     },
     {
       name: "Sushant Wadekar",
@@ -50,6 +51,7 @@ export default function TestimonialSection() {
       content: "One of the best schools of Mulund. Good facilities, teaching staff and everything else. The main attraction here is the school ground which is under the Church authority. Loved this place and feeling great that I got a chance to study here.",
       rating: 5,
       avatarColor: "from-teal-500 to-emerald-500",
+      cmsKey: "testimonials:testimonial_1"
     },
     {
       name: "Ashutosh Tiwari",
@@ -58,6 +60,7 @@ export default function TestimonialSection() {
       content: "I studied here. When I joined this school, I was an introvert, had no idea about how talented I was and couldn't speak English and was only good in mathematics. When I left the school, I was a good basketball, chess and football player, an extrovert, good in all subject and most importantly very ambitious person. This school provides too many facilities with very less fee.",
       rating: 5,
       avatarColor: "from-purple-500 to-pink-500",
+      cmsKey: "testimonials:testimonial_2"
     },
     {
       name: "Angad Mistry",
@@ -66,6 +69,7 @@ export default function TestimonialSection() {
       content: "I made a lot and lots of memories here, Mind blowing experiences, all packed in my backpack named \"GOLDEN DAYS\" really enjoyed studying, playing, etc. really emotional writing this review, in those days I said, \"I want to leave this school life.\", but I take my words back. I am really disappointed by google, can't they add 10-star option for this school",
       rating: 5,
       avatarColor: "from-amber-500 to-orange-500",
+      cmsKey: "testimonials:testimonial_3"
     },
     {
       name: "Ron Menezes",
@@ -74,6 +78,7 @@ export default function TestimonialSection() {
       content: "My son studied at this school. Being a government aided school. The school is at par with best of school in Mumbai. The principal & teaching & non-teaching staff are very good",
       rating: 5,
       avatarColor: "from-indigo-500 to-purple-500",
+      cmsKey: "testimonials:testimonial_4"
     }
   ]
 
@@ -345,9 +350,9 @@ export default function TestimonialSection() {
               className="my-8 grid grid-cols-1 sm:grid-cols-3 gap-4 max-w-3xl mx-auto px-2"
             >
               {[
-                { icon: <CheckCircle2 className="w-5 h-5" />, text: "100% Pass Rate", color: "emerald" },
-                { icon: <Trophy className="w-5 h-5" />, text: "Consistently Top Ranked", color: "blue" },
-                { icon: <Sparkles className="w-5 h-5" />, text: "State-of-the-Art Facilities", color: "amber" },
+                { icon: <CheckCircle2 className="w-5 h-5" />, text: "100% Pass Rate", color: "emerald", cmsKey: "testimonials:mini_stat_0" },
+                { icon: <Trophy className="w-5 h-5" />, text: "Consistently Top Ranked", color: "blue", cmsKey: "testimonials:mini_stat_1" },
+                { icon: <Sparkles className="w-5 h-5" />, text: "State-of-the-Art Facilities", color: "amber", cmsKey: "testimonials:mini_stat_2" },
               ].map((item, i) => (
                 <motion.div
                   key={i}
@@ -375,7 +380,7 @@ export default function TestimonialSection() {
                     {item.icon}
                   </div>
 
-                  <span className="text-sm font-semibold text-slate-800 dark:text-slate-200 group-hover:text-slate-900 dark:group-hover:text-white transition-colors">
+                  <span className="text-sm font-semibold text-slate-800 dark:text-slate-200 group-hover:text-slate-900 dark:group-hover:text-white transition-colors" data-cms={item.cmsKey}>
                     {item.text}
                   </span>
                 </motion.div>
@@ -448,6 +453,7 @@ export default function TestimonialSection() {
                       exit={{ opacity: 0, y: -20 }}
                       transition={{ duration: 0.5 }}
                       className="text-lg md:text-xl font-medium text-slate-800 dark:text-slate-200 leading-relaxed  italic mb-2"
+                      data-cms={`${testimonials[activeIndex].cmsKey}:content`}
                     >
                       "{testimonials[activeIndex].content}"
                     </motion.blockquote>
@@ -473,15 +479,16 @@ export default function TestimonialSection() {
                       </motion.div>
 
                       <div className="flex-1">
-                        <h4 className="text-xl font-bold text-slate-900 dark:text-white">
+                        <h4 className="text-xl font-bold text-slate-900 dark:text-white" data-cms={`${testimonials[activeIndex].cmsKey}:name`}>
                           {testimonials[activeIndex].name}
                         </h4>
-                        <p className="text-blue-600 dark:text-cyan-400 font-semibold text-base">
+                        <p className="text-blue-600 dark:text-cyan-400 font-semibold text-base" data-cms={`${testimonials[activeIndex].cmsKey}:role`}>
                           {testimonials[activeIndex].role}
                         </p>
                         <motion.div
                           whileHover={{ scale: 1.05 }}
                           className="mt-1 inline-flex items-center text-xs gap-2 px-4 py-1 rounded-xl bg-gradient-to-r from-blue-50 to-cyan-50 dark:from-blue-900/30 dark:to-cyan-900/30 text-blue-700 dark:text-blue-300 font-bold"
+                          data-cms={`${testimonials[activeIndex].cmsKey}:school`}
                         >
                           <GraduationCap size={16} />
                           {testimonials[activeIndex].school}
@@ -550,7 +557,7 @@ export default function TestimonialSection() {
                 className="px-10 py-5 bg-gradient-to-r from-white to-blue-50 text-blue-900 font-bold rounded-2xl shadow-2xl hover:shadow-3xl transition-all text-lg group relative overflow-hidden inline-block text-center"
                 onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
               >
-                <span className="relative z-10">Enquire for Admission</span>
+                <span className="relative z-10" data-cms="testimonials:enquire_button">Enquire for Admission</span>
                 <div className="absolute inset-0 bg-gradient-to-r from-cyan-400 to-blue-400 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
                 <Sparkles className="absolute -top-2 -right-2 w-6 h-6 text-white opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
               </MotionLink>

@@ -39,7 +39,8 @@ export default function FacilitiesPage() {
             features: ["Physics Lab", "Chemistry Lab", "Biology Lab", "Innovation Hub"],
             icon: <Brain className="w-6 h-6" />,
             image: "/st_pius/science.jpg",
-            color: "from-blue-600 to-indigo-600"
+            color: "from-blue-600 to-indigo-600",
+            cmsKey: "facilities:facility_0"
         },
         {
             id: 1,
@@ -49,7 +50,8 @@ export default function FacilitiesPage() {
             features: ["High-Speed Internet", "Coding Platforms", "Digital Learning", "Latest Hardware"],
             icon: <Monitor className="w-6 h-6" />,
             image: "/st_pius/ict.JPG",
-            color: "from-cyan-500 to-blue-600"
+            color: "from-cyan-500 to-blue-600",
+            cmsKey: "facilities:facility_1"
         },
         {
             id: 2,
@@ -59,7 +61,8 @@ export default function FacilitiesPage() {
             features: ["15,000+ Books", "Digital Resources", "Reading Rooms", "Research Zones"],
             icon: <BookOpen className="w-6 h-6" />,
             image: "/st_pius/library.JPG",
-            color: "from-blue-600 to-cyan-500"
+            color: "from-blue-600 to-cyan-500",
+            cmsKey: "facilities:facility_2"
         },
         {
             id: 3,
@@ -69,7 +72,8 @@ export default function FacilitiesPage() {
             features: ["Interactive Whiteboards", "Projectors", "Audio-Visual Systems", "Digital Content"],
             icon: <Laptop className="w-6 h-6" />,
             image: "/st_pius/smart.JPG",
-            color: "from-indigo-500 to-blue-600"
+            color: "from-indigo-500 to-blue-600",
+            cmsKey: "facilities:facility_3"
         },
         {
             id: 4,
@@ -79,7 +83,8 @@ export default function FacilitiesPage() {
             features: ["500-Seat Capacity", "Professional Sound", "Stage Lighting", "Event Hosting"],
             icon: <Music className="w-6 h-6" />,
             image: "/st_pius/culturals3.jpeg",
-            color: "from-blue-500 to-indigo-600"
+            color: "from-blue-500 to-indigo-600",
+            cmsKey: "facilities:facility_4"
         },
         {
             id: 5,
@@ -89,7 +94,8 @@ export default function FacilitiesPage() {
             features: ["Visual Arts Studio", "Music Practice Rooms", "Art Supplies", "Performance Space"],
             icon: <Palette className="w-6 h-6" />,
             image: "/st_pius/art2.jpeg",
-            color: "from-cyan-500 to-blue-500"
+            color: "from-cyan-500 to-blue-500",
+            cmsKey: "facilities:facility_5"
         },
         {
             id: 6,
@@ -99,7 +105,8 @@ export default function FacilitiesPage() {
             features: ["Football Ground", "Basketball Court", "Cricket Pitch", "Indoor Games"],
             icon: <Activity className="w-6 h-6" />,
             image: "/st_pius/sport1.jpg",
-            color: "from-blue-600 to-cyan-500"
+            color: "from-blue-600 to-cyan-500",
+            cmsKey: "facilities:facility_6"
         },
         {
             id: 7,
@@ -109,17 +116,18 @@ export default function FacilitiesPage() {
             features: ["Hygienic Kitchen", "Nutritious Meals", "Spacious Seating", "Diverse Menu"],
             icon: <UtensilsCrossed className="w-6 h-6" />,
             image: "/st_pius/culturals4.jpeg",
-            color: "from-indigo-500 to-blue-500"
+            color: "from-indigo-500 to-blue-500",
+            cmsKey: "facilities:facility_7"
         }
     ];
 
     const campusHighlights = [
-        { icon: <MapPin className="w-6 h-6" />, title: "Prime Location", description: "Centrally located with excellent connectivity" },
-        { icon: <Shield className="w-6 h-6" />, title: "Safe & Secure", description: "24/7 CCTV surveillance and secure campus" },
-        { icon: <Wifi className="w-6 h-6" />, title: "Wi-Fi Enabled", description: "High-speed internet across the campus" },
-        { icon: <TreePine className="w-6 h-6" />, title: "Green Campus", description: "Eco-friendly with gardens and open spaces" },
-        { icon: <HeartPulse className="w-6 h-6" />, title: "Health Centre", description: "On-campus medical facilities and first aid" },
-        { icon: <Church className="w-6 h-6" />, title: "Chapel", description: "Serene space for prayer and reflection" },
+        { icon: <MapPin className="w-6 h-6" />, title: "Prime Location", description: "Centrally located with excellent connectivity", cmsKey: "facilities:highlight_0" },
+        { icon: <Shield className="w-6 h-6" />, title: "Safe & Secure", description: "24/7 CCTV surveillance and secure campus", cmsKey: "facilities:highlight_1" },
+        { icon: <Wifi className="w-6 h-6" />, title: "Wi-Fi Enabled", description: "High-speed internet across the campus", cmsKey: "facilities:highlight_2" },
+        { icon: <TreePine className="w-6 h-6" />, title: "Green Campus", description: "Eco-friendly with gardens and open spaces", cmsKey: "facilities:highlight_3" },
+        { icon: <HeartPulse className="w-6 h-6" />, title: "Health Centre", description: "On-campus medical facilities and first aid", cmsKey: "facilities:highlight_4" },
+        { icon: <Church className="w-6 h-6" />, title: "Chapel", description: "Serene space for prayer and reflection", cmsKey: "facilities:highlight_5" },
     ];
 
     return (
@@ -178,6 +186,7 @@ export default function FacilitiesPage() {
                             animate={{ opacity: 1, y: 0 }}
                             transition={{ duration: 0.5, delay: 0.2 }}
                             className="text-base sm:text-lg md:text-xl text-slate-600 dark:text-slate-400 max-w-3xl mx-auto leading-relaxed"
+                            data-cms="facilities:hero_description"
                         >
                             From smart classrooms to sprawling sports grounds, our modern campus provides everything
                             students need to learn, grow, and excel in a safe, inspiring environment.
@@ -194,8 +203,8 @@ export default function FacilitiesPage() {
                             <div className="w-12 h-12 bg-white/10 rounded-xl flex items-center justify-center mb-2">
                                 {item.icon}
                             </div>
-                            <div className="font-bold text-sm">{item.title}</div>
-                            <div className="text-blue-200 text-xs">{item.description}</div>
+                            <div className="font-bold text-sm" data-cms={`${item.cmsKey}:title`}>{item.title}</div>
+                            <div className="text-blue-200 text-xs" data-cms={`${item.cmsKey}:description`}>{item.description}</div>
                         </div>
                     ))}
                 </ScrollObserver>
@@ -208,12 +217,12 @@ export default function FacilitiesPage() {
                     <ScrollObserver className="text-center mb-20">
                         <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-50 dark:bg-blue-900/30 border border-blue-100 dark:border-blue-800 text-blue-600 dark:text-blue-400 text-xs font-bold uppercase tracking-widest mb-6">
                             <Sparkles size={14} />
-                            Explore Our Campus
+                            <span data-cms="facilities:facilities_badge">Explore Our Campus</span>
                         </div>
-                        <h2 className="font-serif text-3xl sm:text-4xl md:text-6xl font-bold text-slate-900 dark:text-white mb-6 tracking-tight">
+                        <h2 className="font-serif text-3xl sm:text-4xl md:text-6xl font-bold text-slate-900 dark:text-white mb-6 tracking-tight" data-cms="facilities:facilities_title">
                             Our <span className="bg-clip-text text-transparent bg-gradient-to-r from-blue-600 to-cyan-500">Facilities</span>
                         </h2>
-                        <p className="text-lg text-slate-600 dark:text-slate-400 max-w-2xl mx-auto leading-relaxed">
+                        <p className="text-lg text-slate-600 dark:text-slate-400 max-w-2xl mx-auto leading-relaxed" data-cms="facilities:facilities_description">
                             State-of-the-art infrastructure designed to provide an enriching, safe, and inspiring learning environment.
                         </p>
                     </ScrollObserver>
@@ -245,11 +254,11 @@ export default function FacilitiesPage() {
                                             {facility.icon}
                                         </div>
 
-                                        <h3 className="font-serif text-xl sm:text-2xl md:text-3xl font-bold text-slate-900 dark:text-white mb-4">
+                                        <h3 className="font-serif text-xl sm:text-2xl md:text-3xl font-bold text-slate-900 dark:text-white mb-4" data-cms={`${facility.cmsKey}:name`}>
                                             {facility.name}
                                         </h3>
 
-                                        <p className="text-slate-600 dark:text-slate-400 text-base sm:text-lg leading-relaxed mb-6">
+                                        <p className="text-slate-600 dark:text-slate-400 text-base sm:text-lg leading-relaxed mb-6" data-cms={`${facility.cmsKey}:description`}>
                                             {facility.description}
                                         </p>
 
@@ -259,6 +268,7 @@ export default function FacilitiesPage() {
                                                 <span
                                                     key={idx}
                                                     className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-blue-50 dark:bg-blue-900/30 text-blue-600 dark:text-blue-400 text-xs font-bold border border-blue-100 dark:border-blue-800"
+                                                    data-cms={`${facility.cmsKey}:feature_${idx}`}
                                                 >
                                                     <Star className="w-3 h-3" />
                                                     {feature}
@@ -282,21 +292,24 @@ export default function FacilitiesPage() {
                                     stat: "5+ Acres",
                                     title: "Campus Area",
                                     description: "Spacious grounds with gardens, playgrounds, and modern buildings designed for optimal learning.",
-                                    color: "from-blue-600 to-indigo-600"
+                                    color: "from-blue-600 to-indigo-600",
+                                    cmsKey: "facilities:stat_0"
                                 },
                                 {
                                     icon: <Users className="w-7 h-7" />,
                                     stat: "1200+",
                                     title: "Students",
                                     description: "A vibrant community of learners from diverse backgrounds thriving in our nurturing environment.",
-                                    color: "from-cyan-500 to-blue-600"
+                                    color: "from-cyan-500 to-blue-600",
+                                    cmsKey: "facilities:stat_1"
                                 },
                                 {
                                     icon: <GraduationCap className="w-7 h-7" />,
                                     stat: "54+",
                                     title: "Years of Excellence",
                                     description: "A legacy of academic achievement, character formation, and holistic development since 1970.",
-                                    color: "from-blue-500 to-cyan-500"
+                                    color: "from-blue-500 to-cyan-500",
+                                    cmsKey: "facilities:stat_2"
                                 }
                             ].map((item, i) => (
                                 <div key={i} className="group relative overflow-hidden rounded-2xl sm:rounded-[2.5rem] border border-slate-200 dark:border-white/10 bg-white/60 dark:bg-slate-900/40 backdrop-blur-xl p-6 sm:p-8 md:p-12 shadow-2xl transition-all duration-700 hover:-translate-y-2">
@@ -309,10 +322,10 @@ export default function FacilitiesPage() {
                                     <div className="text-3xl sm:text-4xl font-black text-slate-900 dark:text-white mb-1">
                                         {item.stat}
                                     </div>
-                                    <div className="text-blue-600 dark:text-cyan-400 font-bold text-sm uppercase tracking-wider mb-3">
+                                    <div className="text-blue-600 dark:text-cyan-400 font-bold text-sm uppercase tracking-wider mb-3" data-cms={`${item.cmsKey}:title`}>
                                         {item.title}
                                     </div>
-                                    <p className="text-base sm:text-lg text-slate-600 dark:text-slate-400 leading-relaxed">
+                                    <p className="text-base sm:text-lg text-slate-600 dark:text-slate-400 leading-relaxed" data-cms={`${item.cmsKey}:description`}>
                                         {item.description}
                                     </p>
 
@@ -335,10 +348,10 @@ export default function FacilitiesPage() {
 
                         <div className="relative z-10 flex flex-col md:flex-row items-center justify-between gap-10">
                             <div className="max-w-xl">
-                                <h3 className="text-3xl md:text-4xl font-bold text-white mb-4">
+                                <h3 className="text-3xl md:text-4xl font-bold text-white mb-4" data-cms="facilities:cta_title">
                                     Experience Our <span className="text-cyan-400 font-serif">Campus In Person</span>
                                 </h3>
-                                <p className="text-blue-100/70 text-lg leading-relaxed">
+                                <p className="text-blue-100/70 text-lg leading-relaxed" data-cms="facilities:cta_description">
                                     Schedule a visit to explore our world-class facilities and see how we're shaping the future of education. Walk through our labs, classrooms, and sports grounds.
                                 </p>
                             </div>
@@ -348,6 +361,7 @@ export default function FacilitiesPage() {
                                     to="/contact"
                                     className="px-10 py-4 bg-gradient-to-r from-blue-500 to-cyan-500 text-white font-bold rounded-2xl shadow-xl shadow-blue-500/25 hover:shadow-blue-500/40 hover:scale-105 active:scale-95 transition-all duration-300 flex items-center gap-2 justify-center whitespace-nowrap text-center"
                                     onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+                                    data-cms="facilities:cta_button"
                                 >
                                     Schedule a Visit
                                     <ArrowRight className="w-5 h-5" />

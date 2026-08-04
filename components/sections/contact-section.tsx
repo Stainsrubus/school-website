@@ -39,7 +39,8 @@ export default function ContactSection() {
       content: "St Pius Rd, opp. St Pius Colony, Mulund West, Mumbai, Maharashtra 400080",
       color: "from-blue-500 to-cyan-500",
       gradient: "bg-gradient-to-br from-blue-500 to-cyan-500",
-      description: "Visit our beautiful campus"
+      description: "Visit our beautiful campus",
+      cmsKey: "contact:info_0"
     },
     {
       icon: Phone,
@@ -47,7 +48,8 @@ export default function ContactSection() {
       content: "+91 (22) 2561-XXXX",
       color: "from-emerald-500 to-teal-500",
       gradient: "bg-gradient-to-br from-emerald-500 to-teal-500",
-      description: "Available 8 AM - 4 PM"
+      description: "Available 8 AM - 4 PM",
+      cmsKey: "contact:info_1"
     },
     {
       icon: Mail,
@@ -55,14 +57,15 @@ export default function ContactSection() {
       content: "admissions@stpiusmulund.com",
       color: "from-purple-500 to-pink-500",
       gradient: "bg-gradient-to-br from-purple-500 to-pink-500",
-      description: "Quick response guaranteed"
+      description: "Quick response guaranteed",
+      cmsKey: "contact:info_2"
     },
   ]
 
   const workingHours = [
-    { day: "Monday - Friday", time: "8:00 AM - 4:00 PM", icon: "📚" },
-    { day: "Saturday", time: "9:00 AM - 2:00 PM", icon: "📝" },
-    { day: "Sunday", time: "Closed", icon: "🏖️" },
+    { day: "Monday - Friday", time: "8:00 AM - 4:00 PM", icon: "📚", cmsKey: "contact:hours_0" },
+    { day: "Saturday", time: "9:00 AM - 2:00 PM", icon: "📝", cmsKey: "contact:hours_1" },
+    { day: "Sunday", time: "Closed", icon: "🏖️", cmsKey: "contact:hours_2" },
   ]
 
   return (
@@ -138,9 +141,9 @@ export default function ContactSection() {
                         <Icon size={24} />
                       </div>
                       <div className="flex-1">
-                        <h3 className="text-lg font-bold text-gray-900 mb-1">{info.title}</h3>
-                        <p className="text-gray-900 font-semibold text-base sm:text-lg mb-2 break-words">{info.content}</p>
-                        <p className="text-sm text-gray-500">{info.description}</p>
+                        <h3 className="text-lg font-bold text-gray-900 mb-1" data-cms={`${info.cmsKey}:title`}>{info.title}</h3>
+                        <p className="text-gray-900 font-semibold text-base sm:text-lg mb-2 break-words" data-cms={`${info.cmsKey}:content`}>{info.content}</p>
+                        <p className="text-sm text-gray-500" data-cms={`${info.cmsKey}:description`}>{info.description}</p>
                       </div>
                     </div>
 
@@ -173,8 +176,8 @@ export default function ContactSection() {
                     <MessageSquare size={24} />
                   </div>
                   <div>
-                    <h3 className="text-2xl font-bold">Send Us a Message</h3>
-                    <p className="text-blue-100">We typically respond within 24 hours</p>
+                    <h3 className="text-2xl font-bold" data-cms="contact:form_title">Send Us a Message</h3>
+                    <p className="text-blue-100" data-cms="contact:form_subtitle">We typically respond within 24 hours</p>
                   </div>
                 </div>
               </div>
@@ -211,7 +214,7 @@ export default function ContactSection() {
                           <label htmlFor="name" className="block text-sm font-semibold text-gray-900 mb-2">
                             <div className="flex items-center gap-2">
                               <User size={14} />
-                              <span>Full Name</span>
+                              <span data-cms="contact:label_name">Full Name</span>
                             </div>
                           </label>
                           <div className="relative">
@@ -236,7 +239,7 @@ export default function ContactSection() {
                           <label htmlFor="email" className="block text-sm font-semibold text-gray-900 mb-2">
                             <div className="flex items-center gap-2">
                               <Mail size={14} />
-                              <span>Email Address</span>
+                              <span data-cms="contact:label_email">Email Address</span>
                             </div>
                           </label>
                           <div className="relative">
@@ -262,7 +265,7 @@ export default function ContactSection() {
                         <label htmlFor="phone" className="block text-sm font-semibold text-gray-900 mb-2">
                           <div className="flex items-center gap-2">
                             <Phone size={14} />
-                            <span>Phone Number</span>
+                            <span data-cms="contact:label_phone">Phone Number</span>
                           </div>
                         </label>
                         <div className="relative">
@@ -286,7 +289,7 @@ export default function ContactSection() {
                         <label htmlFor="message" className="block text-sm font-semibold text-gray-900 mb-2">
                           <div className="flex items-center gap-2">
                             <MessageSquare size={14} />
-                            <span>Your Message</span>
+                            <span data-cms="contact:label_message">Your Message</span>
                           </div>
                         </label>
                         <div className="relative">
@@ -355,8 +358,8 @@ export default function ContactSection() {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div className="space-y-8">
               <div>
-                <h3 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Visit Our Campus</h3>
-                <p className="text-lg text-gray-600 leading-relaxed">
+                <h3 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4" data-cms="contact:visit_title">Visit Our Campus</h3>
+                <p className="text-lg text-gray-600 leading-relaxed" data-cms="contact:visit_description">
                   Experience our state-of-the-art facilities firsthand. Our campus is designed to foster creativity, innovation, and holistic development for all students.
                 </p>
               </div>
@@ -367,8 +370,8 @@ export default function ContactSection() {
                     <MapPin size={24} />
                   </div>
                   <div>
-                    <h4 className="font-bold text-gray-900 mb-1">Location</h4>
-                    <p className="text-gray-600">
+                    <h4 className="font-bold text-gray-900 mb-1" data-cms="contact:location_title">Location</h4>
+                    <p className="text-gray-600" data-cms="contact:location_address">
                       St Pius Rd, opp. St Pius Colony,<br />
                       Mulund West, Mumbai, Maharashtra 400080
                     </p>
@@ -380,8 +383,8 @@ export default function ContactSection() {
                     <Clock size={24} />
                   </div>
                   <div>
-                    <h4 className="font-bold text-gray-900 mb-1">Visiting Hours</h4>
-                    <p className="text-gray-600">
+                    <h4 className="font-bold text-gray-900 mb-1" data-cms="contact:visiting_hours_title">Visiting Hours</h4>
+                    <p className="text-gray-600" data-cms="contact:visiting_hours_text">
                       Monday to Friday: 9:00 AM - 3:00 PM<br />
                       Saturday: 9:00 AM - 12:00 PM (By appointment)
                     </p>

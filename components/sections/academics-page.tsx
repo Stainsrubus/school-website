@@ -38,7 +38,8 @@ export default function AcademicsPage() {
             description: "Building logical thinking and problem-solving skills through applied mathematics, mental math competitions, and real-world problem scenarios.",
             highlights: ["Applied Mathematics", "Math Olympiad Training", "Vedic Mathematics"],
             color: "from-blue-600 to-indigo-600",
-            image: "/st_pius/smartLearning.JPG"
+            image: "/st_pius/smartLearning.JPG",
+            cmsKey: "academics:subject_0"
         },
         {
             name: "Science",
@@ -46,7 +47,8 @@ export default function AcademicsPage() {
             description: "Hands-on exploration in state-of-the-art labs covering Physics, Chemistry, and Biology with practical experiments and science exhibitions.",
             highlights: ["Practical Lab Sessions", "Science Exhibition", "Innovation Projects"],
             color: "from-cyan-500 to-blue-600",
-            image: "/st_pius/science.jpg"
+            image: "/st_pius/science.jpg",
+            cmsKey: "academics:subject_1"
         },
         {
             name: "English & Languages",
@@ -54,7 +56,8 @@ export default function AcademicsPage() {
             description: "Mastery of English language skills along with Hindi and Marathi, fostering effective communication and literary appreciation.",
             highlights: ["Creative Writing", "Elocution", "Debate Competitions"],
             color: "from-blue-600 to-cyan-500",
-            image: "/st_pius/culturals3.jpeg"
+            image: "/st_pius/culturals3.jpeg",
+            cmsKey: "academics:subject_2"
         },
         {
             name: "Social Studies",
@@ -62,7 +65,8 @@ export default function AcademicsPage() {
             description: "Understanding history, geography, civics, and economics through interactive learning methods, field trips, and project-based exploration.",
             highlights: ["Heritage Projects", "Model Parliament", "Geography Expeditions"],
             color: "from-indigo-600 to-blue-500",
-            image: "/st_pius/expo.jpg"
+            image: "/st_pius/expo.jpg",
+            cmsKey: "academics:subject_3"
         },
         {
             name: "Information Technology",
@@ -70,7 +74,8 @@ export default function AcademicsPage() {
             description: "Digital literacy and coding fundamentals using advanced ICT labs with latest hardware and software platforms for the 21st-century learner.",
             highlights: ["Computer Science", "Coding & Robotics", "Digital Literacy"],
             color: "from-blue-500 to-cyan-400",
-            image: "/st_pius/ict.JPG"
+            image: "/st_pius/ict.JPG",
+            cmsKey: "academics:subject_4"
         },
         {
             name: "Arts & Culture",
@@ -78,7 +83,8 @@ export default function AcademicsPage() {
             description: "Nurturing creative talents through visual arts, music, drama, and cultural programs that celebrate artistic expression and cultural heritage.",
             highlights: ["Visual Arts", "Music & Drama", "Pius Fest Cultural Program"],
             color: "from-cyan-500 to-indigo-500",
-            image: "/st_pius/art2.jpeg"
+            image: "/st_pius/art2.jpeg",
+            cmsKey: "academics:subject_5"
         }
     ];
 
@@ -88,29 +94,32 @@ export default function AcademicsPage() {
             badge: "Maharashtra State Board",
             description: "Our school follows the SSC (Secondary School Certificate) curriculum under the Maharashtra State Board of Secondary and Higher Secondary Education, ensuring students are well-prepared for board examinations with a comprehensive, structured programme.",
             icon: <BookMarked className="w-7 h-7" />,
-            color: "from-blue-600 to-blue-800"
+            color: "from-blue-600 to-blue-800",
+            cmsKey: "academics:curriculum_0"
         },
         {
             title: "Co-Curricular Integration",
             badge: "Beyond Textbooks",
             description: "We integrate co-curricular activities seamlessly with academics. From science exhibitions to literary fests, from sports days to cultural programmes, every student gets opportunities to explore interests beyond the classroom.",
             icon: <Activity className="w-7 h-7" />,
-            color: "from-cyan-500 to-blue-600"
+            color: "from-cyan-500 to-blue-600",
+            cmsKey: "academics:curriculum_1"
         },
         {
             title: "Value-Based Education",
             badge: "Holistic Formation",
             description: "Rooted in Christian values, our education model emphasises moral formation, social responsibility, and spiritual growth alongside academic excellence, creating well-rounded individuals prepared for life's challenges.",
             icon: <Lightbulb className="w-7 h-7" />,
-            color: "from-blue-500 to-indigo-600"
+            color: "from-blue-500 to-indigo-600",
+            cmsKey: "academics:curriculum_2"
         }
     ];
 
     const achievements = [
-        { number: "100%", label: "SSC Pass Rate", description: "Consistent board results", icon: <Trophy className="w-6 h-6" /> },
-        { number: "75+", label: "Expert Faculty", description: "Highly qualified teachers", icon: <Users className="w-6 h-6" /> },
-        { number: "20+", label: "Student Clubs", description: "Enrichment programmes", icon: <Star className="w-6 h-6" /> },
-        { number: "25+", label: "National Awards", description: "Recognised excellence", icon: <Award className="w-6 h-6" /> }
+        { number: "100%", label: "SSC Pass Rate", description: "Consistent board results", icon: <Trophy className="w-6 h-6" />, cmsKey: "academics:stat_0" },
+        { number: "75+", label: "Expert Faculty", description: "Highly qualified teachers", icon: <Users className="w-6 h-6" />, cmsKey: "academics:stat_1" },
+        { number: "20+", label: "Student Clubs", description: "Enrichment programmes", icon: <Star className="w-6 h-6" />, cmsKey: "academics:stat_2" },
+        { number: "25+", label: "National Awards", description: "Recognised excellence", icon: <Award className="w-6 h-6" />, cmsKey: "academics:stat_3" }
     ];
 
     const teachingMethods = [
@@ -118,21 +127,25 @@ export default function AcademicsPage() {
             title: "Smart Classroom Learning",
             description: "Interactive whiteboards, projectors, and audio-visual systems enabling digital content delivery and collaborative learning experiences.",
             icon: <Monitor className="w-6 h-6" />,
+            cmsKey: "academics:method_0"
         },
         {
             title: "Experiential Learning",
             description: "Hands-on experiments, field trips, and project-based learning that bring concepts to life and deepen understanding.",
             icon: <Brain className="w-6 h-6" />,
+            cmsKey: "academics:method_1"
         },
         {
             title: "Personalised Attention",
             description: "Small class sizes and dedicated mentoring ensure every student receives individual guidance and support for academic growth.",
             icon: <Target className="w-6 h-6" />,
+            cmsKey: "academics:method_2"
         },
         {
             title: "Continuous Assessment",
             description: "Regular evaluations, diagnostic tests, and remedial classes to track progress and address learning gaps proactively.",
             icon: <CheckCircle2 className="w-6 h-6" />,
+            cmsKey: "academics:method_3"
         },
     ];
 
@@ -211,6 +224,7 @@ export default function AcademicsPage() {
                             animate={{ opacity: 1, y: 0 }}
                             transition={{ duration: 0.5, delay: 0.2 }}
                             className="text-base sm:text-lg md:text-xl text-slate-600 dark:text-slate-400 max-w-3xl mx-auto leading-relaxed"
+                            data-cms="academics:hero_description"
                         >
                             At St. Pius X High School, we deliver a rigorous SSC Board curriculum enriched with co-curricular
                             programmes, modern pedagogy, and value-based education to prepare students for global success.
@@ -228,8 +242,8 @@ export default function AcademicsPage() {
                                 {item.icon}
                             </div>
                             <div className="text-2xl sm:text-3xl font-black">{item.number}</div>
-                            <div className="font-bold text-sm">{item.label}</div>
-                            <div className="text-blue-200 text-xs">{item.description}</div>
+                            <div className="font-bold text-sm" data-cms={`${item.cmsKey}:label`}>{item.label}</div>
+                            <div className="text-blue-200 text-xs" data-cms={`${item.cmsKey}:description`}>{item.description}</div>
                         </div>
                     ))}
                 </ScrollObserver>
@@ -242,12 +256,12 @@ export default function AcademicsPage() {
                     <ScrollObserver className="text-center mb-20">
                         <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-50 dark:bg-blue-900/30 border border-blue-100 dark:border-blue-800 text-blue-600 dark:text-blue-400 text-xs font-bold uppercase tracking-widest mb-6">
                             <BookOpen size={14} />
-                            Our Framework
+                            <span data-cms="academics:curriculum_badge">Our Framework</span>
                         </div>
-                        <h2 className="font-serif text-3xl sm:text-4xl md:text-6xl font-bold text-slate-900 dark:text-white mb-6 tracking-tight">
+                        <h2 className="font-serif text-3xl sm:text-4xl md:text-6xl font-bold text-slate-900 dark:text-white mb-6 tracking-tight" data-cms="academics:curriculum_title">
                             Curriculum & <span className="bg-clip-text text-transparent bg-gradient-to-r from-blue-600 to-cyan-500">Approach</span>
                         </h2>
-                        <p className="text-lg text-slate-600 dark:text-slate-400 max-w-2xl mx-auto leading-relaxed">
+                        <p className="text-lg text-slate-600 dark:text-slate-400 max-w-2xl mx-auto leading-relaxed" data-cms="academics:curriculum_description">
                             A structured, comprehensive educational framework that balances academic rigour with holistic development.
                         </p>
                     </ScrollObserver>
@@ -260,7 +274,7 @@ export default function AcademicsPage() {
                                     <div className={`absolute top-0 left-0 w-full h-1 bg-gradient-to-r ${item.color}`}></div>
 
                                     {/* Badge */}
-                                    <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-blue-50 dark:bg-blue-900/30 text-blue-600 dark:text-blue-400 text-[10px] font-bold uppercase tracking-widest mb-6">
+                                    <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-blue-50 dark:bg-blue-900/30 text-blue-600 dark:text-blue-400 text-[10px] font-bold uppercase tracking-widest mb-6" data-cms={`${item.cmsKey}:badge`}>
                                         {item.badge}
                                     </div>
 
@@ -268,10 +282,10 @@ export default function AcademicsPage() {
                                         {item.icon}
                                     </div>
 
-                                    <h3 className="font-serif text-xl sm:text-2xl font-bold text-slate-900 dark:text-white mb-4">
+                                    <h3 className="font-serif text-xl sm:text-2xl font-bold text-slate-900 dark:text-white mb-4" data-cms={`${item.cmsKey}:title`}>
                                         {item.title}
                                     </h3>
-                                    <p className="text-base sm:text-lg text-slate-600 dark:text-slate-400 leading-relaxed">
+                                    <p className="text-base sm:text-lg text-slate-600 dark:text-slate-400 leading-relaxed" data-cms={`${item.cmsKey}:description`}>
                                         {item.description}
                                     </p>
 
@@ -290,12 +304,12 @@ export default function AcademicsPage() {
                     <ScrollObserver className="text-center mb-20">
                         <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-50 dark:bg-blue-900/30 border border-blue-100 dark:border-blue-800 text-blue-600 dark:text-blue-400 text-xs font-bold uppercase tracking-widest mb-6">
                             <Zap size={14} className="fill-current" />
-                            Explore Departments
+                            <span data-cms="academics:departments_badge">Explore Departments</span>
                         </div>
-                        <h2 className="font-serif text-3xl sm:text-4xl md:text-6xl font-bold text-slate-900 dark:text-white mb-6 tracking-tight">
+                        <h2 className="font-serif text-3xl sm:text-4xl md:text-6xl font-bold text-slate-900 dark:text-white mb-6 tracking-tight" data-cms="academics:departments_title">
                             Academic <span className="bg-clip-text text-transparent bg-gradient-to-r from-blue-600 to-cyan-500">Departments</span>
                         </h2>
-                        <p className="text-lg text-slate-600 dark:text-slate-400 max-w-2xl mx-auto leading-relaxed">
+                        <p className="text-lg text-slate-600 dark:text-slate-400 max-w-2xl mx-auto leading-relaxed" data-cms="academics:departments_description">
                             Comprehensive departments staffed by expert educators, each dedicated to nurturing subject mastery and a passion for learning.
                         </p>
                     </ScrollObserver>
@@ -320,7 +334,7 @@ export default function AcademicsPage() {
                                             {subject.icon}
                                         </div>
                                         <div className="flex-1 min-w-0">
-                                            <div className="font-bold text-base">{subject.name}</div>
+                                            <div className="font-bold text-base" data-cms={`${subject.cmsKey}:name`}>{subject.name}</div>
                                             <div className={`text-xs mt-0.5 ${activeSubject === index ? 'text-blue-100' : 'text-slate-500 dark:text-slate-400'}`}>
                                                 {subject.highlights[0]}
                                             </div>
@@ -353,22 +367,22 @@ export default function AcademicsPage() {
                                         </div>
                                     </div>
 
-                                    {/* Content */}
-                                    <div className="p-6 sm:p-8 md:p-10">
-                                        <p className="text-lg text-slate-600 dark:text-slate-400 leading-relaxed mb-6">
-                                            {subjects[activeSubject].description}
-                                        </p>
+                                        {/* Content */}
+                                        <div className="p-6 sm:p-8 md:p-10">
+                                            <p className="text-lg text-slate-600 dark:text-slate-400 leading-relaxed mb-6" data-cms={`${subjects[activeSubject].cmsKey}:description`}>
+                                                {subjects[activeSubject].description}
+                                            </p>
 
-                                        <div className="space-y-3">
-                                            <h4 className="font-bold text-sm text-slate-900 dark:text-white uppercase tracking-wider">Key Highlights</h4>
-                                            {subjects[activeSubject].highlights.map((highlight, i) => (
-                                                <div key={i} className="flex items-center gap-3 text-slate-700 dark:text-slate-300">
-                                                    <CheckCircle2 className="w-5 h-5 text-blue-500 flex-shrink-0" />
-                                                    <span className="font-medium">{highlight}</span>
-                                                </div>
-                                            ))}
+                                            <div className="space-y-3">
+                                                <h4 className="font-bold text-sm text-slate-900 dark:text-white uppercase tracking-wider" data-cms={`${subjects[activeSubject].cmsKey}:highlights_title`}>Key Highlights</h4>
+                                                {subjects[activeSubject].highlights.map((highlight, i) => (
+                                                    <div key={i} className="flex items-center gap-3 text-slate-700 dark:text-slate-300">
+                                                        <CheckCircle2 className="w-5 h-5 text-blue-500 flex-shrink-0" />
+                                                        <span className="font-medium" data-cms={`${subjects[activeSubject].cmsKey}:highlight_${i}`}>{highlight}</span>
+                                                    </div>
+                                                ))}
+                                            </div>
                                         </div>
-                                    </div>
                                 </div>
                             </ScrollObserver>
                         </div>
@@ -380,12 +394,12 @@ export default function AcademicsPage() {
                     <ScrollObserver className="text-center mb-20">
                         <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-50 dark:bg-blue-900/30 border border-blue-100 dark:border-blue-800 text-blue-600 dark:text-blue-400 text-xs font-bold uppercase tracking-widest mb-6">
                             <Lightbulb size={14} />
-                            How We Teach
+                            <span data-cms="academics:methodology_badge">How We Teach</span>
                         </div>
-                        <h2 className="font-serif text-3xl sm:text-4xl md:text-6xl font-bold text-slate-900 dark:text-white mb-6 tracking-tight">
+                        <h2 className="font-serif text-3xl sm:text-4xl md:text-6xl font-bold text-slate-900 dark:text-white mb-6 tracking-tight" data-cms="academics:methodology_title">
                             Teaching <span className="bg-clip-text text-transparent bg-gradient-to-r from-blue-600 to-cyan-500">Methodology</span>
                         </h2>
-                        <p className="text-lg text-slate-600 dark:text-slate-400 max-w-2xl mx-auto leading-relaxed">
+                        <p className="text-lg text-slate-600 dark:text-slate-400 max-w-2xl mx-auto leading-relaxed" data-cms="academics:methodology_description">
                             Modern pedagogical approaches that engage, inspire, and empower every student to reach their full potential.
                         </p>
                     </ScrollObserver>
@@ -399,10 +413,10 @@ export default function AcademicsPage() {
                                         {method.icon}
                                     </div>
                                     <div>
-                                        <h3 className="font-serif text-xl font-bold text-slate-900 dark:text-white mb-2 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">
+                                        <h3 className="font-serif text-xl font-bold text-slate-900 dark:text-white mb-2 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors" data-cms={`${method.cmsKey}:title`}>
                                             {method.title}
                                         </h3>
-                                        <p className="text-slate-600 dark:text-slate-400 leading-relaxed">
+                                        <p className="text-slate-600 dark:text-slate-400 leading-relaxed" data-cms={`${method.cmsKey}:description`}>
                                             {method.description}
                                         </p>
                                     </div>
@@ -417,12 +431,12 @@ export default function AcademicsPage() {
                     <ScrollObserver className="text-center mb-20">
                         <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-50 dark:bg-blue-900/30 border border-blue-100 dark:border-blue-800 text-blue-600 dark:text-blue-400 text-xs font-bold uppercase tracking-widest mb-6">
                             <Trophy size={14} />
-                            Our Pride
+                            <span data-cms="academics:toppers_badge">Our Pride</span>
                         </div>
-                        <h2 className="font-serif text-3xl sm:text-4xl md:text-6xl font-bold text-slate-900 dark:text-white mb-6 tracking-tight">
+                        <h2 className="font-serif text-3xl sm:text-4xl md:text-6xl font-bold text-slate-900 dark:text-white mb-6 tracking-tight" data-cms="academics:toppers_title">
                             Board Exam <span className="bg-clip-text text-transparent bg-gradient-to-r from-blue-600 to-cyan-500">Toppers</span>
                         </h2>
-                        <p className="text-lg text-slate-600 dark:text-slate-400 max-w-2xl mx-auto leading-relaxed">
+                        <p className="text-lg text-slate-600 dark:text-slate-400 max-w-2xl mx-auto leading-relaxed" data-cms="academics:toppers_description">
                             Celebrating the outstanding achievers of the 2025–2026 academic year who made St. Pius X proud.
                         </p>
                     </ScrollObserver>
@@ -545,10 +559,10 @@ export default function AcademicsPage() {
 
                         <div className="relative z-10 flex flex-col md:flex-row items-center justify-between gap-10">
                             <div className="max-w-xl">
-                                <h3 className="text-3xl md:text-4xl font-bold text-white mb-4">
+                                <h3 className="text-3xl md:text-4xl font-bold text-white mb-4" data-cms="academics:cta_title">
                                     Ready to Start an <span className="text-cyan-400 font-serif">Academic Journey</span> with Us?
                                 </h3>
-                                <p className="text-blue-100/70 text-lg leading-relaxed">
+                                <p className="text-blue-100/70 text-lg leading-relaxed" data-cms="academics:cta_description">
                                     Admissions are now open for the upcoming academic year. Give your child the gift of a world-class education.
                                 </p>
                             </div>
@@ -558,6 +572,7 @@ export default function AcademicsPage() {
                                     to="/contact"
                                     className="px-10 py-4 bg-gradient-to-r from-blue-500 to-cyan-500 text-white font-bold rounded-2xl shadow-xl shadow-blue-500/25 hover:shadow-blue-500/40 hover:scale-105 active:scale-95 transition-all duration-300 flex items-center gap-2 justify-center text-center"
                                     onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+                                    data-cms="academics:cta_button"
                                 >
                                     Apply Now
                                     <ArrowRight className="w-5 h-5" />

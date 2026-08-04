@@ -78,8 +78,8 @@ export default function TopBar() {
                             aria-expanded={dropdownOpen}
                         >
                             <Bell size={11} className="text-yellow-300 animate-pulse" />
-                            <span className="hidden sm:inline">ONLINE FEE PAYMENT</span>
-                            <span className="sm:hidden">NOTICE</span>
+                            <span className="hidden sm:inline" data-cms="topbar:fee_payment_label">ONLINE FEE PAYMENT</span>
+                            <span className="sm:hidden" data-cms="topbar:notice_label">NOTICE</span>
                             {dropdownOpen ? <ChevronUp size={12} /> : <ChevronDown size={12} />}
                         </button>
                     </div>
@@ -129,12 +129,13 @@ export default function TopBar() {
                                     <Bell size={16} className="text-yellow-300" />
                                 </div>
                                 <div>
-                                    <p className="text-[10px] font-bold text-blue-200 uppercase tracking-widest">
+                                    <p className="text-[10px] font-bold text-blue-200 uppercase tracking-widest" data-cms="topbar:notice_header">
                                         Official Notice
                                     </p>
                                     <h3
                                         id="notice-title"
                                         className="text-sm sm:text-base font-bold text-white leading-tight"
+                                        data-cms="topbar:notice_title"
                                     >
                                         Online Fee Payment — Primary Section
                                     </h3>
@@ -164,15 +165,16 @@ export default function TopBar() {
 
                             {/* Info chips */}
                             <div className="flex flex-wrap gap-2 mb-5">
-                                {["Class 2", "Class 3", "Class 4"].map((cls) => (
+                                {["Class 2", "Class 3", "Class 4"].map((cls, index) => (
                                     <span
                                         key={cls}
                                         className="px-3 py-1 bg-blue-50 border border-blue-200 text-blue-800 text-xs font-semibold rounded-full"
+                                        data-cms={`topbar:class_${index}_label`}
                                     >
                                         {cls}
                                     </span>
                                 ))}
-                                <span className="px-3 py-1 bg-yellow-50 border border-yellow-300 text-yellow-800 text-xs font-semibold rounded-full">
+                                <span className="px-3 py-1 bg-yellow-50 border border-yellow-300 text-yellow-800 text-xs font-semibold rounded-full" data-cms="topbar:gr_number_required">
                                     📋 GR Number Required
                                 </span>
                             </div>
@@ -194,7 +196,7 @@ export default function TopBar() {
                              transition-all duration-200 hover:shadow-lg hover:-translate-y-0.5"
                                 >
                                     <CreditCard size={15} />
-                                    Proceed to Online Fee Payment
+                                    <span data-cms="topbar:proceed_button">Proceed to Online Fee Payment</span>
                                 </a>
                                 <button
                                     onClick={() => setDropdownOpen(false)}
