@@ -141,7 +141,7 @@ const AboutPage: React.FC = () => {
       name: "Library",
       description: "A vast collection of over 15,000 books, digital resources, e-journals, and quiet study spaces. Features reading rooms, research zones, and a digital library with online databases.",
       icon: <BookOpen className="w-6 h-6" />,
-      image: "st_pius/library.JPG",
+      image: "/st_pius/library.JPG",
       clipPath: "polygon(0% 0%, 100% 15%, 100% 100%, 0% 85%)",
       cmsKey: "about:facility_2"
     },
@@ -150,7 +150,7 @@ const AboutPage: React.FC = () => {
       name: "Smart Classrooms",
       description: "Technology-integrated learning spaces with interactive whiteboards, projectors, and audio-visual systems. Enables digital content delivery and collaborative learning experiences.",
       icon: <Laptop className="w-6 h-6" />,
-      image: "st_pius/smart.JPG",
+      image: "/st_pius/smart.JPG",
       clipPath: "polygon(0% 15%, 100% 0%, 100% 85%, 0% 100%)",
       cmsKey: "about:facility_3"
     },
@@ -159,7 +159,7 @@ const AboutPage: React.FC = () => {
       name: "Cultural Auditorium",
       description: "A magnificent 500-seat auditorium with professional lighting, sound systems, and stage facilities. Hosts cultural programs, annual functions, drama, music concerts and inter-school competitions.",
       icon: <Music className="w-6 h-6" />,
-      image: "st_pius/culturals3.jpeg",
+      image: "/st_pius/culturals3.jpeg",
       clipPath: "polygon(0% 0%, 100% 15%, 100% 100%, 0% 85%)",
       cmsKey: "about:facility_4"
     },
@@ -168,7 +168,7 @@ const AboutPage: React.FC = () => {
       name: "Arts & Music Studios",
       description: "Dedicated spaces for visual arts, music practice, and performing arts. Equipped with instruments, art supplies, practice rooms, and recording facilities to nurture creative talents.",
       icon: <Palette className="w-6 h-6" />,
-      image: "st_pius/art2.jpeg",
+      image: "/st_pius/art2.jpeg",
       clipPath: "polygon(0% 15%, 100% 0%, 100% 100%, 0% 85%)",
       cmsKey: "about:facility_5"
     },
@@ -271,9 +271,9 @@ const AboutPage: React.FC = () => {
             <SchoolIcon className="w-4 h-4" />
             Established 1970
           </div>
-          <h1 className="text-3xl sm:text-5xl md:text-7xl font-bold text-slate-900 dark:text-white mb-6" data-cms="about:welcome_title">
+          <h1 className="text-3xl sm:text-5xl md:text-7xl font-bold text-slate-900 dark:text-white mb-6">
             Welcome to<br />
-            <span className="font-serif bg-clip-text text-transparent bg-gradient-to-r from-blue-600 via-cyan-500 to-blue-400">
+            <span className="font-serif bg-clip-text text-transparent bg-gradient-to-r from-blue-600 via-cyan-500 to-blue-400" data-cms="about:welcome_title">
               St. Pius X High School
             </span>
           </h1>
@@ -494,6 +494,7 @@ const AboutPage: React.FC = () => {
                       <img
                         src="/st_pius/principal.JPG"
                         alt="Principal"
+                        data-cms-src="about:principal:photo"
                         className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
                       />
                       {/* Photo Overlay */}
@@ -704,7 +705,7 @@ const AboutPage: React.FC = () => {
             {facilities.map((facility, i) => (
               <div key={facility.id} className={`flex flex-col ${i % 2 === 1 ? 'lg:flex-row-reverse' : 'lg:flex-row'} bg-white dark:bg-slate-900 rounded-[2.5rem] overflow-hidden shadow-2xl border border-slate-100 dark:border-slate-800`}>
                 <div className="lg:w-1/2 h-52 sm:h-64 md:h-80 lg:min-h-96 object-cover overflow-hidden">
-                  <img src={facility.image} alt={facility.name} className="w-full h-full object-cover hover:scale-110 transition-transform duration-700" />
+                  <img src={facility.image} alt={facility.name} data-cms-src={`${facility.cmsKey}:image`} className="w-full h-full object-cover hover:scale-110 transition-transform duration-700" />
                 </div>
                 <div className="lg:w-1/2 p-5 sm:p-8 md:p-10 flex flex-col justify-center">
                   <div className={`w-14 h-14 rounded-2xl bg-gradient-to-br ${i % 2 === 0 ? 'from-blue-600 to-cyan-500' : 'from-cyan-500 to-blue-600'} text-white flex items-center justify-center mb-6 shadow-lg`}>

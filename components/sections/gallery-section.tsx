@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState } from "react"
 import { Calendar, MapPin, X, ChevronLeft, ChevronRight } from "lucide-react"
+import { useCmsCollection, type CmsCollectionEntry } from "@/lib/useCmsCollection"
 
 const galleryItems = [
   {
@@ -105,16 +106,45 @@ const categories = [
   { id: "marathi-elocution", label: "Marathi Elocution" },
 ]
 
+interface GalleryItem {
+  id: number | string
+  category: string
+  title: string
+  date: string
+  location: string
+  description: string
+  image: string
+}
+
 export default function GalleryPage() {
   const [activeCategory, setActiveCategory] = useState("all")
   const [selectedIndex, setSelectedIndex] = useState<number | null>(null)
   const [showFloatingBar, setShowFloatingBar] = useState(false)
   const filterRef = useRef<HTMLDivElement>(null)
 
+  const cmsItems = useCmsCollection<GalleryItem>("gallery_items", galleryItems, (entry: CmsCollectionEntry) => ({
+    id: entry.id,
+    category: entry.data.category || "",
+    title: entry.data.title || "",
+    date: entry.data.date || "",
+    location: entry.data.location || "",
+    description: entry.data.description || "",
+    image: entry.data.image || "",
+  }))
+
+  const allCategories = [...categories]
+  const knownCategories = new Set(allCategories.map((cat) => cat.id))
+  cmsItems.forEach((item) => {
+    if (item.category && !knownCategories.has(item.category)) {
+      knownCategories.add(item.category)
+      allCategories.push({ id: item.category, label: item.category })
+    }
+  })
+
   const filteredItems =
     activeCategory === "all"
-      ? galleryItems
-      : galleryItems.filter((item) => item.category === activeCategory)
+      ? cmsItems
+      : cmsItems.filter((item) => item.category === activeCategory)
 
   // Handlers for Lightbox
   const handlePrev = (e: React.MouseEvent) => {
@@ -168,7 +198,7 @@ export default function GalleryPage() {
         <div className="w-full bg-white/60 backdrop-blur-xl border-b border-white/30 shadow-[0_8px_32px_rgba(0,0,0,0.08)]">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 py-3">
             <div className="flex items-center gap-2 overflow-x-auto scrollbar-hide snap-x snap-mandatory">
-              {categories.map((cat) => (
+              {allCategories.map((cat) => (
                 <button
                   key={cat.id}
                   onClick={() => {
@@ -197,10 +227,10 @@ export default function GalleryPage() {
         </div>
 
         <div className="relative max-w-7xl mx-auto px-6 text-center">
-          <h1 className="text-5xl sm:text-6xl md:text-7xl font-extrabold tracking-tight mb-5" data-cms="gallery:title">
+          <h1 className="text-5xl sm:text-6xl md:text-7xl font-extrabold tracking-tight mb-5">
             <span className="relative inline-block">
-              <span className="relative z-10 bg-gradient-to-r from-blue-200 via-white to-cyan-200 bg-clip-text text-transparent">
-                School Gallery
+              <span className="relative z-10 bg-gradient-to-r from-blue-200 via-white to-cyan-200 bg-clip-text text-transparent" data-cms="gallery:title">
+                Moments That Define Us
               </span>
               <span className="absolute inset-0 bg-gradient-to-r from-blue-400/30 via-cyan-400/30 to-blue-400/30 blur-xl animate-pulse" />
             </span>
@@ -218,7 +248,7 @@ export default function GalleryPage() {
           {/* Category Filters */}
           <div ref={filterRef} className="flex justify-center mb-12 md:mb-16 w-full px-2 sm:px-0">
             <div className="flex flex-wrap justify-center gap-2 md:gap-3 p-1.5 sm:p-2 bg-white/80 dark:bg-slate-900/80 backdrop-blur-md rounded-[2rem] shadow-lg border border-slate-200/50 w-full max-w-fit">
-              {categories.map((cat) => (
+              {allCategories.map((cat) => (
                 <button
                   key={cat.id}
                   onClick={() => {

@@ -89,6 +89,7 @@ export default function FeaturesSection() {
                   <img
                     src={feature.image}
                     alt={feature.title}
+                    data-cms-src={`feature_${index}:image`}
                     className={`w-full h-full object-cover transition-transform duration-1000 ${hoveredIndex === index ? 'scale-110' : 'scale-100'}`}
                   />
                   <div className={`absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/40 to-transparent transition-opacity duration-500 ${hoveredIndex === index ? 'opacity-90' : 'opacity-70'}`} />

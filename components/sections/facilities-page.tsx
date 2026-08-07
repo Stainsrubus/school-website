@@ -173,10 +173,9 @@ export default function FacilitiesPage() {
                             animate={{ opacity: 1, y: 0 }}
                             transition={{ duration: 0.5, delay: 0.1 }}
                             className="text-3xl sm:text-5xl md:text-7xl font-bold text-slate-900 dark:text-white mb-6"
-                            data-cms="facilities:title"
                         >
                             A Campus Built for<br />
-                            <span className="font-serif bg-clip-text text-transparent bg-gradient-to-r from-blue-600 via-cyan-500 to-blue-400">
+                            <span className="font-serif bg-clip-text text-transparent bg-gradient-to-r from-blue-600 via-cyan-500 to-blue-400" data-cms="facilities:title">
                                 Tomorrow's Leaders
                             </span>
                         </motion.h1>
@@ -237,6 +236,7 @@ export default function FacilitiesPage() {
                                         <img
                                             src={facility.image}
                                             alt={facility.name}
+                                            data-cms-src={`${facility.cmsKey}:image`}
                                             className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
                                         />
                                         <div className="absolute inset-0 bg-gradient-to-t from-slate-900/30 via-transparent to-transparent"></div>

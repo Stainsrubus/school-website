@@ -211,10 +211,9 @@ export default function AcademicsPage() {
                             animate={{ opacity: 1, y: 0 }}
                             transition={{ duration: 0.5, delay: 0.1 }}
                             className="text-3xl sm:text-5xl md:text-7xl font-bold text-slate-900 dark:text-white mb-6"
-                            data-cms="academics:title"
                         >
                             Shaping Futures Through<br />
-                            <span className="font-serif bg-clip-text text-transparent bg-gradient-to-r from-blue-600 via-cyan-500 to-blue-400">
+                            <span className="font-serif bg-clip-text text-transparent bg-gradient-to-r from-blue-600 via-cyan-500 to-blue-400" data-cms="academics:title">
                                 Academic Mastery
                             </span>
                         </motion.h1>

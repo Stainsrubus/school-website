@@ -1,10 +1,12 @@
 import { createFileRoute } from '@tanstack/react-router'
 import { useEffect, useRef, useState } from "react"
 import { Calendar, MapPin, X, ChevronLeft, ChevronRight, ChevronUp, ChevronDown } from "lucide-react"
+import { useCmsCollection, type CmsCollectionEntry } from '../../lib/useCmsCollection'
 
 export const Route = createFileRoute('/gallery')({
   component: GalleryPage,
 })
+
 
 const galleryItems = [
   {
@@ -120,18 +122,48 @@ function GalleryPage() {
   const filterRef = useRef<HTMLDivElement>(null)
   const origFilterScrollRef = useRef<HTMLDivElement>(null)
 
+  const cmsItems = useCmsCollection<{
+    id: string | number
+    category: string
+    title: string
+    date: string
+    location: string
+    description: string
+    image: string
+  }>('gallery_items', galleryItems, (entry: CmsCollectionEntry) => ({
+    id: entry.id,
+    category: (entry.data.category || entry.data.category_id || '').trim().toLowerCase(),
+    title: entry.data.title || 'Untitled Event',
+    date: entry.data.date || '',
+    location: entry.data.location || '',
+    description: entry.data.description || '',
+    image: entry.data.image || '/st_pius/culturals.jpg',
+  }))
+
+
+  const allCategories = [...categories]
+  const knownCategories = new Set(allCategories.map((cat) => cat.id))
+  cmsItems.forEach((item) => {
+    if (item.category && !knownCategories.has(item.category)) {
+      knownCategories.add(item.category)
+      const formattedLabel = item.category.replace(/[-_]/g, ' ').replace(/\b\w/g, c => c.toUpperCase())
+      allCategories.push({ id: item.category, label: formattedLabel })
+    }
+  })
+
   const ITEMS_PER_PAGE = 6
   const MOBILE_PER_PAGE = 3
-  const totalSidebarPages = Math.ceil(categories.length / ITEMS_PER_PAGE)
-  const visibleCategories = categories.slice(sidebarPage * ITEMS_PER_PAGE, (sidebarPage + 1) * ITEMS_PER_PAGE)
-  const activeCatIndex = categories.findIndex(c => c.id === activeCategory)
-  const mobileTotalPages = Math.ceil(categories.length / MOBILE_PER_PAGE)
-  const mobileVisibleCats = categories.slice(mobilePage * MOBILE_PER_PAGE, (mobilePage + 1) * MOBILE_PER_PAGE)
+  const totalSidebarPages = Math.ceil(allCategories.length / ITEMS_PER_PAGE)
+  const visibleCategories = allCategories.slice(sidebarPage * ITEMS_PER_PAGE, (sidebarPage + 1) * ITEMS_PER_PAGE)
+  const activeCatIndex = allCategories.findIndex(c => c.id === activeCategory)
+  const mobileTotalPages = Math.ceil(allCategories.length / MOBILE_PER_PAGE)
+  const mobileVisibleCats = allCategories.slice(mobilePage * MOBILE_PER_PAGE, (mobilePage + 1) * MOBILE_PER_PAGE)
 
   const filteredItems =
     activeCategory === "all"
-      ? galleryItems
-      : galleryItems.filter((item) => item.category === activeCategory)
+      ? cmsItems
+      : cmsItems.filter((item) => item.category === activeCategory)
+
 
   // Handlers for Lightbox
   const handlePrev = (e: React.MouseEvent) => {
@@ -344,7 +376,7 @@ function GalleryPage() {
               ref={origFilterScrollRef}
               className="flex gap-2 md:gap-3 p-1.5 sm:p-2 bg-white/80 dark:bg-slate-900/80 backdrop-blur-md rounded-[2rem] shadow-lg border border-slate-200/50 overflow-x-auto scrollbar-hide"
             >
-              {categories.map((cat) => (
+              {allCategories.map((cat) => (
                 <button
                   key={cat.id}
                   onClick={() => {
@@ -359,6 +391,7 @@ function GalleryPage() {
                   {cat.label}
                 </button>
               ))}
+
             </div>
 
             {/* Right arrow */}

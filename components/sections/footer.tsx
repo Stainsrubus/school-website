@@ -62,11 +62,12 @@ export default function Footer() {
                   src="/st_pius/LOGO-St-pius.png"
                   alt="St. Pius X Logo"
                   className="h-16 w-auto"
+                  data-cms-src="nav:logo:url"
                 />
 <span className="text-xl sm:text-2xl md:text-3xl font-bold text-indigo-950 tracking-tight" data-cms="st-pius-hero:headline">St. Pius X High School</span>
               </Link>
               <p className="mt-5 text-gray-700 leading-relaxed text-base" data-cms="footer:about_description">
-                St. Pius X High School has been dedicated to Excellence in Education, Character Building, and Holistic Development since 1975. Our mission is to be a catalyst in unlocking every student's potential and fostering their intellectual, creative, and spiritual capabilities to prepare them to succeed in a challenging world of tomorrow.
+                St. Pius X High School has been dedicated to Excellence in Education, Character Building, and Holistic Development since 1970. Our mission is to be a catalyst in unlocking every student's potential and fostering their intellectual, creative, and spiritual capabilities to prepare them to succeed in a challenging world of tomorrow.
               </p>
             </div>
 

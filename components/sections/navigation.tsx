@@ -36,7 +36,7 @@ export default function Navigation() {
           {/* Logo */}
           <div className="flex-shrink-0">
             <Link to="/" onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}>
-              <img src="/st_pius/LOGO-St-pius.png" className="h-14 sm:h-20" alt="St. Pius X Logo" data-cms="nav:logo:alt" />
+              <img src="/st_pius/LOGO-St-pius.png" className="h-14 sm:h-20" alt="St. Pius X Logo" data-cms-src="nav:logo:url" />
             </Link>
           </div>
 
