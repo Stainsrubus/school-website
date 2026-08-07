@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from 'react';
+﻿import React, { useState, useEffect, useRef } from 'react';
 import {
   Users,
   GraduationCap,
@@ -123,7 +123,7 @@ const AboutPage: React.FC = () => {
       name: "Science & Innovation Labs",
       description: "State-of-the-art laboratories equipped with modern technology for physics, chemistry, biology, and robotics. Features include 3D printers and VR learning stations.",
       icon: <Brain className="w-6 h-6" />,
-      image: "/st_pius/IMG_8389.JPG",
+      image: "https://schoolpress-cms.creoleaptech.workers.dev/api/assets/st-pius/IMG_8389.JPG",
       clipPath: "polygon(0% 0%, 100% 0%, 100% 85%, 0% 100%)",
       cmsKey: "about:facility_0"
     },
@@ -132,7 +132,7 @@ const AboutPage: React.FC = () => {
       name: "ICT Labs",
       description: "Advanced computer laboratories with latest hardware and software. Equipped with high-speed internet, coding platforms, and digital learning tools for technology education and innovation.",
       icon: <Monitor className="w-6 h-6" />,
-      image: "/st_pius/ict.JPG",
+      image: "https://schoolpress-cms.creoleaptech.workers.dev/api/assets/st-pius/ict.JPG",
       clipPath: "polygon(0% 15%, 100% 0%, 100% 100%, 0% 85%)",
       cmsKey: "about:facility_1"
     },
@@ -141,7 +141,7 @@ const AboutPage: React.FC = () => {
       name: "Library",
       description: "A vast collection of over 15,000 books, digital resources, e-journals, and quiet study spaces. Features reading rooms, research zones, and a digital library with online databases.",
       icon: <BookOpen className="w-6 h-6" />,
-      image: "/st_pius/library.JPG",
+      image: "https://schoolpress-cms.creoleaptech.workers.dev/api/assets/st-pius/library.JPG",
       clipPath: "polygon(0% 0%, 100% 15%, 100% 100%, 0% 85%)",
       cmsKey: "about:facility_2"
     },
@@ -150,7 +150,7 @@ const AboutPage: React.FC = () => {
       name: "Smart Classrooms",
       description: "Technology-integrated learning spaces with interactive whiteboards, projectors, and audio-visual systems. Enables digital content delivery and collaborative learning experiences.",
       icon: <Laptop className="w-6 h-6" />,
-      image: "/st_pius/smart.JPG",
+      image: "https://schoolpress-cms.creoleaptech.workers.dev/api/assets/st-pius/smart.JPG",
       clipPath: "polygon(0% 15%, 100% 0%, 100% 85%, 0% 100%)",
       cmsKey: "about:facility_3"
     },
@@ -159,7 +159,7 @@ const AboutPage: React.FC = () => {
       name: "Cultural Auditorium",
       description: "A magnificent 500-seat auditorium with professional lighting, sound systems, and stage facilities. Hosts cultural programs, annual functions, drama, music concerts and inter-school competitions.",
       icon: <Music className="w-6 h-6" />,
-      image: "/st_pius/culturals3.jpeg",
+      image: "https://schoolpress-cms.creoleaptech.workers.dev/api/assets/st-pius/culturals3.jpeg",
       clipPath: "polygon(0% 0%, 100% 15%, 100% 100%, 0% 85%)",
       cmsKey: "about:facility_4"
     },
@@ -168,7 +168,7 @@ const AboutPage: React.FC = () => {
       name: "Arts & Music Studios",
       description: "Dedicated spaces for visual arts, music practice, and performing arts. Equipped with instruments, art supplies, practice rooms, and recording facilities to nurture creative talents.",
       icon: <Palette className="w-6 h-6" />,
-      image: "/st_pius/art2.jpeg",
+      image: "https://schoolpress-cms.creoleaptech.workers.dev/api/assets/st-pius/art2.jpeg",
       clipPath: "polygon(0% 15%, 100% 0%, 100% 100%, 0% 85%)",
       cmsKey: "about:facility_5"
     },
@@ -177,7 +177,7 @@ const AboutPage: React.FC = () => {
       name: "Sports & Fitness Complex",
       description: "Comprehensive sports facilities including football, basketball, tennis, badminton courts, running tracks, kabaddi, cricket grounds. Indoor games like table tennis, carrom, and chess help develop teamwork and well-balanced individuals.",
       icon: <Activity className="w-6 h-6" />,
-      image: "/st_pius/sport1.jpg",
+      image: "https://schoolpress-cms.creoleaptech.workers.dev/api/assets/st-pius/sport1.jpg",
       clipPath: "polygon(0% 15%, 100% 0%, 100% 100%, 0% 85%)",
       cmsKey: "about:facility_6"
     },
@@ -186,7 +186,7 @@ const AboutPage: React.FC = () => {
       name: "Cafeteria & Dining Hall",
       description: "Spacious, hygienic dining facility serving nutritious meals prepared under strict quality standards. Offers diverse menu options catering to different dietary requirements and preferences.",
       icon: <UtensilsCrossed className="w-6 h-6" />,
-      image: "/st_pius/culturals4.jpeg",
+      image: "https://schoolpress-cms.creoleaptech.workers.dev/api/assets/st-pius/culturals4.jpeg",
       clipPath: "polygon(0% 0%, 100% 15%, 100% 100%, 0% 85%)",
       cmsKey: "about:facility_7"
     }
@@ -492,7 +492,7 @@ const AboutPage: React.FC = () => {
                     {/* Photo Container */}
                     <div className="relative aspect-[3/4] rounded-[2rem] overflow-hidden mb-6 bg-gradient-to-br from-blue-100 to-amber-100">
                       <img
-                        src="/st_pius/principal.JPG"
+                        src="https://schoolpress-cms.creoleaptech.workers.dev/api/assets/st-pius/principal.JPG"
                         alt="Principal"
                         data-cms-src="about:principal:photo"
                         className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"

@@ -47,7 +47,7 @@ export function useCmsCollection<T>(
       try {
         const res = await fetch(
           `${cmsOrigin()}/api/content?school=${encodeURIComponent(slug)}`,
-          { headers: { 'X-Schoolpress-Key': apiKey } }
+          { headers: { 'X-Schoolpress-Key': apiKey }, cache: 'no-store' }
         )
         if (!res.ok) throw new Error(`HTTP ${res.status}`)
         const data = (await res.json()) as {

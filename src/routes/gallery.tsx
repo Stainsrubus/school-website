@@ -1,4 +1,4 @@
-import { createFileRoute } from '@tanstack/react-router'
+﻿import { createFileRoute } from '@tanstack/react-router'
 import { useEffect, useRef, useState } from "react"
 import { Calendar, MapPin, X, ChevronLeft, ChevronRight, ChevronUp, ChevronDown } from "lucide-react"
 import { useCmsCollection, type CmsCollectionEntry } from '../../lib/useCmsCollection'
@@ -16,7 +16,7 @@ const galleryItems = [
     date: "February 15, 2025",
     location: "School Auditorium",
     description: "Cultural performances, awards & vibrant celebrations",
-    image: "/st_pius/culturals.jpg",
+    image: "https://schoolpress-cms.creoleaptech.workers.dev/api/assets/st-pius/culturals.jpg",
   },
   {
     id: 991,
@@ -25,7 +25,7 @@ const galleryItems = [
     date: "February 15, 2025",
     location: "School Auditorium",
     description: "Cultural performances, awards & vibrant celebrations",
-    image: "/st_pius/culturals2.jpeg",
+    image: "https://schoolpress-cms.creoleaptech.workers.dev/api/assets/st-pius/culturals2.jpeg",
   },
   {
     id: 992,
@@ -34,7 +34,7 @@ const galleryItems = [
     date: "February 15, 2025",
     location: "School Auditorium",
     description: "Cultural performances, awards & vibrant celebrations",
-    image: "/st_pius/culturals2.jpeg",
+    image: "https://schoolpress-cms.creoleaptech.workers.dev/api/assets/st-pius/culturals2.jpeg",
   },
   {
     id: 993,
@@ -43,55 +43,55 @@ const galleryItems = [
     date: "February 15, 2025",
     location: "School Auditorium",
     description: "Cultural performances, awards & vibrant celebrations",
-    image: "/st_pius/culturals3.jpeg",
+    image: "https://schoolpress-cms.creoleaptech.workers.dev/api/assets/st-pius/culturals3.jpeg",
   },
-  { id: 2, category: "first-day", title: "FIRST DAY OF THE SCHOOL", date: "2024-25", location: "School Campus", description: "Welcoming students for the new academic year", image: "/images/gallery/event-first-day-of-the-school-4.png" },
-  { id: 3, category: "first-day", title: "FIRST DAY OF THE SCHOOL", date: "2024-25", location: "School Campus", description: "Welcoming students for the new academic year", image: "/images/gallery/event-first-day-of-the-school-5.png" },
+  { id: 2, category: "first-day", title: "FIRST DAY OF THE SCHOOL", date: "2024-25", location: "School Campus", description: "Welcoming students for the new academic year", image: "https://schoolpress-cms.creoleaptech.workers.dev/api/assets/school-website/images/gallery/event-first-day-of-the-school-4.png" },
+  { id: 3, category: "first-day", title: "FIRST DAY OF THE SCHOOL", date: "2024-25", location: "School Campus", description: "Welcoming students for the new academic year", image: "https://schoolpress-cms.creoleaptech.workers.dev/api/assets/school-website/images/gallery/event-first-day-of-the-school-5.png" },
 
-  { id: 4, category: "investiture", title: "INVESTITURE CEREMONY", date: "2024-25", location: "School Ground", description: "Swearing-in of the new student council", image: "/images/gallery/event-investiture-ceremony-6.jpeg" },
-  { id: 5, category: "investiture", title: "INVESTITURE CEREMONY", date: "2024-25", location: "School Ground", description: "Swearing-in of the new student council", image: "/images/gallery/event-investiture-ceremony-7.jpeg" },
-  { id: 6, category: "investiture", title: "INVESTITURE CEREMONY", date: "2024-25", location: "School Ground", description: "Swearing-in of the new student council", image: "/images/gallery/event-investiture-ceremony-8.jpeg" },
+  { id: 4, category: "investiture", title: "INVESTITURE CEREMONY", date: "2024-25", location: "School Ground", description: "Swearing-in of the new student council", image: "https://schoolpress-cms.creoleaptech.workers.dev/api/assets/school-website/images/gallery/event-investiture-ceremony-6.jpeg" },
+  { id: 5, category: "investiture", title: "INVESTITURE CEREMONY", date: "2024-25", location: "School Ground", description: "Swearing-in of the new student council", image: "https://schoolpress-cms.creoleaptech.workers.dev/api/assets/school-website/images/gallery/event-investiture-ceremony-7.jpeg" },
+  { id: 6, category: "investiture", title: "INVESTITURE CEREMONY", date: "2024-25", location: "School Ground", description: "Swearing-in of the new student council", image: "https://schoolpress-cms.creoleaptech.workers.dev/api/assets/school-website/images/gallery/event-investiture-ceremony-8.jpeg" },
 
-  { id: 7, category: "yoga-day", title: "INTERNATIONAL YOGA DAY", date: "2024-25", location: "School Hall", description: "Promoting health and mindfulness", image: "/images/gallery/event-international-yoga-day-9.jpeg" },
-  { id: 8, category: "yoga-day", title: "INTERNATIONAL YOGA DAY", date: "2024-25", location: "School Hall", description: "Promoting health and mindfulness", image: "/images/gallery/event-international-yoga-day-10.jpeg" },
-  { id: 9, category: "yoga-day", title: "INTERNATIONAL YOGA DAY", date: "2024-25", location: "School Hall", description: "Promoting health and mindfulness", image: "/images/gallery/event-international-yoga-day-11.png" },
+  { id: 7, category: "yoga-day", title: "INTERNATIONAL YOGA DAY", date: "2024-25", location: "School Hall", description: "Promoting health and mindfulness", image: "https://schoolpress-cms.creoleaptech.workers.dev/api/assets/school-website/images/gallery/event-international-yoga-day-9.jpeg" },
+  { id: 8, category: "yoga-day", title: "INTERNATIONAL YOGA DAY", date: "2024-25", location: "School Hall", description: "Promoting health and mindfulness", image: "https://schoolpress-cms.creoleaptech.workers.dev/api/assets/school-website/images/gallery/event-international-yoga-day-10.jpeg" },
+  { id: 9, category: "yoga-day", title: "INTERNATIONAL YOGA DAY", date: "2024-25", location: "School Hall", description: "Promoting health and mindfulness", image: "https://schoolpress-cms.creoleaptech.workers.dev/api/assets/school-website/images/gallery/event-international-yoga-day-11.png" },
 
-  { id: 10, category: "english-week", title: "ENGLISH ENHANCEMENT WEEK", date: "2024-25", location: "Classrooms", description: "Activities to boost English language skills", image: "/images/gallery/event-english-enhancement-week-12.png" },
-  { id: 11, category: "english-week", title: "ENGLISH ENHANCEMENT WEEK", date: "2024-25", location: "Classrooms", description: "Activities to boost English language skills", image: "/images/gallery/event-english-enhancement-week-13.jpeg" },
-  { id: 12, category: "english-week", title: "ENGLISH ENHANCEMENT WEEK", date: "2024-25", location: "Classrooms", description: "Activities to boost English language skills", image: "/images/gallery/event-english-enhancement-week-14.jpeg" },
+  { id: 10, category: "english-week", title: "ENGLISH ENHANCEMENT WEEK", date: "2024-25", location: "Classrooms", description: "Activities to boost English language skills", image: "https://schoolpress-cms.creoleaptech.workers.dev/api/assets/school-website/images/gallery/event-english-enhancement-week-12.png" },
+  { id: 11, category: "english-week", title: "ENGLISH ENHANCEMENT WEEK", date: "2024-25", location: "Classrooms", description: "Activities to boost English language skills", image: "https://schoolpress-cms.creoleaptech.workers.dev/api/assets/school-website/images/gallery/event-english-enhancement-week-13.jpeg" },
+  { id: 12, category: "english-week", title: "ENGLISH ENHANCEMENT WEEK", date: "2024-25", location: "Classrooms", description: "Activities to boost English language skills", image: "https://schoolpress-cms.creoleaptech.workers.dev/api/assets/school-website/images/gallery/event-english-enhancement-week-14.jpeg" },
 
-  { id: 13, category: "enactment-speech", title: "ENACTMENT & SPEECH (STD 5)", date: "2024-25", location: "Classrooms", description: "Showcasing speaking talents", image: "/images/gallery/event-enactment-and-speech-competition-for-std-5th-15.jpeg" },
-  { id: 14, category: "enactment-speech", title: "ENACTMENT & SPEECH (STD 5)", date: "2024-25", location: "Classrooms", description: "Showcasing speaking talents", image: "/images/gallery/event-enactment-and-speech-competition-for-std-5th-16.jpeg" },
-  { id: 15, category: "enactment-speech", title: "ENACTMENT & SPEECH (STD 5)", date: "2024-25", location: "Classrooms", description: "Showcasing speaking talents", image: "/images/gallery/event-enactment-and-speech-competition-for-std-5th-17.jpeg" },
+  { id: 13, category: "enactment-speech", title: "ENACTMENT & SPEECH (STD 5)", date: "2024-25", location: "Classrooms", description: "Showcasing speaking talents", image: "https://schoolpress-cms.creoleaptech.workers.dev/api/assets/school-website/images/gallery/event-enactment-and-speech-competition-for-std-5th-15.jpeg" },
+  { id: 14, category: "enactment-speech", title: "ENACTMENT & SPEECH (STD 5)", date: "2024-25", location: "Classrooms", description: "Showcasing speaking talents", image: "https://schoolpress-cms.creoleaptech.workers.dev/api/assets/school-website/images/gallery/event-enactment-and-speech-competition-for-std-5th-16.jpeg" },
+  { id: 15, category: "enactment-speech", title: "ENACTMENT & SPEECH (STD 5)", date: "2024-25", location: "Classrooms", description: "Showcasing speaking talents", image: "https://schoolpress-cms.creoleaptech.workers.dev/api/assets/school-website/images/gallery/event-enactment-and-speech-competition-for-std-5th-17.jpeg" },
 
-  { id: 16, category: "choral-recitation", title: "CHORAL RECITATION (STD 6)", date: "2024-25", location: "Auditorium", description: "Group poetry recitation event", image: "/images/gallery/event-choral-recitation-competition-for-std-6th-18.jpeg" },
-  { id: 17, category: "choral-recitation", title: "CHORAL RECITATION (STD 6)", date: "2024-25", location: "Auditorium", description: "Group poetry recitation event", image: "/images/gallery/event-choral-recitation-competition-for-std-6th-19.jpeg" },
+  { id: 16, category: "choral-recitation", title: "CHORAL RECITATION (STD 6)", date: "2024-25", location: "Auditorium", description: "Group poetry recitation event", image: "https://schoolpress-cms.creoleaptech.workers.dev/api/assets/school-website/images/gallery/event-choral-recitation-competition-for-std-6th-18.jpeg" },
+  { id: 17, category: "choral-recitation", title: "CHORAL RECITATION (STD 6)", date: "2024-25", location: "Auditorium", description: "Group poetry recitation event", image: "https://schoolpress-cms.creoleaptech.workers.dev/api/assets/school-website/images/gallery/event-choral-recitation-competition-for-std-6th-19.jpeg" },
 
-  { id: 18, category: "speech-personalities", title: "SPEECH BY GREAT PERSONALITIES", date: "2024-25", location: "Auditorium", description: "Inspirational talks for students", image: "/images/gallery/event-speech-by-great-personalites-for-std-7th-and-8th-20.jpeg" },
-  { id: 19, category: "speech-personalities", title: "SPEECH BY GREAT PERSONALITIES", date: "2024-25", location: "Auditorium", description: "Inspirational talks for students", image: "/images/gallery/event-speech-by-great-personalites-for-std-7th-and-8th-21.jpeg" },
-  { id: 20, category: "speech-personalities", title: "SPEECH BY GREAT PERSONALITIES", date: "2024-25", location: "Auditorium", description: "Inspirational talks for students", image: "/images/gallery/event-speech-by-great-personalites-for-std-7th-and-8th-22.jpeg" },
+  { id: 18, category: "speech-personalities", title: "SPEECH BY GREAT PERSONALITIES", date: "2024-25", location: "Auditorium", description: "Inspirational talks for students", image: "https://schoolpress-cms.creoleaptech.workers.dev/api/assets/school-website/images/gallery/event-speech-by-great-personalites-for-std-7th-and-8th-20.jpeg" },
+  { id: 19, category: "speech-personalities", title: "SPEECH BY GREAT PERSONALITIES", date: "2024-25", location: "Auditorium", description: "Inspirational talks for students", image: "https://schoolpress-cms.creoleaptech.workers.dev/api/assets/school-website/images/gallery/event-speech-by-great-personalites-for-std-7th-and-8th-21.jpeg" },
+  { id: 20, category: "speech-personalities", title: "SPEECH BY GREAT PERSONALITIES", date: "2024-25", location: "Auditorium", description: "Inspirational talks for students", image: "https://schoolpress-cms.creoleaptech.workers.dev/api/assets/school-website/images/gallery/event-speech-by-great-personalites-for-std-7th-and-8th-22.jpeg" },
 
-  { id: 21, category: "spell-bee", title: "SPELL BEE COMPETITION", date: "2024-25", location: "Classroom", description: "Testing vocabulary and spelling", image: "/images/gallery/event-spell-bee-comeptition-for-std-9th-23.jpeg" },
-  { id: 22, category: "spell-bee", title: "SPELL BEE COMPETITION", date: "2024-25", location: "Classroom", description: "Testing vocabulary and spelling", image: "/images/gallery/event-spell-bee-comeptition-for-std-9th-24.jpeg" },
+  { id: 21, category: "spell-bee", title: "SPELL BEE COMPETITION", date: "2024-25", location: "Classroom", description: "Testing vocabulary and spelling", image: "https://schoolpress-cms.creoleaptech.workers.dev/api/assets/school-website/images/gallery/event-spell-bee-comeptition-for-std-9th-23.jpeg" },
+  { id: 22, category: "spell-bee", title: "SPELL BEE COMPETITION", date: "2024-25", location: "Classroom", description: "Testing vocabulary and spelling", image: "https://schoolpress-cms.creoleaptech.workers.dev/api/assets/school-website/images/gallery/event-spell-bee-comeptition-for-std-9th-24.jpeg" },
 
-  { id: 23, category: "declamation", title: "DECLAMATION CONTEST", date: "2024-25", location: "Auditorium", description: "Powerful speech delivery", image: "/images/gallery/event-declamation-contest-for-std-9th-and-10th-25.jpeg" },
+  { id: 23, category: "declamation", title: "DECLAMATION CONTEST", date: "2024-25", location: "Auditorium", description: "Powerful speech delivery", image: "https://schoolpress-cms.creoleaptech.workers.dev/api/assets/school-website/images/gallery/event-declamation-contest-for-std-9th-and-10th-25.jpeg" },
 
-  { id: 24, category: "solo-singing", title: "SOLO-SINGING COMPETITION", date: "2024-25", location: "Auditorium", description: "Where Melody Meets Passion", image: "/images/gallery/event-solo-singing-competition-where-melody-meets-passion-26.png" },
-  { id: 25, category: "solo-singing", title: "SOLO-SINGING COMPETITION", date: "2024-25", location: "Auditorium", description: "Where Melody Meets Passion", image: "/images/gallery/event-solo-singing-competition-where-melody-meets-passion-27.png" },
+  { id: 24, category: "solo-singing", title: "SOLO-SINGING COMPETITION", date: "2024-25", location: "Auditorium", description: "Where Melody Meets Passion", image: "https://schoolpress-cms.creoleaptech.workers.dev/api/assets/school-website/images/gallery/event-solo-singing-competition-where-melody-meets-passion-26.png" },
+  { id: 25, category: "solo-singing", title: "SOLO-SINGING COMPETITION", date: "2024-25", location: "Auditorium", description: "Where Melody Meets Passion", image: "https://schoolpress-cms.creoleaptech.workers.dev/api/assets/school-website/images/gallery/event-solo-singing-competition-where-melody-meets-passion-27.png" },
 
-  { id: 26, category: "instrumental", title: "INSTRUMENTAL COMPETITION", date: "2024-25", location: "Auditorium", description: "Strings of Talent", image: "/images/gallery/event-instrumental-competition-strings-of-talent-28.png" },
-  { id: 27, category: "instrumental", title: "INSTRUMENTAL COMPETITION", date: "2024-25", location: "Auditorium", description: "Strings of Talent", image: "/images/gallery/event-instrumental-competition-strings-of-talent-29.jpeg" },
-  { id: 28, category: "instrumental", title: "INSTRUMENTAL COMPETITION", date: "2024-25", location: "Auditorium", description: "Strings of Talent", image: "/images/gallery/event-instrumental-competition-strings-of-talent-30.jpeg" },
+  { id: 26, category: "instrumental", title: "INSTRUMENTAL COMPETITION", date: "2024-25", location: "Auditorium", description: "Strings of Talent", image: "https://schoolpress-cms.creoleaptech.workers.dev/api/assets/school-website/images/gallery/event-instrumental-competition-strings-of-talent-28.png" },
+  { id: 27, category: "instrumental", title: "INSTRUMENTAL COMPETITION", date: "2024-25", location: "Auditorium", description: "Strings of Talent", image: "https://schoolpress-cms.creoleaptech.workers.dev/api/assets/school-website/images/gallery/event-instrumental-competition-strings-of-talent-29.jpeg" },
+  { id: 28, category: "instrumental", title: "INSTRUMENTAL COMPETITION", date: "2024-25", location: "Auditorium", description: "Strings of Talent", image: "https://schoolpress-cms.creoleaptech.workers.dev/api/assets/school-website/images/gallery/event-instrumental-competition-strings-of-talent-30.jpeg" },
 
-  { id: 29, category: "hindi-diwas", title: "HINDI DIWAS CELEBRATION", date: "2024-25", location: "Auditorium", description: "हमारी भाषा हमारा अभिमान", image: "/images/gallery/event--31.jpeg" },
-  { id: 30, category: "hindi-diwas", title: "HINDI DIWAS CELEBRATION", date: "2024-25", location: "Auditorium", description: "हमारी भाषा हमारा अभिमान", image: "/images/gallery/event--32.png" },
-  { id: 31, category: "hindi-diwas", title: "HINDI DIWAS CELEBRATION", date: "2024-25", location: "Auditorium", description: "हमारी भाषा हमारा अभिमान", image: "/images/gallery/event--33.png" },
+  { id: 29, category: "hindi-diwas", title: "HINDI DIWAS CELEBRATION", date: "2024-25", location: "Auditorium", description: "हमारी भाषा हमारा अभिमान", image: "https://schoolpress-cms.creoleaptech.workers.dev/api/assets/school-website/images/gallery/event--31.jpeg" },
+  { id: 30, category: "hindi-diwas", title: "HINDI DIWAS CELEBRATION", date: "2024-25", location: "Auditorium", description: "हमारी भाषा हमारा अभिमान", image: "https://schoolpress-cms.creoleaptech.workers.dev/api/assets/school-website/images/gallery/event--32.png" },
+  { id: 31, category: "hindi-diwas", title: "HINDI DIWAS CELEBRATION", date: "2024-25", location: "Auditorium", description: "हमारी भाषा हमारा अभिमान", image: "https://schoolpress-cms.creoleaptech.workers.dev/api/assets/school-website/images/gallery/event--33.png" },
 
-  { id: 32, category: "marathi-elocution", title: "MARATHI ELOCUTION", date: "2024-25", location: "Auditorium", description: "Expressing thoughts in Marathi", image: "/images/gallery/event-marathi-elocution-competition-34.jpeg" },
-  { id: 33, category: "marathi-elocution", title: "MARATHI ELOCUTION", date: "2024-25", location: "Auditorium", description: "Expressing thoughts in Marathi", image: "/images/gallery/event-marathi-elocution-competition-35.jpeg" },
-  { id: 34, category: "marathi-elocution", title: "MARATHI ELOCUTION", date: "2024-25", location: "Auditorium", description: "Expressing thoughts in Marathi", image: "/images/gallery/event-marathi-elocution-competition-36.jpeg" },
-  { id: 35, category: "marathi-elocution", title: "MARATHI ELOCUTION", date: "2024-25", location: "Auditorium", description: "Expressing thoughts in Marathi", image: "/images/gallery/event-marathi-elocution-competition-37.jpeg" },
-  { id: 36, category: "marathi-elocution", title: "MARATHI ELOCUTION", date: "2024-25", location: "Auditorium", description: "Expressing thoughts in Marathi", image: "/images/gallery/event-marathi-elocution-competition-38.png" },
+  { id: 32, category: "marathi-elocution", title: "MARATHI ELOCUTION", date: "2024-25", location: "Auditorium", description: "Expressing thoughts in Marathi", image: "https://schoolpress-cms.creoleaptech.workers.dev/api/assets/school-website/images/gallery/event-marathi-elocution-competition-34.jpeg" },
+  { id: 33, category: "marathi-elocution", title: "MARATHI ELOCUTION", date: "2024-25", location: "Auditorium", description: "Expressing thoughts in Marathi", image: "https://schoolpress-cms.creoleaptech.workers.dev/api/assets/school-website/images/gallery/event-marathi-elocution-competition-35.jpeg" },
+  { id: 34, category: "marathi-elocution", title: "MARATHI ELOCUTION", date: "2024-25", location: "Auditorium", description: "Expressing thoughts in Marathi", image: "https://schoolpress-cms.creoleaptech.workers.dev/api/assets/school-website/images/gallery/event-marathi-elocution-competition-36.jpeg" },
+  { id: 35, category: "marathi-elocution", title: "MARATHI ELOCUTION", date: "2024-25", location: "Auditorium", description: "Expressing thoughts in Marathi", image: "https://schoolpress-cms.creoleaptech.workers.dev/api/assets/school-website/images/gallery/event-marathi-elocution-competition-37.jpeg" },
+  { id: 36, category: "marathi-elocution", title: "MARATHI ELOCUTION", date: "2024-25", location: "Auditorium", description: "Expressing thoughts in Marathi", image: "https://schoolpress-cms.creoleaptech.workers.dev/api/assets/school-website/images/gallery/event-marathi-elocution-competition-38.png" },
 ];
 
 const categories = [
@@ -137,7 +137,7 @@ function GalleryPage() {
     date: entry.data.date || '',
     location: entry.data.location || '',
     description: entry.data.description || '',
-    image: entry.data.image || '/st_pius/culturals.jpg',
+    image: entry.data.image || 'https://schoolpress-cms.creoleaptech.workers.dev/api/assets/st-pius/culturals.jpg',
   }))
 
 

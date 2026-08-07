@@ -1,4 +1,4 @@
-
+﻿
 import { useState } from "react"
 import { Facebook, Twitter, Instagram, Linkedin, Heart, ArrowUp, Mail } from "lucide-react"
 import { Link } from "@tanstack/react-router"
@@ -59,7 +59,7 @@ export default function Footer() {
             <div>
               <Link to="/" onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })} className="flex items-center gap-3 sm:gap-4 flex-wrap">
                 <img
-                  src="/st_pius/LOGO-St-pius.png"
+                  src="https://schoolpress-cms.creoleaptech.workers.dev/api/assets/st-pius/LOGO-St-pius.png"
                   alt="St. Pius X Logo"
                   className="h-16 w-auto"
                   data-cms-src="nav:logo:url"

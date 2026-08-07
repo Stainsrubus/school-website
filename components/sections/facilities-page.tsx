@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+﻿import React, { useState } from 'react';
 import { ScrollObserver } from "@/components/ui/scroll-observer";
 import { motion } from 'framer-motion';
 import {
@@ -38,7 +38,7 @@ export default function FacilitiesPage() {
             description: "State-of-the-art laboratories equipped with modern technology for physics, chemistry, biology, and robotics. Features include advanced equipment, digital measurement tools, and hands-on discovery stations that make science come alive.",
             features: ["Physics Lab", "Chemistry Lab", "Biology Lab", "Innovation Hub"],
             icon: <Brain className="w-6 h-6" />,
-            image: "/st_pius/science.jpg",
+            image: "https://schoolpress-cms.creoleaptech.workers.dev/api/assets/st-pius/science.jpg",
             color: "from-blue-600 to-indigo-600",
             cmsKey: "facilities:facility_0"
         },
@@ -49,7 +49,7 @@ export default function FacilitiesPage() {
             description: "Advanced computer laboratories with latest hardware and software. Equipped with high-speed internet, coding platforms, and digital learning tools for technology education, digital literacy, and innovation.",
             features: ["High-Speed Internet", "Coding Platforms", "Digital Learning", "Latest Hardware"],
             icon: <Monitor className="w-6 h-6" />,
-            image: "/st_pius/ict.JPG",
+            image: "https://schoolpress-cms.creoleaptech.workers.dev/api/assets/st-pius/ict.JPG",
             color: "from-cyan-500 to-blue-600",
             cmsKey: "facilities:facility_1"
         },
@@ -60,7 +60,7 @@ export default function FacilitiesPage() {
             description: "A vast collection of over 15,000 books, digital resources, e-journals, and quiet study spaces. Features reading rooms, research zones, and a digital library with online databases to foster a love of lifelong learning.",
             features: ["15,000+ Books", "Digital Resources", "Reading Rooms", "Research Zones"],
             icon: <BookOpen className="w-6 h-6" />,
-            image: "/st_pius/library.JPG",
+            image: "https://schoolpress-cms.creoleaptech.workers.dev/api/assets/st-pius/library.JPG",
             color: "from-blue-600 to-cyan-500",
             cmsKey: "facilities:facility_2"
         },
@@ -71,7 +71,7 @@ export default function FacilitiesPage() {
             description: "Technology-integrated learning spaces with interactive whiteboards, projectors, and audio-visual systems. Enables digital content delivery, collaborative learning, and multimedia-rich educational experiences.",
             features: ["Interactive Whiteboards", "Projectors", "Audio-Visual Systems", "Digital Content"],
             icon: <Laptop className="w-6 h-6" />,
-            image: "/st_pius/smart.JPG",
+            image: "https://schoolpress-cms.creoleaptech.workers.dev/api/assets/st-pius/smart.JPG",
             color: "from-indigo-500 to-blue-600",
             cmsKey: "facilities:facility_3"
         },
@@ -82,7 +82,7 @@ export default function FacilitiesPage() {
             description: "A magnificent 500-seat auditorium with professional lighting, sound systems, and stage facilities. Hosts cultural programmes, annual functions, drama productions, music concerts, and inter-school competitions.",
             features: ["500-Seat Capacity", "Professional Sound", "Stage Lighting", "Event Hosting"],
             icon: <Music className="w-6 h-6" />,
-            image: "/st_pius/culturals3.jpeg",
+            image: "https://schoolpress-cms.creoleaptech.workers.dev/api/assets/st-pius/culturals3.jpeg",
             color: "from-blue-500 to-indigo-600",
             cmsKey: "facilities:facility_4"
         },
@@ -93,7 +93,7 @@ export default function FacilitiesPage() {
             description: "Dedicated spaces for visual arts, music practice, and performing arts. Equipped with instruments, art supplies, practice rooms, and recording facilities to nurture creative talents and artistic expression.",
             features: ["Visual Arts Studio", "Music Practice Rooms", "Art Supplies", "Performance Space"],
             icon: <Palette className="w-6 h-6" />,
-            image: "/st_pius/art2.jpeg",
+            image: "https://schoolpress-cms.creoleaptech.workers.dev/api/assets/st-pius/art2.jpeg",
             color: "from-cyan-500 to-blue-500",
             cmsKey: "facilities:facility_5"
         },
@@ -104,7 +104,7 @@ export default function FacilitiesPage() {
             description: "Comprehensive sports facilities including football, basketball, tennis, badminton courts, running tracks, kabaddi and cricket grounds. Indoor games like table tennis, carrom, and chess develop teamwork and balanced individuals.",
             features: ["Football Ground", "Basketball Court", "Cricket Pitch", "Indoor Games"],
             icon: <Activity className="w-6 h-6" />,
-            image: "/st_pius/sport1.jpg",
+            image: "https://schoolpress-cms.creoleaptech.workers.dev/api/assets/st-pius/sport1.jpg",
             color: "from-blue-600 to-cyan-500",
             cmsKey: "facilities:facility_6"
         },
@@ -115,7 +115,7 @@ export default function FacilitiesPage() {
             description: "Spacious, hygienic dining facility serving nutritious meals prepared under strict quality standards. Offers diverse menu options catering to different dietary requirements and preferences.",
             features: ["Hygienic Kitchen", "Nutritious Meals", "Spacious Seating", "Diverse Menu"],
             icon: <UtensilsCrossed className="w-6 h-6" />,
-            image: "/st_pius/culturals4.jpeg",
+            image: "https://schoolpress-cms.creoleaptech.workers.dev/api/assets/st-pius/culturals4.jpeg",
             color: "from-indigo-500 to-blue-500",
             cmsKey: "facilities:facility_7"
         }

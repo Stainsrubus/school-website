@@ -1,0 +1,414 @@
+﻿[
+    {
+        "local":  "/st_pius/art1.jpeg",
+        "r2":  "https://schoolpress-cms.creoleaptech.workers.dev/api/assets/st-pius/art1.jpeg"
+    },
+    {
+        "local":  "/st_pius/art2.jpeg",
+        "r2":  "https://schoolpress-cms.creoleaptech.workers.dev/api/assets/st-pius/art2.jpeg"
+    },
+    {
+        "local":  "/st_pius/art3.jpg",
+        "r2":  "https://schoolpress-cms.creoleaptech.workers.dev/api/assets/st-pius/art3.jpg"
+    },
+    {
+        "local":  "/st_pius/art4.jpg",
+        "r2":  "https://schoolpress-cms.creoleaptech.workers.dev/api/assets/st-pius/art4.jpg"
+    },
+    {
+        "local":  "/st_pius/art5.jpg",
+        "r2":  "https://schoolpress-cms.creoleaptech.workers.dev/api/assets/st-pius/art5.jpg"
+    },
+    {
+        "local":  "/st_pius/AV9A2637.JPG",
+        "r2":  "https://schoolpress-cms.creoleaptech.workers.dev/api/assets/st-pius/AV9A2637.JPG"
+    },
+    {
+        "local":  "/st_pius/AV9A2643.JPG",
+        "r2":  "https://schoolpress-cms.creoleaptech.workers.dev/api/assets/st-pius/AV9A2643.JPG"
+    },
+    {
+        "local":  "/st_pius/AV9A2645.JPG",
+        "r2":  "https://schoolpress-cms.creoleaptech.workers.dev/api/assets/st-pius/AV9A2645.JPG"
+    },
+    {
+        "local":  "/st_pius/AV9A2647.JPG",
+        "r2":  "https://schoolpress-cms.creoleaptech.workers.dev/api/assets/st-pius/AV9A2647.JPG"
+    },
+    {
+        "local":  "/st_pius/AV9A2655.JPG",
+        "r2":  "https://schoolpress-cms.creoleaptech.workers.dev/api/assets/st-pius/AV9A2655.JPG"
+    },
+    {
+        "local":  "/st_pius/AV9A2665.JPG",
+        "r2":  "https://schoolpress-cms.creoleaptech.workers.dev/api/assets/st-pius/AV9A2665.JPG"
+    },
+    {
+        "local":  "/st_pius/AV9A2666.JPG",
+        "r2":  "https://schoolpress-cms.creoleaptech.workers.dev/api/assets/st-pius/AV9A2666.JPG"
+    },
+    {
+        "local":  "/st_pius/AV9A2668.JPG",
+        "r2":  "https://schoolpress-cms.creoleaptech.workers.dev/api/assets/st-pius/AV9A2668.JPG"
+    },
+    {
+        "local":  "/st_pius/AV9A2672.JPG",
+        "r2":  "https://schoolpress-cms.creoleaptech.workers.dev/api/assets/st-pius/AV9A2672.JPG"
+    },
+    {
+        "local":  "/st_pius/AV9A2691.JPG",
+        "r2":  "https://schoolpress-cms.creoleaptech.workers.dev/api/assets/st-pius/AV9A2691.JPG"
+    },
+    {
+        "local":  "/st_pius/AV9A2692.JPG",
+        "r2":  "https://schoolpress-cms.creoleaptech.workers.dev/api/assets/st-pius/AV9A2692.JPG"
+    },
+    {
+        "local":  "/st_pius/AV9A2714.JPG",
+        "r2":  "https://schoolpress-cms.creoleaptech.workers.dev/api/assets/st-pius/AV9A2714.JPG"
+    },
+    {
+        "local":  "/st_pius/AV9A2751 a.jpg",
+        "r2":  "https://schoolpress-cms.creoleaptech.workers.dev/api/assets/st-pius/AV9A2751 a.jpg"
+    },
+    {
+        "local":  "/st_pius/AV9A2757.JPG",
+        "r2":  "https://schoolpress-cms.creoleaptech.workers.dev/api/assets/st-pius/AV9A2757.JPG"
+    },
+    {
+        "local":  "/st_pius/AV9A2758.JPG",
+        "r2":  "https://schoolpress-cms.creoleaptech.workers.dev/api/assets/st-pius/AV9A2758.JPG"
+    },
+    {
+        "local":  "/st_pius/AV9A2761.JPG",
+        "r2":  "https://schoolpress-cms.creoleaptech.workers.dev/api/assets/st-pius/AV9A2761.JPG"
+    },
+    {
+        "local":  "/st_pius/AV9A2764.JPG",
+        "r2":  "https://schoolpress-cms.creoleaptech.workers.dev/api/assets/st-pius/AV9A2764.JPG"
+    },
+    {
+        "local":  "/st_pius/AV9A2766.JPG",
+        "r2":  "https://schoolpress-cms.creoleaptech.workers.dev/api/assets/st-pius/AV9A2766.JPG"
+    },
+    {
+        "local":  "/st_pius/AV9A2903.jpg",
+        "r2":  "https://schoolpress-cms.creoleaptech.workers.dev/api/assets/st-pius/AV9A2903.jpg"
+    },
+    {
+        "local":  "/st_pius/AV9A2906.jpg",
+        "r2":  "https://schoolpress-cms.creoleaptech.workers.dev/api/assets/st-pius/AV9A2906.jpg"
+    },
+    {
+        "local":  "/st_pius/AV9A2921.JPG",
+        "r2":  "https://schoolpress-cms.creoleaptech.workers.dev/api/assets/st-pius/AV9A2921.JPG"
+    },
+    {
+        "local":  "/st_pius/AV9A2926.JPG",
+        "r2":  "https://schoolpress-cms.creoleaptech.workers.dev/api/assets/st-pius/AV9A2926.JPG"
+    },
+    {
+        "local":  "/st_pius/childrens.jpg",
+        "r2":  "https://schoolpress-cms.creoleaptech.workers.dev/api/assets/st-pius/childrens.jpg"
+    },
+    {
+        "local":  "/st_pius/culturals.jpg",
+        "r2":  "https://schoolpress-cms.creoleaptech.workers.dev/api/assets/st-pius/culturals.jpg"
+    },
+    {
+        "local":  "/st_pius/culturals2.jpeg",
+        "r2":  "https://schoolpress-cms.creoleaptech.workers.dev/api/assets/st-pius/culturals2.jpeg"
+    },
+    {
+        "local":  "/st_pius/culturals2.jpg",
+        "r2":  "https://schoolpress-cms.creoleaptech.workers.dev/api/assets/st-pius/culturals2.jpg"
+    },
+    {
+        "local":  "/st_pius/culturals3.jpeg",
+        "r2":  "https://schoolpress-cms.creoleaptech.workers.dev/api/assets/st-pius/culturals3.jpeg"
+    },
+    {
+        "local":  "/st_pius/culturals4.jpeg",
+        "r2":  "https://schoolpress-cms.creoleaptech.workers.dev/api/assets/st-pius/culturals4.jpeg"
+    },
+    {
+        "local":  "/st_pius/devotional.jpg",
+        "r2":  "https://schoolpress-cms.creoleaptech.workers.dev/api/assets/st-pius/devotional.jpg"
+    },
+    {
+        "local":  "/st_pius/event1.jpeg",
+        "r2":  "https://schoolpress-cms.creoleaptech.workers.dev/api/assets/st-pius/event1.jpeg"
+    },
+    {
+        "local":  "/st_pius/event3.jpeg",
+        "r2":  "https://schoolpress-cms.creoleaptech.workers.dev/api/assets/st-pius/event3.jpeg"
+    },
+    {
+        "local":  "/st_pius/event4.jpeg",
+        "r2":  "https://schoolpress-cms.creoleaptech.workers.dev/api/assets/st-pius/event4.jpeg"
+    },
+    {
+        "local":  "/st_pius/event5.jpeg",
+        "r2":  "https://schoolpress-cms.creoleaptech.workers.dev/api/assets/st-pius/event5.jpeg"
+    },
+    {
+        "local":  "/st_pius/expo.jpg",
+        "r2":  "https://schoolpress-cms.creoleaptech.workers.dev/api/assets/st-pius/expo.jpg"
+    },
+    {
+        "local":  "/st_pius/foodfest.jpeg",
+        "r2":  "https://schoolpress-cms.creoleaptech.workers.dev/api/assets/st-pius/foodfest.jpeg"
+    },
+    {
+        "local":  "/st_pius/graduation.jpg",
+        "r2":  "https://schoolpress-cms.creoleaptech.workers.dev/api/assets/st-pius/graduation.jpg"
+    },
+    {
+        "local":  "/st_pius/group1.jpeg",
+        "r2":  "https://schoolpress-cms.creoleaptech.workers.dev/api/assets/st-pius/group1.jpeg"
+    },
+    {
+        "local":  "/st_pius/group3.jpeg",
+        "r2":  "https://schoolpress-cms.creoleaptech.workers.dev/api/assets/st-pius/group3.jpeg"
+    },
+    {
+        "local":  "/st_pius/hoist.jpeg",
+        "r2":  "https://schoolpress-cms.creoleaptech.workers.dev/api/assets/st-pius/hoist.jpeg"
+    },
+    {
+        "local":  "/st_pius/ict.JPG",
+        "r2":  "https://schoolpress-cms.creoleaptech.workers.dev/api/assets/st-pius/ict.JPG"
+    },
+    {
+        "local":  "/st_pius/IMG_8389.JPG",
+        "r2":  "https://schoolpress-cms.creoleaptech.workers.dev/api/assets/st-pius/IMG_8389.JPG"
+    },
+    {
+        "local":  "/st_pius/leader.jpeg",
+        "r2":  "https://schoolpress-cms.creoleaptech.workers.dev/api/assets/st-pius/leader.jpeg"
+    },
+    {
+        "local":  "/st_pius/leader1.jpeg",
+        "r2":  "https://schoolpress-cms.creoleaptech.workers.dev/api/assets/st-pius/leader1.jpeg"
+    },
+    {
+        "local":  "/st_pius/leader2.jpeg",
+        "r2":  "https://schoolpress-cms.creoleaptech.workers.dev/api/assets/st-pius/leader2.jpeg"
+    },
+    {
+        "local":  "/st_pius/leader3.jpeg",
+        "r2":  "https://schoolpress-cms.creoleaptech.workers.dev/api/assets/st-pius/leader3.jpeg"
+    },
+    {
+        "local":  "/st_pius/leadership.jpeg",
+        "r2":  "https://schoolpress-cms.creoleaptech.workers.dev/api/assets/st-pius/leadership.jpeg"
+    },
+    {
+        "local":  "/st_pius/library.JPG",
+        "r2":  "https://schoolpress-cms.creoleaptech.workers.dev/api/assets/st-pius/library.JPG"
+    },
+    {
+        "local":  "/st_pius/LOGO-St-pius.png",
+        "r2":  "https://schoolpress-cms.creoleaptech.workers.dev/api/assets/st-pius/LOGO-St-pius.png"
+    },
+    {
+        "local":  "/st_pius/Office staff - 01.jpg",
+        "r2":  "https://schoolpress-cms.creoleaptech.workers.dev/api/assets/st-pius/Office staff - 01.jpg"
+    },
+    {
+        "local":  "/st_pius/pride.jpg",
+        "r2":  "https://schoolpress-cms.creoleaptech.workers.dev/api/assets/st-pius/pride.jpg"
+    },
+    {
+        "local":  "/st_pius/pride2.jpg",
+        "r2":  "https://schoolpress-cms.creoleaptech.workers.dev/api/assets/st-pius/pride2.jpg"
+    },
+    {
+        "local":  "/st_pius/principal.JPG",
+        "r2":  "https://schoolpress-cms.creoleaptech.workers.dev/api/assets/st-pius/principal.JPG"
+    },
+    {
+        "local":  "/st_pius/school.jpeg",
+        "r2":  "https://schoolpress-cms.creoleaptech.workers.dev/api/assets/st-pius/school.jpeg"
+    },
+    {
+        "local":  "/st_pius/science.jpg",
+        "r2":  "https://schoolpress-cms.creoleaptech.workers.dev/api/assets/st-pius/science.jpg"
+    },
+    {
+        "local":  "/st_pius/Service staff - 01.jpg",
+        "r2":  "https://schoolpress-cms.creoleaptech.workers.dev/api/assets/st-pius/Service staff - 01.jpg"
+    },
+    {
+        "local":  "/st_pius/smart.JPG",
+        "r2":  "https://schoolpress-cms.creoleaptech.workers.dev/api/assets/st-pius/smart.JPG"
+    },
+    {
+        "local":  "/st_pius/smartLearning.JPG",
+        "r2":  "https://schoolpress-cms.creoleaptech.workers.dev/api/assets/st-pius/smartLearning.JPG"
+    },
+    {
+        "local":  "/st_pius/sport1.jpg",
+        "r2":  "https://schoolpress-cms.creoleaptech.workers.dev/api/assets/st-pius/sport1.jpg"
+    },
+    {
+        "local":  "/st_pius/Teacher -1.jpg",
+        "r2":  "https://schoolpress-cms.creoleaptech.workers.dev/api/assets/st-pius/Teacher -1.jpg"
+    },
+    {
+        "local":  "/st_pius/yoga.jpg",
+        "r2":  "https://schoolpress-cms.creoleaptech.workers.dev/api/assets/st-pius/yoga.jpg"
+    },
+    {
+        "local":  "/images/gallery/event--31.jpeg",
+        "r2":  "https://schoolpress-cms.creoleaptech.workers.dev/api/assets/school-website/images/gallery/event--31.jpeg"
+    },
+    {
+        "local":  "/images/gallery/event--32.png",
+        "r2":  "https://schoolpress-cms.creoleaptech.workers.dev/api/assets/school-website/images/gallery/event--32.png"
+    },
+    {
+        "local":  "/images/gallery/event--33.png",
+        "r2":  "https://schoolpress-cms.creoleaptech.workers.dev/api/assets/school-website/images/gallery/event--33.png"
+    },
+    {
+        "local":  "/images/gallery/event-choral-recitation-competition-for-std-6th-18.jpeg",
+        "r2":  "https://schoolpress-cms.creoleaptech.workers.dev/api/assets/school-website/images/gallery/event-choral-recitation-competition-for-std-6th-18.jpeg"
+    },
+    {
+        "local":  "/images/gallery/event-choral-recitation-competition-for-std-6th-19.jpeg",
+        "r2":  "https://schoolpress-cms.creoleaptech.workers.dev/api/assets/school-website/images/gallery/event-choral-recitation-competition-for-std-6th-19.jpeg"
+    },
+    {
+        "local":  "/images/gallery/event-declamation-contest-for-std-9th-and-10th-25.jpeg",
+        "r2":  "https://schoolpress-cms.creoleaptech.workers.dev/api/assets/school-website/images/gallery/event-declamation-contest-for-std-9th-and-10th-25.jpeg"
+    },
+    {
+        "local":  "/images/gallery/event-enactment-and-speech-competition-for-std-5th-15.jpeg",
+        "r2":  "https://schoolpress-cms.creoleaptech.workers.dev/api/assets/school-website/images/gallery/event-enactment-and-speech-competition-for-std-5th-15.jpeg"
+    },
+    {
+        "local":  "/images/gallery/event-enactment-and-speech-competition-for-std-5th-16.jpeg",
+        "r2":  "https://schoolpress-cms.creoleaptech.workers.dev/api/assets/school-website/images/gallery/event-enactment-and-speech-competition-for-std-5th-16.jpeg"
+    },
+    {
+        "local":  "/images/gallery/event-enactment-and-speech-competition-for-std-5th-17.jpeg",
+        "r2":  "https://schoolpress-cms.creoleaptech.workers.dev/api/assets/school-website/images/gallery/event-enactment-and-speech-competition-for-std-5th-17.jpeg"
+    },
+    {
+        "local":  "/images/gallery/event-english-enhancement-week-12.png",
+        "r2":  "https://schoolpress-cms.creoleaptech.workers.dev/api/assets/school-website/images/gallery/event-english-enhancement-week-12.png"
+    },
+    {
+        "local":  "/images/gallery/event-english-enhancement-week-13.jpeg",
+        "r2":  "https://schoolpress-cms.creoleaptech.workers.dev/api/assets/school-website/images/gallery/event-english-enhancement-week-13.jpeg"
+    },
+    {
+        "local":  "/images/gallery/event-english-enhancement-week-14.jpeg",
+        "r2":  "https://schoolpress-cms.creoleaptech.workers.dev/api/assets/school-website/images/gallery/event-english-enhancement-week-14.jpeg"
+    },
+    {
+        "local":  "/images/gallery/event-first-day-of-the-school-4.png",
+        "r2":  "https://schoolpress-cms.creoleaptech.workers.dev/api/assets/school-website/images/gallery/event-first-day-of-the-school-4.png"
+    },
+    {
+        "local":  "/images/gallery/event-first-day-of-the-school-5.png",
+        "r2":  "https://schoolpress-cms.creoleaptech.workers.dev/api/assets/school-website/images/gallery/event-first-day-of-the-school-5.png"
+    },
+    {
+        "local":  "/images/gallery/event-general-1.jpeg",
+        "r2":  "https://schoolpress-cms.creoleaptech.workers.dev/api/assets/school-website/images/gallery/event-general-1.jpeg"
+    },
+    {
+        "local":  "/images/gallery/event-general-2.jpeg",
+        "r2":  "https://schoolpress-cms.creoleaptech.workers.dev/api/assets/school-website/images/gallery/event-general-2.jpeg"
+    },
+    {
+        "local":  "/images/gallery/event-general-3.jpeg",
+        "r2":  "https://schoolpress-cms.creoleaptech.workers.dev/api/assets/school-website/images/gallery/event-general-3.jpeg"
+    },
+    {
+        "local":  "/images/gallery/event-instrumental-competition-strings-of-talent-28.png",
+        "r2":  "https://schoolpress-cms.creoleaptech.workers.dev/api/assets/school-website/images/gallery/event-instrumental-competition-strings-of-talent-28.png"
+    },
+    {
+        "local":  "/images/gallery/event-instrumental-competition-strings-of-talent-29.jpeg",
+        "r2":  "https://schoolpress-cms.creoleaptech.workers.dev/api/assets/school-website/images/gallery/event-instrumental-competition-strings-of-talent-29.jpeg"
+    },
+    {
+        "local":  "/images/gallery/event-instrumental-competition-strings-of-talent-30.jpeg",
+        "r2":  "https://schoolpress-cms.creoleaptech.workers.dev/api/assets/school-website/images/gallery/event-instrumental-competition-strings-of-talent-30.jpeg"
+    },
+    {
+        "local":  "/images/gallery/event-international-yoga-day-10.jpeg",
+        "r2":  "https://schoolpress-cms.creoleaptech.workers.dev/api/assets/school-website/images/gallery/event-international-yoga-day-10.jpeg"
+    },
+    {
+        "local":  "/images/gallery/event-international-yoga-day-11.png",
+        "r2":  "https://schoolpress-cms.creoleaptech.workers.dev/api/assets/school-website/images/gallery/event-international-yoga-day-11.png"
+    },
+    {
+        "local":  "/images/gallery/event-international-yoga-day-9.jpeg",
+        "r2":  "https://schoolpress-cms.creoleaptech.workers.dev/api/assets/school-website/images/gallery/event-international-yoga-day-9.jpeg"
+    },
+    {
+        "local":  "/images/gallery/event-investiture-ceremony-6.jpeg",
+        "r2":  "https://schoolpress-cms.creoleaptech.workers.dev/api/assets/school-website/images/gallery/event-investiture-ceremony-6.jpeg"
+    },
+    {
+        "local":  "/images/gallery/event-investiture-ceremony-7.jpeg",
+        "r2":  "https://schoolpress-cms.creoleaptech.workers.dev/api/assets/school-website/images/gallery/event-investiture-ceremony-7.jpeg"
+    },
+    {
+        "local":  "/images/gallery/event-investiture-ceremony-8.jpeg",
+        "r2":  "https://schoolpress-cms.creoleaptech.workers.dev/api/assets/school-website/images/gallery/event-investiture-ceremony-8.jpeg"
+    },
+    {
+        "local":  "/images/gallery/event-marathi-elocution-competition-34.jpeg",
+        "r2":  "https://schoolpress-cms.creoleaptech.workers.dev/api/assets/school-website/images/gallery/event-marathi-elocution-competition-34.jpeg"
+    },
+    {
+        "local":  "/images/gallery/event-marathi-elocution-competition-35.jpeg",
+        "r2":  "https://schoolpress-cms.creoleaptech.workers.dev/api/assets/school-website/images/gallery/event-marathi-elocution-competition-35.jpeg"
+    },
+    {
+        "local":  "/images/gallery/event-marathi-elocution-competition-36.jpeg",
+        "r2":  "https://schoolpress-cms.creoleaptech.workers.dev/api/assets/school-website/images/gallery/event-marathi-elocution-competition-36.jpeg"
+    },
+    {
+        "local":  "/images/gallery/event-marathi-elocution-competition-37.jpeg",
+        "r2":  "https://schoolpress-cms.creoleaptech.workers.dev/api/assets/school-website/images/gallery/event-marathi-elocution-competition-37.jpeg"
+    },
+    {
+        "local":  "/images/gallery/event-marathi-elocution-competition-38.png",
+        "r2":  "https://schoolpress-cms.creoleaptech.workers.dev/api/assets/school-website/images/gallery/event-marathi-elocution-competition-38.png"
+    },
+    {
+        "local":  "/images/gallery/event-solo-singing-competition-where-melody-meets-passion-26.png",
+        "r2":  "https://schoolpress-cms.creoleaptech.workers.dev/api/assets/school-website/images/gallery/event-solo-singing-competition-where-melody-meets-passion-26.png"
+    },
+    {
+        "local":  "/images/gallery/event-solo-singing-competition-where-melody-meets-passion-27.png",
+        "r2":  "https://schoolpress-cms.creoleaptech.workers.dev/api/assets/school-website/images/gallery/event-solo-singing-competition-where-melody-meets-passion-27.png"
+    },
+    {
+        "local":  "/images/gallery/event-speech-by-great-personalites-for-std-7th-and-8th-20.jpeg",
+        "r2":  "https://schoolpress-cms.creoleaptech.workers.dev/api/assets/school-website/images/gallery/event-speech-by-great-personalites-for-std-7th-and-8th-20.jpeg"
+    },
+    {
+        "local":  "/images/gallery/event-speech-by-great-personalites-for-std-7th-and-8th-21.jpeg",
+        "r2":  "https://schoolpress-cms.creoleaptech.workers.dev/api/assets/school-website/images/gallery/event-speech-by-great-personalites-for-std-7th-and-8th-21.jpeg"
+    },
+    {
+        "local":  "/images/gallery/event-speech-by-great-personalites-for-std-7th-and-8th-22.jpeg",
+        "r2":  "https://schoolpress-cms.creoleaptech.workers.dev/api/assets/school-website/images/gallery/event-speech-by-great-personalites-for-std-7th-and-8th-22.jpeg"
+    },
+    {
+        "local":  "/images/gallery/event-spell-bee-comeptition-for-std-9th-23.jpeg",
+        "r2":  "https://schoolpress-cms.creoleaptech.workers.dev/api/assets/school-website/images/gallery/event-spell-bee-comeptition-for-std-9th-23.jpeg"
+    },
+    {
+        "local":  "/images/gallery/event-spell-bee-comeptition-for-std-9th-24.jpeg",
+        "r2":  "https://schoolpress-cms.creoleaptech.workers.dev/api/assets/school-website/images/gallery/event-spell-bee-comeptition-for-std-9th-24.jpeg"
+    }
+]

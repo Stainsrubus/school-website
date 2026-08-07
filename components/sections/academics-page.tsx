@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+﻿import React, { useState } from 'react';
 import { ScrollObserver } from "@/components/ui/scroll-observer";
 import { motion } from 'framer-motion';
 import {
@@ -38,7 +38,7 @@ export default function AcademicsPage() {
             description: "Building logical thinking and problem-solving skills through applied mathematics, mental math competitions, and real-world problem scenarios.",
             highlights: ["Applied Mathematics", "Math Olympiad Training", "Vedic Mathematics"],
             color: "from-blue-600 to-indigo-600",
-            image: "/st_pius/smartLearning.JPG",
+            image: "https://schoolpress-cms.creoleaptech.workers.dev/api/assets/st-pius/smartLearning.JPG",
             cmsKey: "academics:subject_0"
         },
         {
@@ -47,7 +47,7 @@ export default function AcademicsPage() {
             description: "Hands-on exploration in state-of-the-art labs covering Physics, Chemistry, and Biology with practical experiments and science exhibitions.",
             highlights: ["Practical Lab Sessions", "Science Exhibition", "Innovation Projects"],
             color: "from-cyan-500 to-blue-600",
-            image: "/st_pius/science.jpg",
+            image: "https://schoolpress-cms.creoleaptech.workers.dev/api/assets/st-pius/science.jpg",
             cmsKey: "academics:subject_1"
         },
         {
@@ -56,7 +56,7 @@ export default function AcademicsPage() {
             description: "Mastery of English language skills along with Hindi and Marathi, fostering effective communication and literary appreciation.",
             highlights: ["Creative Writing", "Elocution", "Debate Competitions"],
             color: "from-blue-600 to-cyan-500",
-            image: "/st_pius/culturals3.jpeg",
+            image: "https://schoolpress-cms.creoleaptech.workers.dev/api/assets/st-pius/culturals3.jpeg",
             cmsKey: "academics:subject_2"
         },
         {
@@ -65,7 +65,7 @@ export default function AcademicsPage() {
             description: "Understanding history, geography, civics, and economics through interactive learning methods, field trips, and project-based exploration.",
             highlights: ["Heritage Projects", "Model Parliament", "Geography Expeditions"],
             color: "from-indigo-600 to-blue-500",
-            image: "/st_pius/expo.jpg",
+            image: "https://schoolpress-cms.creoleaptech.workers.dev/api/assets/st-pius/expo.jpg",
             cmsKey: "academics:subject_3"
         },
         {
@@ -74,7 +74,7 @@ export default function AcademicsPage() {
             description: "Digital literacy and coding fundamentals using advanced ICT labs with latest hardware and software platforms for the 21st-century learner.",
             highlights: ["Computer Science", "Coding & Robotics", "Digital Literacy"],
             color: "from-blue-500 to-cyan-400",
-            image: "/st_pius/ict.JPG",
+            image: "https://schoolpress-cms.creoleaptech.workers.dev/api/assets/st-pius/ict.JPG",
             cmsKey: "academics:subject_4"
         },
         {
@@ -83,7 +83,7 @@ export default function AcademicsPage() {
             description: "Nurturing creative talents through visual arts, music, drama, and cultural programs that celebrate artistic expression and cultural heritage.",
             highlights: ["Visual Arts", "Music & Drama", "Pius Fest Cultural Program"],
             color: "from-cyan-500 to-indigo-500",
-            image: "/st_pius/art2.jpeg",
+            image: "https://schoolpress-cms.creoleaptech.workers.dev/api/assets/st-pius/art2.jpeg",
             cmsKey: "academics:subject_5"
         }
     ];
@@ -150,21 +150,21 @@ export default function AcademicsPage() {
     ];
 
     const sslcToppers = [
-        { name: "Arjun Sharma", marks: 489, image: "/st_pius/toppers/sslc_1.jpg" },
-        { name: "Priya Nair", marks: 482, image: "/st_pius/toppers/sslc_2.jpg" },
-        { name: "Rohan Deshmukh", marks: 478, image: "/st_pius/toppers/sslc_3.jpg" },
-        { name: "Sneha Kulkarni", marks: 475, image: "/st_pius/toppers/sslc_4.jpg" },
-        { name: "Aditya Patil", marks: 471, image: "/st_pius/toppers/sslc_5.jpg" },
-        { name: "Meera Joshi", marks: 468, image: "/st_pius/toppers/sslc_6.jpg" },
+        { name: "Arjun Sharma", marks: 489, image: "https://schoolpress-cms.creoleaptech.workers.dev/api/assets/st-pius/leader.jpeg" },
+        { name: "Priya Nair", marks: 482, image: "https://schoolpress-cms.creoleaptech.workers.dev/api/assets/st-pius/leader1.jpeg" },
+        { name: "Rohan Deshmukh", marks: 478, image: "https://schoolpress-cms.creoleaptech.workers.dev/api/assets/st-pius/leader2.jpeg" },
+        { name: "Sneha Kulkarni", marks: 475, image: "https://schoolpress-cms.creoleaptech.workers.dev/api/assets/st-pius/leader3.jpeg" },
+        { name: "Aditya Patil", marks: 471, image: "https://schoolpress-cms.creoleaptech.workers.dev/api/assets/st-pius/leadership.jpeg" },
+        { name: "Meera Joshi", marks: 468, image: "https://schoolpress-cms.creoleaptech.workers.dev/api/assets/st-pius/pride.jpg" },
     ];
 
     const hscToppers = [
-        { name: "Kavitha Menon", marks: 584, image: "/st_pius/toppers/hsc_1.jpg" },
-        { name: "Rahul Iyer", marks: 576, image: "/st_pius/toppers/hsc_2.jpg" },
-        { name: "Ananya Reddy", marks: 571, image: "/st_pius/toppers/hsc_3.jpg" },
-        { name: "Vikram Singh", marks: 568, image: "/st_pius/toppers/hsc_4.jpg" },
-        { name: "Divya Pillai", marks: 562, image: "/st_pius/toppers/hsc_5.jpg" },
-        { name: "Siddharth Das", marks: 558, image: "/st_pius/toppers/hsc_6.jpg" },
+        { name: "Kavitha Menon", marks: 584, image: "https://schoolpress-cms.creoleaptech.workers.dev/api/assets/st-pius/leader.jpeg" },
+        { name: "Rahul Iyer", marks: 576, image: "https://schoolpress-cms.creoleaptech.workers.dev/api/assets/st-pius/leader1.jpeg" },
+        { name: "Ananya Reddy", marks: 571, image: "https://schoolpress-cms.creoleaptech.workers.dev/api/assets/st-pius/leader2.jpeg" },
+        { name: "Vikram Singh", marks: 568, image: "https://schoolpress-cms.creoleaptech.workers.dev/api/assets/st-pius/leader3.jpeg" },
+        { name: "Divya Pillai", marks: 562, image: "https://schoolpress-cms.creoleaptech.workers.dev/api/assets/st-pius/leadership.jpeg" },
+        { name: "Siddharth Das", marks: 558, image: "https://schoolpress-cms.creoleaptech.workers.dev/api/assets/st-pius/pride2.jpg" },
     ];
 
     return (

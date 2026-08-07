@@ -55,7 +55,7 @@ export default function HeroSection() {
           playsInline
           className="absolute inset-0 w-full h-full object-cover"
         >
-          <source src="/hero-video.mp4" type="video/mp4" data-cms-src="st-pius-hero:bg_video" />
+          <source src="https://schoolpress-cms.creoleaptech.workers.dev/api/assets/st-pius/hero-video.mp4" type="video/mp4" data-cms-src="st-pius-hero:bg_video" />
         </video>
         {/* Overlay gradient */}
         <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-black/20 to-black/60" />

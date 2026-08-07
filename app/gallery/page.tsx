@@ -12,7 +12,7 @@ const galleryItems = [
         date: "February 15, 2025",
         location: "School Auditorium",
         description: "Cultural performances, awards & vibrant celebrations",
-        image: "/st_pius/culturals.jpg",
+        image: "https://schoolpress-cms.creoleaptech.workers.dev/api/assets/st-pius/culturals.jpg",
     },
     {
         id: 2,
@@ -21,7 +21,7 @@ const galleryItems = [
         date: "February 15, 2025",
         location: "School Auditorium",
         description: "Cultural performances, awards & vibrant celebrations",
-        image: "/st_pius/culturals2.jpeg",
+        image: "https://schoolpress-cms.creoleaptech.workers.dev/api/assets/st-pius/culturals2.jpeg",
     },
     {
         id: 3,
@@ -30,7 +30,7 @@ const galleryItems = [
         date: "February 15, 2025",
         location: "School Auditorium",
         description: "Cultural performances, awards & vibrant celebrations",
-        image: "/st_pius/culturals2.jpg",
+        image: "https://schoolpress-cms.creoleaptech.workers.dev/api/assets/st-pius/culturals2.jpg",
     },
     {
         id: 4,
@@ -39,7 +39,7 @@ const galleryItems = [
         date: "February 15, 2025",
         location: "School Auditorium",
         description: "Cultural performances, awards & vibrant celebrations",
-        image: "/st_pius/culturals3.jpeg",
+        image: "https://schoolpress-cms.creoleaptech.workers.dev/api/assets/st-pius/culturals3.jpeg",
     },
     {
         id: 5,
@@ -48,7 +48,7 @@ const galleryItems = [
         date: "December 10, 2024",
         location: "School Ground",
         description: "Athletic spirit and team competitions",
-        image: "/st_pius/sport1.JPG",
+        image: "https://schoolpress-cms.creoleaptech.workers.dev/api/assets/st-pius/sport1.jpg",
     },
     {
         id: 6,
@@ -57,7 +57,7 @@ const galleryItems = [
         date: "November 14, 2024",
         location: "School Campus",
         description: "Games, cultural programs & special treats",
-        image: "/st_pius/childrens-day1.jpg", // Changed from generic
+        image: "https://schoolpress-cms.creoleaptech.workers.dev/api/assets/st-pius/childrens.jpg",
     },
     {
         id: 7,
@@ -66,7 +66,7 @@ const galleryItems = [
         date: "October 18, 2024",
         location: "Chennai Science Centre",
         description: "Hands-on science exploration",
-        image: "/st_pius/excursion1.jpg", // Changed from generic
+        image: "https://schoolpress-cms.creoleaptech.workers.dev/api/assets/st-pius/school.jpeg",
     },
     {
         id: 8,
@@ -75,7 +75,7 @@ const galleryItems = [
         date: "October 31, 2024",
         location: "School Premises",
         description: "Rangoli, diyas & eco-friendly festivities",
-        image: "/st_pius/diwali1.jpg", // Changed from generic
+        image: "https://schoolpress-cms.creoleaptech.workers.dev/api/assets/st-pius/culturals4.jpeg",
     },
     {
         id: 9,
@@ -84,7 +84,7 @@ const galleryItems = [
         date: "Ongoing",
         location: "School Laboratories",
         description: "Practical learning in action",
-        image: "/st_pius/science-lab1.jpg", // Changed from generic
+        image: "https://schoolpress-cms.creoleaptech.workers.dev/api/assets/st-pius/science.jpg",
     },
     {
         id: 10,
@@ -93,7 +93,7 @@ const galleryItems = [
         date: "2024 Season",
         location: "Various Venues",
         description: "Inter-school sports events",
-        image: "/st_pius/sports2.jpg", // Changed from generic
+        image: "https://schoolpress-cms.creoleaptech.workers.dev/api/assets/st-pius/pride.jpg",
     },
     {
         id: 11,
@@ -102,7 +102,7 @@ const galleryItems = [
         date: "Throughout the year",
         location: "School Auditorium",
         description: "Dance, music & drama showcases",
-        image: "/st_pius/arts1.jpg", // Changed from generic
+        image: "https://schoolpress-cms.creoleaptech.workers.dev/api/assets/st-pius/art2.jpeg",
     },
     {
         id: 12,
@@ -111,7 +111,7 @@ const galleryItems = [
         date: "Daily Life",
         location: "Classrooms",
         description: "Interactive and joyful learning",
-        image: "/st_pius/classroom1.jpg", // Changed from generic
+        image: "https://schoolpress-cms.creoleaptech.workers.dev/api/assets/st-pius/smart.JPG",
     },
     {
         id: 13,
@@ -120,7 +120,7 @@ const galleryItems = [
         date: "March 25, 2024",
         location: "School Auditorium",
         description: "Celebrating student achievements",
-        image: "/st_pius/graduation1.jpg", // Added new category
+        image: "https://schoolpress-cms.creoleaptech.workers.dev/api/assets/st-pius/graduation.jpg",
     },
     {
         id: 14,
@@ -129,7 +129,7 @@ const galleryItems = [
         date: "December 25, 2024",
         location: "School Premises",
         description: "Christmas carols and celebrations",
-        image: "/st_pius/christmas1.jpg", // Added new item
+        image: "https://schoolpress-cms.creoleaptech.workers.dev/api/assets/st-pius/foodfest.jpeg",
     },
     {
         id: 15,
@@ -138,7 +138,7 @@ const galleryItems = [
         date: "September 5, 2024",
         location: "School Campus",
         description: "Honoring our dedicated teachers",
-        image: "/st_pius/teachers-day1.jpg", // Added new category
+        image: "https://schoolpress-cms.creoleaptech.workers.dev/api/assets/st-pius/Teacher -1.jpg",
     }
 ];
 const categories = [
@@ -282,7 +282,7 @@ export default function GalleryPage() {
                                 transform: `rotate(${i * 15}deg)`,
                             }}
                         >
-                            <img src="/st_pius/art1.jpeg" alt="" />
+                            <img src="https://schoolpress-cms.creoleaptech.workers.dev/api/assets/st-pius/art1.jpeg" alt="" />
                             <div className="absolute inset-2 bg-gradient-to-br from-blue-400/20 to-cyan-400/20 rounded" />
                             <div className="absolute top-2 left-1/2 -translate-x-1/2 w-8 h-1 bg-white/20 rounded" />
                             <div className="absolute bottom-2 left-1/2 -translate-x-1/2 w-6 h-1 bg-white/20 rounded" />

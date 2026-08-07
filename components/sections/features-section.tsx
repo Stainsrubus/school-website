@@ -1,4 +1,4 @@
-
+﻿
 import React, { useState } from 'react'
 import { ScrollObserver } from "@/components/ui/scroll-observer"
 import {
@@ -21,7 +21,7 @@ export default function FeaturesSection() {
       tag: "Technology",
       description: "Equipped with Next-Gen Smart Boards and a state-of-the-art Computer Lab to foster technical literacy from a young age.",
       icon: <Laptop className="w-6 h-6" />,
-      image: "/st_pius/smartLearning.JPG",
+      image: "https://schoolpress-cms.creoleaptech.workers.dev/api/assets/st-pius/smartLearning.JPG",
       color: "from-blue-600 to-cyan-500"
     },
     {
@@ -29,7 +29,7 @@ export default function FeaturesSection() {
       tag: "Leadership",
       description: "Character building through Road Safety Patrol (RSP) and Scouting, instilling discipline and civic responsibility.",
       icon: <Compass className="w-6 h-6" />,
-      image: "/st_pius/leader1.jpeg",
+      image: "https://schoolpress-cms.creoleaptech.workers.dev/api/assets/st-pius/leader1.jpeg",
       color: "from-cyan-500 to-blue-600"
     },
     {
@@ -37,7 +37,7 @@ export default function FeaturesSection() {
       tag: "Physical",
       description: "From inter-school football tournaments to specialized basketball coaching, we nurture the champions of tomorrow.",
       icon: <Trophy className="w-6 h-6" />,
-      image: "/st_pius/sport1.jpg",
+      image: "https://schoolpress-cms.creoleaptech.workers.dev/api/assets/st-pius/sport1.jpg",
       color: "from-blue-600 to-indigo-600"
     },
     {
@@ -45,7 +45,7 @@ export default function FeaturesSection() {
       tag: "Arts",
       description: "Celebrating creativity through the 'Pius Fest', elocution competitions, and a rich performing arts.",
       icon: <Palette className="w-6 h-6" />,
-      image: "/st_pius/art2.jpeg",
+      image: "https://schoolpress-cms.creoleaptech.workers.dev/api/assets/st-pius/art2.jpeg",
       color: "from-indigo-600 to-blue-500"
     }
   ]
