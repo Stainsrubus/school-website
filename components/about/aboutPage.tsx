@@ -79,6 +79,7 @@ interface House {
   color: string;
   colorName: string;
   incharge: string;
+  captain: string;
   cmsKey: string;
 }
 
@@ -128,10 +129,10 @@ const AboutPage: React.FC = () => {
 
   // House System
   const houses: House[] = [
-    { id: 1, name: "Tagore", color: "from-red-500 to-red-700", colorName: "Red", incharge: "Mrs. Sandhya B.", cmsKey: "about:house_0" },
-    { id: 2, name: "Nehru", color: "from-green-500 to-green-700", colorName: "Green", incharge: "Mrs. Mini P. S.", cmsKey: "about:house_1" },
-    { id: 3, name: "Gandhi", color: "from-blue-500 to-blue-700", colorName: "Blue", incharge: "Mrs. Meghana T.", cmsKey: "about:house_2" },
-    { id: 4, name: "Tilak", color: "from-yellow-500 to-yellow-700", colorName: "Yellow", incharge: "Mrs. Ashwini D.", cmsKey: "about:house_3" }
+    { id: 1, name: "Tagore", color: "from-red-500 to-red-700", colorName: "Red", incharge: "Mrs. Sandhya B.", captain: "Tagore House Captain", cmsKey: "about:house_0" },
+    { id: 2, name: "Nehru", color: "from-green-500 to-green-700", colorName: "Green", incharge: "Mrs. Mini P. S.", captain: "Nehru House Captain", cmsKey: "about:house_1" },
+    { id: 3, name: "Gandhi", color: "from-blue-500 to-blue-700", colorName: "Blue", incharge: "Mrs. Meghana T.", captain: "Gandhi House Captain", cmsKey: "about:house_2" },
+    { id: 4, name: "Tilak", color: "from-yellow-500 to-yellow-700", colorName: "Yellow", incharge: "Mrs. Ashwini D.", captain: "Tilak House Captain", cmsKey: "about:house_3" }
   ];
 
   // Facilities
@@ -721,7 +722,7 @@ const AboutPage: React.FC = () => {
 
                     {/* Name & Title */}
                     <div className="relative text-center space-y-2">
-                      <h3 className="text-2xl font-black text-gray-900" data-cms="about:manager_name">Mr. Michael D'Souza</h3>
+                      <h3 className="text-2xl font-black text-gray-900" data-cms="about:manager_name">Rev. Fr. Michael D'Souza</h3>
                       <p className="text-teal-600 font-bold text-sm uppercase tracking-wider" data-cms="about:manager_title">School Manager</p>
                     </div>
 
@@ -764,7 +765,7 @@ const AboutPage: React.FC = () => {
                   {/* Message Body */}
                   <div className="space-y-6 relative z-10">
                     <p className="text-lg text-gray-700 leading-relaxed" data-cms="about:manager_message">
-                      On behalf of the management, I extend a warm welcome to the St. Pius X High School family. We remain steadfast in our commitment to providing a safe, nurturing, and academically enriching environment for every child entrusted to our care.
+                      On behalf of the school management, I warmly welcome you to St. Pius X High School. Rooted in the teachings of Christ and the vision of our patron saint, we strive to form every child entrusted to our care into a person of knowledge, character, and faith. Our dedicated staff works hand in hand with parents to ensure each student grows in wisdom, virtue, and compassion - equipped not only for examinations, but for the journey of life.
                     </p>
 
                     {/* Signature Section */}
@@ -772,7 +773,7 @@ const AboutPage: React.FC = () => {
                       <div>
                         <p className="text-xl font-bold text-gray-900 mb-1">With warm regards,</p>
                         <p className="text-3xl font-black text-transparent bg-clip-text bg-gradient-to-r from-teal-600 to-emerald-600 font-serif" data-cms="about:manager_signature_name">
-                          Mr. Michael D'Souza
+                          Rev. Fr. Michael D'Souza
                         </p>
                         <p className="text-sm text-gray-600 font-semibold mt-1" data-cms="about:manager_signature_title">School Manager</p>
                       </div>
@@ -871,6 +872,10 @@ const AboutPage: React.FC = () => {
                   <div className="border-t dark:border-slate-800 pt-4 mt-4">
                     <p className="text-sm text-slate-500 dark:text-slate-400 text-center mb-1">House Incharge</p>
                     <p className="text-lg font-semibold text-slate-900 dark:text-white text-center" data-cms={`${house.cmsKey}:incharge`}>{house.incharge}</p>
+                  </div>
+                  <div className="border-t dark:border-slate-800 pt-4 mt-4">
+                    <p className="text-sm text-slate-500 dark:text-slate-400 text-center mb-1">House Captain</p>
+                    <p className="text-lg font-semibold text-slate-900 dark:text-white text-center" data-cms={`${house.cmsKey}:captain`}>{house.captain}</p>
                   </div>
                 </div>
               </div>

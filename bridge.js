@@ -158,6 +158,7 @@
       var incoming = res.headers.get('ETag')
       return res.json().then(function (data) {
         if (incoming) etag = incoming.replace(/^W\//, '').replace(/^"|"$/g, '')
+        lastData = data
         var needsDiscovery = Object.keys(data.schema || {}).length === 0
         apply(data)
         syncedAt = Date.now()
@@ -168,6 +169,48 @@
       failed = true
       if (config.dev) console.warn('[SchoolPress] Sync failed:', err.message)
     })
+  }
+
+  // SPA navigation re-mounts sections after the initial sync. Watch the DOM and
+  // re-apply CMS content (and re-sync) whenever new cms elements appear.
+  var lastData = null
+  var domTimer = null
+
+  function newCmsElements(mutations) {
+    var found = []
+    mutations.forEach(function (m) {
+      m.addedNodes.forEach(function (node) {
+        if (!node || node.nodeType !== 1) return
+        if (node.matches && node.matches('[data-cms], [data-cms-src]')) found.push(node)
+        if (node.querySelectorAll) {
+          node.querySelectorAll('[data-cms], [data-cms-src]').forEach(function (el) { found.push(el) })
+        }
+      })
+    })
+    return found
+  }
+
+  function onDomChanged(mutations) {
+    var els = newCmsElements(mutations)
+    if (els.length === 0) return
+    clearTimeout(domTimer)
+    domTimer = setTimeout(function () {
+      var schema = (lastData && lastData.schema) || {}
+      var needsSync = !lastData
+      els.forEach(function (el) {
+        var page = pageOf(el)
+        var key = el.getAttribute('data-cms') || el.getAttribute('data-cms-src') || ''
+        if (schema[page] && schema[page][key] !== undefined) return
+        if (!schema[page] || !schema[page][key]) needsSync = true
+      })
+      if (lastData) apply(lastData)
+      if (needsSync) sync()
+    }, 120)
+  }
+
+  function startObserver() {
+    if (!window.MutationObserver) return
+    new MutationObserver(onDomChanged).observe(document.documentElement, { childList: true, subtree: true })
   }
 
   if (config.dev) {
@@ -187,5 +230,6 @@
     }, 1000)
   }
 
+  startObserver()
   sync()
 })()
