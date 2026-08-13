@@ -19,13 +19,11 @@
     "isolatedModules": true,
     "noEmit": true,
     "jsx": "react-jsx",
-    "baseUrl": ".",
     "paths": {
       "@/*": [
         "./*"
       ]
-    },
-    "ignoreDeprecations": "5.0"
+    }
   },
   "include": [
     "src",
