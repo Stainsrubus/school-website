@@ -73,6 +73,15 @@ interface Facility {
   cmsKey: string;
 }
 
+interface House {
+  id: number;
+  name: string;
+  color: string;
+  colorName: string;
+  incharge: string;
+  cmsKey: string;
+}
+
 const AboutPage: React.FC = () => {
   // Primary and secondary colors
   const primaryColor = "from-blue-600 to-blue-800";
@@ -96,6 +105,7 @@ const AboutPage: React.FC = () => {
   const statsRef = useRef<HTMLDivElement>(null);
   const valuesRef = useRef<HTMLDivElement>(null);
   const leadershipRef = useRef<HTMLDivElement>(null);
+  const houseSystemRef = useRef<HTMLDivElement>(null);
   const facilitiesRef = useRef<HTMLDivElement>(null);
 
   // Core Values
@@ -113,7 +123,16 @@ const AboutPage: React.FC = () => {
     { id: 1, name: "Rev. Fr. John Mathew", position: "Principal & Director", experience: "25 Years Experience", specialty: ["Spiritual Leadership", "Academic Administration"], color: "from-blue-600 to-blue-800", quote: "Education is the kindling of a flame, not the filling of a vessel.", cmsKey: "about:leader_0" },
     { id: 2, name: "Mrs. Susan Rodrigues", position: "Vice Principal", experience: "18 Years Experience", specialty: ["Curriculum Development", "Student Welfare"], color: "from-cyan-500 to-cyan-700", quote: "Every child deserves a champion who believes in them.", cmsKey: "about:leader_1" },
     { id: 3, name: "Mr. Thomas Kurien", position: "Academic Dean", experience: "15 Years Experience", specialty: ["Science Education", "Research Programs"], color: "from-blue-600 to-blue-800", quote: "Learning is not attained by chance, it must be sought with ardor.", cmsKey: "about:leader_2" },
-    { id: 4, name: "Ms. Mary Thomas", position: "Head of Student Affairs", experience: "12 Years Experience", specialty: ["Student Development", "Extra-curricular"], color: "from-cyan-500 to-cyan-700", quote: "The goal of education is not to increase knowledge but to create possibilities.", cmsKey: "about:leader_3" }
+    { id: 4, name: "Ms. Mary Thomas", position: "Head of Student Affairs", experience: "12 Years Experience", specialty: ["Student Development", "Extra-curricular"], color: "from-cyan-500 to-cyan-700", quote: "The goal of education is not to increase knowledge but to create possibilities.", cmsKey: "about:leader_3" },
+    { id: 5, name: "Mrs. Cheryl Dsouza", position: "Mistress of Houses", experience: "House Incharge", specialty: ["House Management", "Student Activities"], color: "from-purple-500 to-pink-600", quote: "Building character through healthy competition and teamwork.", cmsKey: "about:leader_4" }
+  ];
+
+  // House System
+  const houses: House[] = [
+    { id: 1, name: "Tagore", color: "from-red-500 to-red-700", colorName: "Red", incharge: "Mrs. Sandhya B.", cmsKey: "about:house_0" },
+    { id: 2, name: "Nehru", color: "from-green-500 to-green-700", colorName: "Green", incharge: "Mrs. Mini P. S.", cmsKey: "about:house_1" },
+    { id: 3, name: "Gandhi", color: "from-blue-500 to-blue-700", colorName: "Blue", incharge: "Mrs. Meghana T.", cmsKey: "about:house_2" },
+    { id: 4, name: "Tilak", color: "from-yellow-500 to-yellow-700", colorName: "Yellow", incharge: "Mrs. Ashwini D.", cmsKey: "about:house_3" }
   ];
 
   // Facilities
@@ -690,6 +709,52 @@ const AboutPage: React.FC = () => {
                     ))}
                   </div>
                   <p className="text-slate-500 dark:text-slate-400 italic text-sm text-center border-t dark:border-slate-800 pt-4" data-cms={`${leader.cmsKey}:quote`}>"{leader.quote}"</p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        {/* HOUSE SYSTEM */}
+        <div id="house-system" ref={houseSystemRef} className="mb-32">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl font-bold text-slate-900 dark:text-white mb-4" data-cms="about:house_title">House System</h2>
+            <p className="text-slate-600 dark:text-slate-400" data-cms="about:house_subtitle">Fostering teamwork, leadership, and healthy competition</p>
+          </div>
+          
+          {/* Mistress of Houses */}
+          <div className="mb-12 bg-gradient-to-r from-purple-500 to-pink-600 rounded-3xl p-8 text-white">
+            <div className="flex flex-col md:flex-row items-center gap-6">
+              <div className="w-24 h-24 bg-white/20 rounded-full flex items-center justify-center text-3xl font-bold">
+                CD
+              </div>
+              <div className="text-center md:text-left">
+                <h3 className="text-2xl font-bold mb-2" data-cms="about:house_incharge_name">Mrs. Cheryl Dsouza</h3>
+                <p className="text-lg opacity-90" data-cms="about:house_incharge_position">Mistress of Houses</p>
+                <p className="opacity-80 mt-2" data-cms="about:house_incharge_description">Overseeing all house activities and competitions</p>
+              </div>
+            </div>
+          </div>
+
+          {/* Individual Houses */}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+            {houses.map((house) => (
+              <div key={house.id} className="group bg-white dark:bg-slate-900/40 rounded-3xl overflow-hidden border border-slate-100 dark:border-slate-800 shadow-xl hover:shadow-2xl transition-all">
+                <div className={`h-3 bg-gradient-to-r ${house.color}`}></div>
+                <div className="p-8">
+                  <div className={`w-20 h-20 mx-auto mb-6 bg-gradient-to-br ${house.color} rounded-full flex items-center justify-center text-white text-2xl font-bold shadow-lg`}>
+                    {house.name[0]}
+                  </div>
+                  <h3 className="text-2xl font-bold text-slate-900 dark:text-white text-center mb-2" data-cms={`${house.cmsKey}:name`}>{house.name} House</h3>
+                  <div className="text-center mb-4">
+                    <span className={`inline-block px-3 py-1 rounded-full text-sm font-semibold text-white bg-gradient-to-r ${house.color}`}>
+                      {house.colorName}
+                    </span>
+                  </div>
+                  <div className="border-t dark:border-slate-800 pt-4 mt-4">
+                    <p className="text-sm text-slate-500 dark:text-slate-400 text-center mb-1">House Incharge</p>
+                    <p className="text-lg font-semibold text-slate-900 dark:text-white text-center" data-cms={`${house.cmsKey}:incharge`}>{house.incharge}</p>
+                  </div>
                 </div>
               </div>
             ))}
