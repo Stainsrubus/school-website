@@ -665,6 +665,124 @@ const AboutPage: React.FC = () => {
             </motion.div>
           </div>
         </div>
+        {/* MANAGER MESSAGE */}
+        <div id="manager-message" className="mb-12 md:mb-32 relative">
+          {/* Background Elements */}
+          <div className="absolute inset-0 overflow-hidden pointer-events-none">
+            <div className="absolute top-1/2 left-0 w-96 h-96 bg-teal-200/20 rounded-full blur-[120px] -translate-y-1/2" />
+            <div className="absolute top-1/2 right-0 w-96 h-96 bg-emerald-200/20 rounded-full blur-[120px] -translate-y-1/2" />
+          </div>
+
+          <div className="relative">
+            {/* Section Header */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              className="text-center mb-12"
+            >
+              <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-gradient-to-r from-teal-100 to-emerald-100 border border-teal-200/50 mb-4">
+                <Users className="w-4 h-4 text-teal-600 fill-teal-600" />
+                <span className="text-sm font-bold text-gray-700 uppercase tracking-wider">From Our Manager</span>
+              </div>
+              <h2 className="text-3xl sm:text-4xl md:text-5xl font-black text-gray-900">
+                A Note of <span className="text-transparent bg-clip-text bg-gradient-to-r from-teal-600 to-emerald-600">Commitment</span>
+              </h2>
+            </motion.div>
+
+            <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+
+              {/* Left Side - Photo & Info */}
+              <motion.div
+                initial={{ opacity: 0, x: -30 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6 }}
+                className="lg:col-span-4"
+              >
+                <div className="relative">
+                  {/* Main Photo Card */}
+                  <div className="relative bg-white rounded-2xl sm:rounded-[2.5rem] p-4 sm:p-6 shadow-2xl border border-gray-100 overflow-hidden group">
+                    {/* Decorative Corner Elements */}
+                    <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-teal-500/10 to-transparent rounded-bl-[3rem]" />
+                    <div className="absolute bottom-0 left-0 w-32 h-32 bg-gradient-to-tr from-emerald-500/10 to-transparent rounded-tr-[3rem]" />
+
+                    {/* Photo Container */}
+                    <div className="relative aspect-[3/4] rounded-[2rem] overflow-hidden mb-6 bg-gradient-to-br from-teal-100 to-emerald-100">
+                      <img
+                        src="https://schoolpress-cms.creoleaptech.workers.dev/api/assets/st-pius/manager.png"
+                        alt="Manager"
+                        data-cms-src="about:manager:photo"
+                        className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                      />
+                      {/* Photo Overlay */}
+                      <div className="absolute inset-0 bg-gradient-to-t from-teal-900/30 via-transparent to-transparent" />
+                    </div>
+
+                    {/* Name & Title */}
+                    <div className="relative text-center space-y-2">
+                      <h3 className="text-2xl font-black text-gray-900" data-cms="about:manager_name">Mr. Michael D'Souza</h3>
+                      <p className="text-teal-600 font-bold text-sm uppercase tracking-wider" data-cms="about:manager_title">School Manager</p>
+                    </div>
+
+                    {/* Decorative Line */}
+                    <div className="mt-6 pt-6 border-t border-gray-100 flex items-center justify-center gap-2">
+                      <div className="w-2 h-2 rounded-full bg-teal-500" />
+                      <div className="w-2 h-2 rounded-full bg-emerald-500" />
+                      <div className="w-2 h-2 rounded-full bg-teal-500" />
+                    </div>
+                  </div>
+                </div>
+              </motion.div>
+
+              {/* Right Side - Message Content */}
+              <motion.div
+                initial={{ opacity: 0, x: 30 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6, delay: 0.2 }}
+                className="lg:col-span-8"
+              >
+                <div className="bg-white rounded-2xl sm:rounded-[2.5rem] p-5 sm:p-8 md:p-12 shadow-2xl border border-gray-100 relative overflow-hidden">
+                  {/* Decorative Background Pattern */}
+                  <div className="absolute top-0 right-0 w-64 h-64 opacity-5">
+                    <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+                      <path fill="#0D9488" d="M44.7,-76.4C58.8,-69.2,71.8,-59.1,79.6,-45.8C87.4,-32.6,90,-16.3,88.5,-0.9C87,14.6,81.4,29.2,73.1,42.8C64.8,56.4,53.8,69,39.9,76.8C26,84.6,9.2,87.6,-6.5,87.1C-22.2,86.6,-36.8,82.6,-50.1,74.9C-63.4,67.2,-75.4,55.8,-82.3,41.8C-89.2,27.8,-91,11.2,-89.3,-5.1C-87.6,-21.4,-82.4,-37.4,-73.3,-50.8C-64.2,-64.2,-51.2,-75,-36.8,-81.3C-22.4,-87.6,-6.6,-89.4,7.5,-90C21.6,-90.6,30.6,-83.6,44.7,-76.4Z" transform="translate(100 100)" />
+                    </svg>
+                  </div>
+
+                  {/* Large Opening Quote */}
+                  <div className="relative mb-6">
+                    <span className="absolute -top-4 -left-2 text-8xl font-serif text-teal-600/10 select-none leading-none">"</span>
+                    <div className="relative pl-8">
+                      <p className="text-2xl md:text-3xl font-serif italic text-gray-900 leading-relaxed mb-8" data-cms="about:manager_greeting">
+                        Dear Parents and Well-wishers,
+                      </p>
+                    </div>
+                  </div>
+
+                  {/* Message Body */}
+                  <div className="space-y-6 relative z-10">
+                    <p className="text-lg text-gray-700 leading-relaxed" data-cms="about:manager_message">
+                      On behalf of the management, I extend a warm welcome to the St. Pius X High School family. We remain steadfast in our commitment to providing a safe, nurturing, and academically enriching environment for every child entrusted to our care.
+                    </p>
+
+                    {/* Signature Section */}
+                    <div className="mt-10 pt-6 border-t border-gray-200 flex items-end justify-between flex-wrap gap-6">
+                      <div>
+                        <p className="text-xl font-bold text-gray-900 mb-1">With warm regards,</p>
+                        <p className="text-3xl font-black text-transparent bg-clip-text bg-gradient-to-r from-teal-600 to-emerald-600 font-serif" data-cms="about:manager_signature_name">
+                          Mr. Michael D'Souza
+                        </p>
+                        <p className="text-sm text-gray-600 font-semibold mt-1" data-cms="about:manager_signature_title">School Manager</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </motion.div>
+            </div>
+          </div>
+        </div>
         {/* CORE VALUES */}
         <div id="core-values" ref={valuesRef} className={`mb-32 transition-all duration-1000 ${isVisible[1] ? 'opacity-100' : 'opacity-0'}`}>
           <div className="text-center mb-16">
