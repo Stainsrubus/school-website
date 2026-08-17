@@ -26,100 +26,164 @@ import {
     Zap,
 } from 'lucide-react';
 import { Link } from '@tanstack/react-router';
+import { useCmsCollection, type CmsCollectionEntry } from "@/lib/useCmsCollection";
+
+export interface FacilityItem {
+    id: string | number;
+    name: string;
+    shortName: string;
+    description: string;
+    features: string[];
+    icon: React.ReactNode;
+    image: string;
+    color: string;
+    cmsKey?: string;
+}
+
+const defaultFacilities: FacilityItem[] = [
+    {
+        id: 0,
+        name: "Science & Innovation Labs",
+        shortName: "Science Labs",
+        description: "State-of-the-art laboratories equipped with modern technology for physics, chemistry, biology, and robotics. Features include advanced equipment, digital measurement tools, and hands-on discovery stations that make science come alive.",
+        features: ["Physics Lab", "Chemistry Lab", "Biology Lab", "Innovation Hub"],
+        icon: <Brain className="w-6 h-6" />,
+        image: "https://schoolpress-cms.creoleaptech.workers.dev/api/assets/st-pius/science.jpg",
+        color: "from-blue-600 to-indigo-600",
+        cmsKey: "facilities:facility_0"
+    },
+    {
+        id: 1,
+        name: "ICT & Computer Labs",
+        shortName: "ICT Labs",
+        description: "Advanced computer laboratories with latest hardware and software. Equipped with high-speed internet, coding platforms, and digital learning tools for technology education, digital literacy, and innovation.",
+        features: ["High-Speed Internet", "Coding Platforms", "Digital Learning", "Latest Hardware"],
+        icon: <Monitor className="w-6 h-6" />,
+        image: "https://schoolpress-cms.creoleaptech.workers.dev/api/assets/st-pius/ict.JPG",
+        color: "from-cyan-500 to-blue-600",
+        cmsKey: "facilities:facility_1"
+    },
+    {
+        id: 2,
+        name: "Library & Resource Centre",
+        shortName: "Library",
+        description: "A vast collection of over 15,000 books, digital resources, e-journals, and quiet study spaces. Features reading rooms, research zones, and a digital library with online databases to foster a love of lifelong learning.",
+        features: ["15,000+ Books", "Digital Resources", "Reading Rooms", "Research Zones"],
+        icon: <BookOpen className="w-6 h-6" />,
+        image: "https://schoolpress-cms.creoleaptech.workers.dev/api/assets/st-pius/library.JPG",
+        color: "from-blue-600 to-cyan-500",
+        cmsKey: "facilities:facility_2"
+    },
+    {
+        id: 3,
+        name: "Smart Classrooms",
+        shortName: "Smart Classes",
+        description: "Technology-integrated learning spaces with interactive whiteboards, projectors, and audio-visual systems. Enables digital content delivery, collaborative learning, and multimedia-rich educational experiences.",
+        features: ["Interactive Whiteboards", "Projectors", "Audio-Visual Systems", "Digital Content"],
+        icon: <Laptop className="w-6 h-6" />,
+        image: "https://schoolpress-cms.creoleaptech.workers.dev/api/assets/st-pius/smart.JPG",
+        color: "from-indigo-500 to-blue-600",
+        cmsKey: "facilities:facility_3"
+    },
+    {
+        id: 4,
+        name: "Cultural Auditorium",
+        shortName: "Auditorium",
+        description: "A magnificent 500-seat auditorium with professional lighting, sound systems, and stage facilities. Hosts cultural programmes, annual functions, drama productions, music concerts, and inter-school competitions.",
+        features: ["500-Seat Capacity", "Professional Sound", "Stage Lighting", "Event Hosting"],
+        icon: <Music className="w-6 h-6" />,
+        image: "https://schoolpress-cms.creoleaptech.workers.dev/api/assets/st-pius/culturals3.jpeg",
+        color: "from-blue-500 to-indigo-600",
+        cmsKey: "facilities:facility_4"
+    },
+    {
+        id: 5,
+        name: "Arts & Music Studios",
+        shortName: "Arts Studios",
+        description: "Dedicated spaces for visual arts, music practice, and performing arts. Equipped with instruments, art supplies, practice rooms, and recording facilities to nurture creative talents and artistic expression.",
+        features: ["Visual Arts Studio", "Music Practice Rooms", "Art Supplies", "Performance Space"],
+        icon: <Palette className="w-6 h-6" />,
+        image: "https://schoolpress-cms.creoleaptech.workers.dev/api/assets/st-pius/art2.jpeg",
+        color: "from-cyan-500 to-blue-500",
+        cmsKey: "facilities:facility_5"
+    },
+    {
+        id: 6,
+        name: "Sports & Fitness Complex",
+        shortName: "Sports Complex",
+        description: "Comprehensive sports facilities including football, basketball, tennis, badminton courts, running tracks, kabaddi and cricket grounds. Indoor games like table tennis, carrom, and chess develop teamwork and balanced individuals.",
+        features: ["Football Ground", "Basketball Court", "Cricket Pitch", "Indoor Games"],
+        icon: <Activity className="w-6 h-6" />,
+        image: "https://schoolpress-cms.creoleaptech.workers.dev/api/assets/st-pius/sport1.jpg",
+        color: "from-blue-600 to-cyan-500",
+        cmsKey: "facilities:facility_6"
+    },
+    {
+        id: 7,
+        name: "Cafeteria & Dining Hall",
+        shortName: "Cafeteria",
+        description: "Spacious, hygienic dining facility serving nutritious meals prepared under strict quality standards. Offers diverse menu options catering to different dietary requirements and preferences.",
+        features: ["Hygienic Kitchen", "Nutritious Meals", "Spacious Seating", "Diverse Menu"],
+        icon: <UtensilsCrossed className="w-6 h-6" />,
+        image: "https://schoolpress-cms.creoleaptech.workers.dev/api/assets/st-pius/culturals4.jpeg",
+        color: "from-indigo-500 to-blue-500",
+        cmsKey: "facilities:facility_7"
+    }
+];
+
+const COLOR_GRADIENTS = [
+    "from-blue-600 to-indigo-600",
+    "from-cyan-500 to-blue-600",
+    "from-blue-600 to-cyan-500",
+    "from-indigo-500 to-blue-600",
+    "from-blue-500 to-indigo-600",
+    "from-cyan-500 to-blue-500",
+    "from-blue-600 to-cyan-500",
+    "from-indigo-500 to-blue-500",
+];
+
+function getFacilityIcon(name: string) {
+    const lower = name.toLowerCase();
+    if (lower.includes('science') || lower.includes('lab') || lower.includes('physics') || lower.includes('chem') || lower.includes('bio')) return <Brain className="w-6 h-6" />;
+    if (lower.includes('ict') || lower.includes('computer') || lower.includes('tech')) return <Monitor className="w-6 h-6" />;
+    if (lower.includes('library') || lower.includes('book')) return <BookOpen className="w-6 h-6" />;
+    if (lower.includes('smart') || lower.includes('class')) return <Laptop className="w-6 h-6" />;
+    if (lower.includes('auditorium') || lower.includes('music') || lower.includes('hall')) return <Music className="w-6 h-6" />;
+    if (lower.includes('art') || lower.includes('studio') || lower.includes('dance')) return <Palette className="w-6 h-6" />;
+    if (lower.includes('sport') || lower.includes('fitness') || lower.includes('ground') || lower.includes('game')) return <Activity className="w-6 h-6" />;
+    if (lower.includes('cafeteria') || lower.includes('dining') || lower.includes('canteen') || lower.includes('food')) return <UtensilsCrossed className="w-6 h-6" />;
+    return <Building2 className="w-6 h-6" />;
+}
+
+function resolveImageUrl(img?: string) {
+    if (!img) return "https://schoolpress-cms.creoleaptech.workers.dev/api/assets/st-pius/science.jpg";
+    if (img.startsWith('http://') || img.startsWith('https://') || img.startsWith('data:')) return img;
+    if (img.startsWith('/')) return img;
+    return `https://schoolpress-cms.creoleaptech.workers.dev/api/assets/${img}`;
+}
 
 export default function FacilitiesPage() {
     const [expandedFacility, setExpandedFacility] = useState<number | null>(0);
 
-    const facilities = [
-        {
-            id: 0,
-            name: "Science & Innovation Labs",
-            shortName: "Science Labs",
-            description: "State-of-the-art laboratories equipped with modern technology for physics, chemistry, biology, and robotics. Features include advanced equipment, digital measurement tools, and hands-on discovery stations that make science come alive.",
-            features: ["Physics Lab", "Chemistry Lab", "Biology Lab", "Innovation Hub"],
-            icon: <Brain className="w-6 h-6" />,
-            image: "https://schoolpress-cms.creoleaptech.workers.dev/api/assets/st-pius/science.jpg",
-            color: "from-blue-600 to-indigo-600",
-            cmsKey: "facilities:facility_0"
-        },
-        {
-            id: 1,
-            name: "ICT & Computer Labs",
-            shortName: "ICT Labs",
-            description: "Advanced computer laboratories with latest hardware and software. Equipped with high-speed internet, coding platforms, and digital learning tools for technology education, digital literacy, and innovation.",
-            features: ["High-Speed Internet", "Coding Platforms", "Digital Learning", "Latest Hardware"],
-            icon: <Monitor className="w-6 h-6" />,
-            image: "https://schoolpress-cms.creoleaptech.workers.dev/api/assets/st-pius/ict.JPG",
-            color: "from-cyan-500 to-blue-600",
-            cmsKey: "facilities:facility_1"
-        },
-        {
-            id: 2,
-            name: "Library & Resource Centre",
-            shortName: "Library",
-            description: "A vast collection of over 15,000 books, digital resources, e-journals, and quiet study spaces. Features reading rooms, research zones, and a digital library with online databases to foster a love of lifelong learning.",
-            features: ["15,000+ Books", "Digital Resources", "Reading Rooms", "Research Zones"],
-            icon: <BookOpen className="w-6 h-6" />,
-            image: "https://schoolpress-cms.creoleaptech.workers.dev/api/assets/st-pius/library.JPG",
-            color: "from-blue-600 to-cyan-500",
-            cmsKey: "facilities:facility_2"
-        },
-        {
-            id: 3,
-            name: "Smart Classrooms",
-            shortName: "Smart Classes",
-            description: "Technology-integrated learning spaces with interactive whiteboards, projectors, and audio-visual systems. Enables digital content delivery, collaborative learning, and multimedia-rich educational experiences.",
-            features: ["Interactive Whiteboards", "Projectors", "Audio-Visual Systems", "Digital Content"],
-            icon: <Laptop className="w-6 h-6" />,
-            image: "https://schoolpress-cms.creoleaptech.workers.dev/api/assets/st-pius/smart.JPG",
-            color: "from-indigo-500 to-blue-600",
-            cmsKey: "facilities:facility_3"
-        },
-        {
-            id: 4,
-            name: "Cultural Auditorium",
-            shortName: "Auditorium",
-            description: "A magnificent 500-seat auditorium with professional lighting, sound systems, and stage facilities. Hosts cultural programmes, annual functions, drama productions, music concerts, and inter-school competitions.",
-            features: ["500-Seat Capacity", "Professional Sound", "Stage Lighting", "Event Hosting"],
-            icon: <Music className="w-6 h-6" />,
-            image: "https://schoolpress-cms.creoleaptech.workers.dev/api/assets/st-pius/culturals3.jpeg",
-            color: "from-blue-500 to-indigo-600",
-            cmsKey: "facilities:facility_4"
-        },
-        {
-            id: 5,
-            name: "Arts & Music Studios",
-            shortName: "Arts Studios",
-            description: "Dedicated spaces for visual arts, music practice, and performing arts. Equipped with instruments, art supplies, practice rooms, and recording facilities to nurture creative talents and artistic expression.",
-            features: ["Visual Arts Studio", "Music Practice Rooms", "Art Supplies", "Performance Space"],
-            icon: <Palette className="w-6 h-6" />,
-            image: "https://schoolpress-cms.creoleaptech.workers.dev/api/assets/st-pius/art2.jpeg",
-            color: "from-cyan-500 to-blue-500",
-            cmsKey: "facilities:facility_5"
-        },
-        {
-            id: 6,
-            name: "Sports & Fitness Complex",
-            shortName: "Sports Complex",
-            description: "Comprehensive sports facilities including football, basketball, tennis, badminton courts, running tracks, kabaddi and cricket grounds. Indoor games like table tennis, carrom, and chess develop teamwork and balanced individuals.",
-            features: ["Football Ground", "Basketball Court", "Cricket Pitch", "Indoor Games"],
-            icon: <Activity className="w-6 h-6" />,
-            image: "https://schoolpress-cms.creoleaptech.workers.dev/api/assets/st-pius/sport1.jpg",
-            color: "from-blue-600 to-cyan-500",
-            cmsKey: "facilities:facility_6"
-        },
-        {
-            id: 7,
-            name: "Cafeteria & Dining Hall",
-            shortName: "Cafeteria",
-            description: "Spacious, hygienic dining facility serving nutritious meals prepared under strict quality standards. Offers diverse menu options catering to different dietary requirements and preferences.",
-            features: ["Hygienic Kitchen", "Nutritious Meals", "Spacious Seating", "Diverse Menu"],
-            icon: <UtensilsCrossed className="w-6 h-6" />,
-            image: "https://schoolpress-cms.creoleaptech.workers.dev/api/assets/st-pius/culturals4.jpeg",
-            color: "from-indigo-500 to-blue-500",
-            cmsKey: "facilities:facility_7"
-        }
-    ];
+    const facilities = useCmsCollection<FacilityItem>('facilities', defaultFacilities, (entry: CmsCollectionEntry, index?: number) => {
+        const rawFeatures = entry.data.features || '';
+        const features = rawFeatures
+            ? rawFeatures.split(',').map(f => f.trim()).filter(Boolean)
+            : [];
+        const name = entry.data.name || 'Facility';
+        const colorIdx = typeof index === 'number' ? index % COLOR_GRADIENTS.length : 0;
+        return {
+            id: entry.id,
+            name: name,
+            shortName: entry.data.short_name || name,
+            description: entry.data.description || '',
+            features: features.length > 0 ? features : ['Modern Amenities', 'Safe Environment'],
+            icon: getFacilityIcon(name),
+            image: resolveImageUrl(entry.data.image),
+            color: entry.data.color || COLOR_GRADIENTS[colorIdx],
+            cmsKey: `facilities:item_${entry.id}`,
+        };
+    });
 
     const campusHighlights = [
         { icon: <MapPin className="w-6 h-6" />, title: "Prime Location", description: "Centrally located with excellent connectivity" },
@@ -236,7 +300,7 @@ export default function FacilitiesPage() {
                                         <img
                                             src={facility.image}
                                             alt={facility.name}
-                                            data-cms-src={`${facility.cmsKey}:image`}
+                                            data-cms-src={facility.cmsKey ? `${facility.cmsKey}:image` : undefined}
                                             className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
                                         />
                                         <div className="absolute inset-0 bg-gradient-to-t from-slate-900/30 via-transparent to-transparent"></div>
@@ -254,11 +318,11 @@ export default function FacilitiesPage() {
                                             {facility.icon}
                                         </div>
 
-                                        <h3 className="font-serif text-xl sm:text-2xl md:text-3xl font-bold text-slate-900 dark:text-white mb-4" data-cms={`${facility.cmsKey}:name`}>
+                                        <h3 className="font-serif text-xl sm:text-2xl md:text-3xl font-bold text-slate-900 dark:text-white mb-4" data-cms={facility.cmsKey ? `${facility.cmsKey}:name` : undefined}>
                                             {facility.name}
                                         </h3>
 
-                                        <p className="text-slate-600 dark:text-slate-400 text-base sm:text-lg leading-relaxed mb-6" data-cms={`${facility.cmsKey}:description`}>
+                                        <p className="text-slate-600 dark:text-slate-400 text-base sm:text-lg leading-relaxed mb-6" data-cms={facility.cmsKey ? `${facility.cmsKey}:description` : undefined}>
                                             {facility.description}
                                         </p>
 
@@ -268,7 +332,7 @@ export default function FacilitiesPage() {
                                                 <span
                                                     key={idx}
                                                     className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-blue-50 dark:bg-blue-900/30 text-blue-600 dark:text-blue-400 text-xs font-bold border border-blue-100 dark:border-blue-800"
-                                                    data-cms={`${facility.cmsKey}:feature_${idx}`}
+                                                    data-cms={facility.cmsKey ? `${facility.cmsKey}:feature_${idx}` : undefined}
                                                 >
                                                     <Star className="w-3 h-3" />
                                                     {feature}
