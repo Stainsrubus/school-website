@@ -260,9 +260,12 @@ export default function GalleryPage() {
               <span className="absolute inset-0 bg-gradient-to-r from-blue-400/30 via-cyan-400/30 to-blue-400/30 blur-xl animate-pulse" />
             </span>
           </h1>
-          <p className="text-xl md:text-2xl text-blue-200/90 max-w-4xl mx-auto font-light relative">
-            Capturing every smile, achievement, celebration and cherished moment at<br />
-            <span className="font-semibold text-cyan-300 ml-2">St. Pius X High School</span>
+          <p
+            className="text-xl md:text-2xl text-blue-200/90 max-w-4xl mx-auto font-light relative"
+            data-cms="gallery:subtitle"
+            data-cms-label="Hero Subtitle / Description"
+          >
+            Capturing every smile, achievement, celebration and cherished moment at St. Pius X High School
           </p>
         </div>
       </section>

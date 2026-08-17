@@ -242,7 +242,7 @@ function GalleryPage() {
   }, [])
 
   return (
-    <div className="min-h-screen bg-gray-50/70 relative">
+    <div className="min-h-screen bg-gray-50/70 relative" data-cms-page="gallery">
       {/* ═══ Desktop: Vertical Side Panel (lg+) ═══ */}
       <div
         className={`fixed right-4 xl:right-8 top-1/2 -translate-y-1/2 z-[51] hidden lg:flex flex-col items-center gap-2 transition-all duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] ${showFloatingBar
@@ -368,15 +368,22 @@ function GalleryPage() {
         <div className="relative max-w-7xl mx-auto px-6 text-center">
           <h1 className="text-3xl sm:text-5xl md:text-7xl font-extrabold tracking-tight mb-5">
             <span className="relative inline-block">
-              <span className="relative z-10 bg-gradient-to-r from-blue-200 via-white to-cyan-200 bg-clip-text text-transparent">
+              <span
+                className="relative z-10 bg-gradient-to-r from-blue-200 via-white to-cyan-200 bg-clip-text text-transparent"
+                data-cms="gallery:title"
+                data-cms-label="Hero Title"
+              >
                 School Gallery
               </span>
               <span className="absolute inset-0 bg-gradient-to-r from-blue-400/30 via-cyan-400/30 to-blue-400/30 blur-xl animate-pulse" />
             </span>
           </h1>
-          <p className="text-base sm:text-xl md:text-2xl text-blue-200/90 max-w-4xl mx-auto font-light relative">
-            Capturing every smile, achievement, celebration and cherished moment at<br />
-            <span className="font-semibold text-cyan-300 ml-2">St. Pius X High School</span>
+          <p
+            className="text-base sm:text-xl md:text-2xl text-blue-200/90 max-w-4xl mx-auto font-light relative"
+            data-cms="gallery:subtitle"
+            data-cms-label="Hero Subtitle / Description"
+          >
+            Capturing every smile, achievement, celebration and cherished moment at St. Pius X High School
           </p>
         </div>
       </section>
