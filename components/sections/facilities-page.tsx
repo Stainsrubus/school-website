@@ -1,4 +1,4 @@
-﻿import React, { useState } from 'react';
+import React, { useState } from 'react';
 import { ScrollObserver } from "@/components/ui/scroll-observer";
 import { motion } from 'framer-motion';
 import {
@@ -122,12 +122,12 @@ export default function FacilitiesPage() {
     ];
 
     const campusHighlights = [
-        { icon: <MapPin className="w-6 h-6" />, title: "Prime Location", description: "Centrally located with excellent connectivity", cmsKey: "facilities:highlight_0" },
-        { icon: <Shield className="w-6 h-6" />, title: "Safe & Secure", description: "24/7 CCTV surveillance and secure campus", cmsKey: "facilities:highlight_1" },
-        { icon: <Wifi className="w-6 h-6" />, title: "Wi-Fi Enabled", description: "High-speed internet across the campus", cmsKey: "facilities:highlight_2" },
-        { icon: <TreePine className="w-6 h-6" />, title: "Green Campus", description: "Eco-friendly with gardens and open spaces", cmsKey: "facilities:highlight_3" },
-        { icon: <HeartPulse className="w-6 h-6" />, title: "Health Centre", description: "On-campus medical facilities and first aid", cmsKey: "facilities:highlight_4" },
-        { icon: <Church className="w-6 h-6" />, title: "Chapel", description: "Serene space for prayer and reflection", cmsKey: "facilities:highlight_5" },
+        { icon: <MapPin className="w-6 h-6" />, title: "Prime Location", description: "Centrally located with excellent connectivity" },
+        { icon: <Shield className="w-6 h-6" />, title: "Safe & Secure", description: "24/7 CCTV surveillance and secure campus" },
+        { icon: <Wifi className="w-6 h-6" />, title: "Wi-Fi Enabled", description: "High-speed internet across the campus" },
+        { icon: <TreePine className="w-6 h-6" />, title: "Green Campus", description: "Eco-friendly with gardens and open spaces" },
+        { icon: <HeartPulse className="w-6 h-6" />, title: "Health Centre", description: "On-campus medical facilities and first aid" },
+        { icon: <Church className="w-6 h-6" />, title: "Chapel", description: "Serene space for prayer and reflection" },
     ];
 
     return (
@@ -202,8 +202,8 @@ export default function FacilitiesPage() {
                             <div className="w-12 h-12 bg-white/10 rounded-xl flex items-center justify-center mb-2">
                                 {item.icon}
                             </div>
-                            <div className="font-bold text-sm" data-cms={`${item.cmsKey}:title`}>{item.title}</div>
-                            <div className="text-blue-200 text-xs" data-cms={`${item.cmsKey}:description`}>{item.description}</div>
+                            <div className="font-bold text-sm">{item.title}</div>
+                            <div className="text-blue-200 text-xs">{item.description}</div>
                         </div>
                     ))}
                 </ScrollObserver>

@@ -350,9 +350,9 @@ export default function TestimonialSection() {
               className="my-8 grid grid-cols-1 sm:grid-cols-3 gap-4 max-w-3xl mx-auto px-2"
             >
               {[
-                { icon: <CheckCircle2 className="w-5 h-5" />, text: "100% Pass Rate", color: "emerald", cmsKey: "testimonials:mini_stat_0" },
-                { icon: <Trophy className="w-5 h-5" />, text: "Consistently Top Ranked", color: "blue", cmsKey: "testimonials:mini_stat_1" },
-                { icon: <Sparkles className="w-5 h-5" />, text: "State-of-the-Art Facilities", color: "amber", cmsKey: "testimonials:mini_stat_2" },
+                { icon: <CheckCircle2 className="w-5 h-5" />, text: "100% Pass Rate", color: "emerald" },
+                { icon: <Trophy className="w-5 h-5" />, text: "Consistently Top Ranked", color: "blue" },
+                { icon: <Sparkles className="w-5 h-5" />, text: "State-of-the-Art Facilities", color: "amber" },
               ].map((item, i) => (
                 <motion.div
                   key={i}
@@ -380,7 +380,7 @@ export default function TestimonialSection() {
                     {item.icon}
                   </div>
 
-                  <span className="text-sm font-semibold text-slate-800 dark:text-slate-200 group-hover:text-slate-900 dark:group-hover:text-white transition-colors" data-cms={item.cmsKey}>
+                  <span className="text-sm font-semibold text-slate-800 dark:text-slate-200 group-hover:text-slate-900 dark:group-hover:text-white transition-colors">
                     {item.text}
                   </span>
                 </motion.div>

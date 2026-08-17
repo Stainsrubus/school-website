@@ -1,5 +1,5 @@
-﻿import { useEffect, useRef, useState } from "react"
-import { Calendar, MapPin, X, ChevronLeft, ChevronRight } from "lucide-react"
+import { useEffect, useRef, useState } from "react"
+import { Calendar, MapPin, X, ChevronLeft, ChevronRight, Images } from "lucide-react"
 import { useCmsCollection, type CmsCollectionEntry } from "@/lib/useCmsCollection"
 
 const galleryItems = [
@@ -146,6 +146,9 @@ export default function GalleryPage() {
       ? cmsItems
       : cmsItems.filter((item) => item.category === activeCategory)
 
+  const [showThumbnails, setShowThumbnails] = useState(true)
+  const thumbnailStripRef = useRef<HTMLDivElement>(null)
+
   // Handlers for Lightbox
   const handlePrev = (e: React.MouseEvent) => {
     e.stopPropagation()
@@ -159,7 +162,29 @@ export default function GalleryPage() {
 
   const handleClose = () => setSelectedIndex(null)
 
-  // Close on Escape key
+  // Auto-scroll active thumbnail into view
+  useEffect(() => {
+    if (selectedIndex !== null && thumbnailStripRef.current) {
+      const activeThumb = thumbnailStripRef.current.children[selectedIndex] as HTMLElement
+      if (activeThumb) {
+        activeThumb.scrollIntoView({ behavior: 'smooth', inline: 'center', block: 'nearest' })
+      }
+    }
+  }, [selectedIndex])
+
+  // Lock body scroll when lightbox is open
+  useEffect(() => {
+    if (selectedIndex !== null) {
+      document.body.style.overflow = 'hidden'
+    } else {
+      document.body.style.overflow = ''
+    }
+    return () => {
+      document.body.style.overflow = ''
+    }
+  }, [selectedIndex])
+
+  // Close on Escape key and Arrow navigation
   useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {
       if (e.key === "Escape") handleClose()
@@ -316,64 +341,169 @@ export default function GalleryPage() {
         </div>
       </section>
 
-      {/* Lightbox */}
-      {selectedIndex !== null && (
-        <div className="fixed inset-0 z-[100] flex flex-col items-center justify-center bg-black/95 backdrop-blur-md" onClick={handleClose}>
-          <button
-            onClick={handleClose}
-            className="absolute top-4 right-4 md:top-6 md:right-6 text-white/70 hover:text-white transition-colors z-50 p-2"
-          >
-            <X size={36} />
-          </button>
-
-          <button
-            onClick={handlePrev}
-            className="absolute left-2 md:left-8 top-1/2 -translate-y-1/2 text-white/50 hover:text-white transition-colors z-[60] p-2 md:p-4"
-          >
-            <ChevronLeft size={48} />
-          </button>
-
-          <button
-            onClick={handleNext}
-            className="absolute right-2 md:right-8 top-1/2 -translate-y-1/2 text-white/50 hover:text-white transition-colors z-[60] p-2 md:p-4"
-          >
-            <ChevronRight size={48} />
-          </button>
-
+      {/* Lightbox Modal */}
+      {selectedIndex !== null && filteredItems[selectedIndex] && (
+        <div
+          className="fixed inset-0 z-[100] flex flex-col bg-black/95 backdrop-blur-xl select-none"
+          onClick={handleClose}
+        >
+          {/* Top Bar Header */}
           <div
-            className="relative w-full max-w-5xl max-h-[75vh] flex flex-col items-center px-12 md:px-24"
+            className="flex-shrink-0 z-50 flex items-center justify-between px-4 sm:px-8 py-4 bg-gradient-to-b from-black/90 via-black/50 to-transparent"
             onClick={(e) => e.stopPropagation()}
           >
-            <img
-              src={filteredItems[selectedIndex].image}
-              alt={filteredItems[selectedIndex].title}
-              className="max-w-full max-h-[60vh] md:max-h-[70vh] object-contain rounded-lg shadow-2xl"
-            />
-
-            <div className="text-white text-center mt-6 max-w-2xl">
-              <h3 className="text-2xl font-bold mb-2">{filteredItems[selectedIndex].title}</h3>
-              <p className="text-gray-300">{filteredItems[selectedIndex].description}</p>
+            {/* Counter & Category Pill */}
+            <div className="flex items-center gap-3">
+              <span className="px-3 py-1 rounded-full text-xs font-semibold bg-white/10 text-white border border-white/15 tracking-wider uppercase">
+                {filteredItems[selectedIndex].category || 'Gallery'}
+              </span>
+              {filteredItems.length > 1 && (
+                <span className="text-xs sm:text-sm font-medium text-gray-400">
+                  {selectedIndex + 1} of {filteredItems.length}
+                </span>
+              )}
             </div>
-          </div>
 
-          {/* Thumbnails */}
-          <div
-            className="absolute bottom-4 left-0 right-0 flex justify-center px-4"
-            onClick={(e) => e.stopPropagation()}
-          >
-            <div className="flex gap-2 p-2 bg-black/50 rounded-xl overflow-x-auto max-w-full scrollbar-hide snap-x">
-              {filteredItems.map((item, idx) => (
+            {/* Action buttons (Toggle Strip + Close) */}
+            <div className="flex items-center gap-2 sm:gap-3">
+              {filteredItems.length > 1 && (
                 <button
-                  key={item.id}
-                  onClick={() => setSelectedIndex(idx)}
-                  className={`relative flex-shrink-0 h-16 w-24 snap-center rounded overflow-hidden transition-all duration-300 ${idx === selectedIndex ? "ring-2 ring-blue-500 scale-100 opacity-100" : "opacity-40 hover:opacity-100 scale-95"
-                    }`}
+                  onClick={() => setShowThumbnails((prev) => !prev)}
+                  className={`px-3 py-1.5 sm:px-4 sm:py-2 rounded-full border transition-all duration-200 flex items-center gap-2 text-xs sm:text-sm font-medium ${
+                    showThumbnails
+                      ? 'bg-indigo-600/90 hover:bg-indigo-600 text-white border-indigo-400/40 shadow-lg shadow-indigo-500/25'
+                      : 'bg-white/10 hover:bg-white/20 text-gray-300 hover:text-white border-white/15'
+                  }`}
+                  title={showThumbnails ? 'Hide thumbnail strip' : 'Show thumbnail strip'}
+                  aria-label="Toggle thumbnails"
                 >
-                  <img src={item.image} alt={item.title} className="w-full h-full object-cover" />
+                  <Images className="w-4 h-4" />
+                  <span className="hidden sm:inline">
+                    {showThumbnails ? 'Hide Strip' : 'Thumbnails'}
+                  </span>
                 </button>
-              ))}
+              )}
+              <button
+                onClick={handleClose}
+                className="p-2 sm:p-2.5 rounded-full bg-white/10 hover:bg-white/20 text-gray-300 hover:text-white border border-white/15 transition-all duration-200 active:scale-95"
+                title="Close (Esc)"
+                aria-label="Close lightbox"
+              >
+                <X className="w-5 h-5 sm:w-6 sm:h-6" />
+              </button>
             </div>
           </div>
+
+          {/* Navigation Arrows (fixed on sides, vertically centered) */}
+          {filteredItems.length > 1 && (
+            <>
+              <button
+                onClick={handlePrev}
+                className="fixed left-2 sm:left-4 md:left-6 top-1/2 -translate-y-1/2 z-40 p-2.5 sm:p-3.5 md:p-4 rounded-full bg-black/60 hover:bg-black/85 text-white/70 hover:text-white border border-white/15 backdrop-blur-md shadow-2xl transition-all duration-200 hover:scale-105 active:scale-95"
+                title="Previous Image (Left Arrow)"
+                aria-label="Previous"
+              >
+                <ChevronLeft className="w-6 h-6 sm:w-8 sm:h-8" />
+              </button>
+
+              <button
+                onClick={handleNext}
+                className="fixed right-2 sm:right-4 md:right-6 top-1/2 -translate-y-1/2 z-40 p-2.5 sm:p-3.5 md:p-4 rounded-full bg-black/60 hover:bg-black/85 text-white/70 hover:text-white border border-white/15 backdrop-blur-md shadow-2xl transition-all duration-200 hover:scale-105 active:scale-95"
+                title="Next Image (Right Arrow)"
+                aria-label="Next"
+              >
+                <ChevronRight className="w-6 h-6 sm:w-8 sm:h-8" />
+              </button>
+            </>
+          )}
+
+          {/* Scrollable Center Content Container */}
+          <div
+            className="flex-1 w-full overflow-y-auto px-4 sm:px-12 md:px-20 py-2 sm:py-6"
+            onClick={handleClose}
+          >
+            <div
+              className={`w-full max-w-4xl mx-auto flex flex-col items-center justify-start transition-all duration-300 ${
+                showThumbnails && filteredItems.length > 1 ? 'pb-32 sm:pb-36' : 'pb-12'
+              }`}
+              onClick={(e) => e.stopPropagation()}
+            >
+              {/* Image Container */}
+              <div className="w-full flex items-center justify-center">
+                <img
+                  src={filteredItems[selectedIndex].image}
+                  alt={filteredItems[selectedIndex].title}
+                  className="max-w-full max-h-[55vh] sm:max-h-[62vh] md:max-h-[66vh] object-contain rounded-2xl shadow-2xl ring-1 ring-white/10"
+                />
+              </div>
+
+              {/* Text / Details Container */}
+              <div className="w-full mt-6 flex flex-col items-center text-center gap-3">
+                <h3 className="text-xl sm:text-2xl md:text-3xl font-bold text-white tracking-tight">
+                  {filteredItems[selectedIndex].title}
+                </h3>
+
+                {/* Metadata badges (Date, Location) */}
+                {(filteredItems[selectedIndex].date || filteredItems[selectedIndex].location) && (
+                  <div className="flex flex-wrap items-center justify-center gap-2.5 sm:gap-4 text-xs sm:text-sm text-gray-300">
+                    {filteredItems[selectedIndex].date && (
+                      <div className="flex items-center gap-1.5 px-3 py-1 rounded-full bg-white/10 text-blue-200 border border-white/10">
+                        <Calendar size={14} className="text-blue-400" />
+                        <span>{filteredItems[selectedIndex].date}</span>
+                      </div>
+                    )}
+                    {filteredItems[selectedIndex].location && (
+                      <div className="flex items-center gap-1.5 px-3 py-1 rounded-full bg-white/10 text-emerald-200 border border-white/10">
+                        <MapPin size={14} className="text-emerald-400" />
+                        <span>{filteredItems[selectedIndex].location}</span>
+                      </div>
+                    )}
+                  </div>
+                )}
+
+                {/* Full Description text */}
+                {filteredItems[selectedIndex].description && (
+                  <div className="w-full bg-white/[0.06] backdrop-blur-md border border-white/10 rounded-2xl p-4 sm:p-6 text-left shadow-lg mt-2">
+                    <p className="text-sm sm:text-base md:text-lg text-gray-200 leading-relaxed font-normal whitespace-pre-line select-text">
+                      {filteredItems[selectedIndex].description}
+                    </p>
+                  </div>
+                )}
+              </div>
+            </div>
+          </div>
+
+          {/* Bottom Thumbnails Dock - ONLY if more than 1 item and showThumbnails is true */}
+          {filteredItems.length > 1 && showThumbnails && (
+            <div
+              className="fixed bottom-0 left-0 right-0 z-50 bg-black/85 backdrop-blur-xl border-t border-white/10 px-4 py-3 flex justify-center shadow-2xl pointer-events-auto"
+              onClick={(e) => e.stopPropagation()}
+            >
+              <div
+                ref={thumbnailStripRef}
+                className="flex gap-2.5 p-1 overflow-x-auto max-w-full scrollbar-hide snap-x items-center"
+              >
+                {filteredItems.map((item, idx) => (
+                  <button
+                    key={item.id}
+                    onClick={() => setSelectedIndex(idx)}
+                    className={`relative flex-shrink-0 h-12 w-16 sm:h-14 sm:w-20 md:h-16 md:w-24 snap-center rounded-lg overflow-hidden transition-all duration-200 border-2 ${
+                      idx === selectedIndex
+                        ? "border-indigo-500 ring-2 ring-indigo-400/60 scale-105 opacity-100 shadow-lg"
+                        : "border-transparent opacity-45 hover:opacity-100 scale-95 hover:scale-100"
+                    }`}
+                    title={item.title}
+                  >
+                    <img
+                      src={item.image}
+                      alt={item.title}
+                      className="w-full h-full object-cover"
+                    />
+                  </button>
+                ))}
+              </div>
+            </div>
+          )}
         </div>
       )}
     </div>
