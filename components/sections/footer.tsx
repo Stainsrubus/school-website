@@ -2,8 +2,12 @@
 import { useState } from "react"
 import { Facebook, Twitter, Instagram, Linkedin, Heart, ArrowUp, Mail } from "lucide-react"
 import { Link } from "@tanstack/react-router"
+import { useCmsAsset } from "@/lib/useCmsCollection"
+
+const DEFAULT_LOGO = "https://schoolpress-cms.creoleaptech.workers.dev/api/assets/st-pius/LOGO-St-pius.png"
 
 export default function Footer() {
+  const logoUrl = useCmsAsset("School Logo", DEFAULT_LOGO)
   const currentYear = new Date().getFullYear()
   const [email, setEmail] = useState("")
 
@@ -59,10 +63,11 @@ export default function Footer() {
             <div>
               <Link to="/" onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })} className="flex items-center gap-3 sm:gap-4 flex-wrap">
                 <img
-                  src="https://schoolpress-cms.creoleaptech.workers.dev/api/assets/st-pius/LOGO-St-pius.png"
+                  src={logoUrl}
                   alt="St. Pius X Logo"
                   className="h-16 w-auto"
                   data-cms-src="nav:logo:url"
+                  data-cms-asset="School Logo"
                 />
 <span className="text-xl sm:text-2xl md:text-3xl font-bold text-indigo-950 tracking-tight" data-cms="st-pius-hero:headline">St. Pius X High School</span>
               </Link>

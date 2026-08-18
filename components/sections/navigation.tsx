@@ -3,8 +3,12 @@ import { useState } from "react"
 import { Menu, X, ChevronDown } from "lucide-react"
 import { Link } from "@tanstack/react-router"
 import TopBar from "./topbar"
+import { useCmsAsset } from "@/lib/useCmsCollection"
+
+const DEFAULT_LOGO = "https://schoolpress-cms.creoleaptech.workers.dev/api/assets/st-pius/LOGO-St-pius.png"
 
 export default function Navigation() {
+  const logoUrl = useCmsAsset("School Logo", DEFAULT_LOGO)
   const [isOpen, setIsOpen] = useState(false)
   const [aboutDropdownOpen, setAboutDropdownOpen] = useState(false)
 
@@ -36,7 +40,7 @@ export default function Navigation() {
           {/* Logo */}
           <div className="flex-shrink-0">
             <Link to="/" onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}>
-              <img src="https://schoolpress-cms.creoleaptech.workers.dev/api/assets/st-pius/LOGO-St-pius.png" className="h-14 sm:h-20" alt="St. Pius X Logo" data-cms-src="nav:logo:url" />
+              <img src={logoUrl} className="h-14 sm:h-20" alt="St. Pius X Logo" data-cms-src="nav:logo:url" data-cms-asset="School Logo" />
             </Link>
           </div>
 

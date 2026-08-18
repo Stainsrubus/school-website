@@ -2,8 +2,12 @@
 import { useEffect, useRef } from "react"
 import { ChevronDown } from "lucide-react"
 import { Link } from "@tanstack/react-router"
+import { useCmsAsset } from "@/lib/useCmsCollection"
+
+const DEFAULT_VIDEO = "https://schoolpress-cms.creoleaptech.workers.dev/api/assets/st-pius/hero-video.mp4"
 
 export default function HeroSection() {
+  const videoUrl = useCmsAsset("Hero Video", DEFAULT_VIDEO)
   const heroRef = useRef<HTMLDivElement>(null)
   const bgRef = useRef<HTMLDivElement>(null)
   const rafRef = useRef<number | null>(null)
@@ -49,13 +53,14 @@ export default function HeroSection() {
         }}
       >
         <video
+          key={videoUrl}
           autoPlay
           loop
           muted
           playsInline
           className="absolute inset-0 w-full h-full object-cover"
         >
-          <source src="https://schoolpress-cms.creoleaptech.workers.dev/api/assets/st-pius/hero-video.mp4" type="video/mp4" data-cms-src="st-pius-hero:bg_video" />
+          <source src={videoUrl} type="video/mp4" data-cms-src="st-pius-hero:bg_video" data-cms-asset="Hero Video" />
         </video>
         {/* Overlay gradient */}
         <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-black/20 to-black/60" />

@@ -115,6 +115,50 @@
 
     var cols = Array.isArray(data.collections) ? data.collections : Object.keys(data.collections || {}).map(function (k) { return data.collections[k] })
     cols.forEach(function (col) { applyCollection(col) })
+
+    // Apply school_assets collection items to matching DOM elements
+    var schoolAssets = (data.collections && data.collections.school_assets) || null
+    if (schoolAssets && Array.isArray(schoolAssets.items)) {
+      schoolAssets.items.forEach(function (item) {
+        if (!item.data || !item.data.url) return
+        var assetName = item.data.name || ''
+        var assetType = item.data.type || ''
+        var assetUrl = resolveAssetUrl(item.data.url)
+        if (!assetUrl) return
+
+        // 1. Direct match on data-cms-asset attribute
+        document.querySelectorAll('[data-cms-asset="' + assetName + '"], [data-cms-asset="' + assetType + '"]').forEach(function (el) {
+          if (el.getAttribute('src') !== assetUrl) {
+            el.setAttribute('src', assetUrl)
+            patched++
+            var video = el.closest('video') || (el.tagName === 'VIDEO' ? el : null)
+            if (video) { try { video.load() } catch (e) {} }
+          }
+        })
+
+        // 2. Known slot matches for logo, hero video, and principal photo
+        if (assetType === 'logo' || assetName.toLowerCase().indexOf('logo') !== -1) {
+          document.querySelectorAll('[data-cms-src="nav:logo:url"]').forEach(function (el) {
+            if (el.getAttribute('src') !== assetUrl) { el.setAttribute('src', assetUrl); patched++ }
+          })
+        }
+        if (assetType === 'video' || assetName.toLowerCase().indexOf('video') !== -1) {
+          document.querySelectorAll('[data-cms-src="st-pius-hero:bg_video"]').forEach(function (el) {
+            if (el.getAttribute('src') !== assetUrl) {
+              el.setAttribute('src', assetUrl)
+              patched++
+              var video = el.closest('video') || (el.tagName === 'VIDEO' ? el : null)
+              if (video) { try { video.load() } catch (e) {} }
+            }
+          })
+        }
+        if (assetName.toLowerCase().indexOf('principal') !== -1) {
+          document.querySelectorAll('[data-cms-src="about:principal:photo"]').forEach(function (el) {
+            if (el.getAttribute('src') !== assetUrl) { el.setAttribute('src', assetUrl); patched++ }
+          })
+        }
+      })
+    }
     return patched
   }
 

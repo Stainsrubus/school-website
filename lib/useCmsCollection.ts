@@ -5,6 +5,14 @@ export interface CmsCollectionEntry {
   data: Record<string, string>
 }
 
+export interface CmsAssetItem {
+  id: string
+  name: string
+  type: string
+  url: string
+  description?: string
+}
+
 const DEFAULT_CMS_ORIGIN = 'https://schoolpress-cms.creoleaptech.workers.dev'
 
 function cmsOrigin(): string {
@@ -21,6 +29,14 @@ function cmsOrigin(): string {
   return DEFAULT_CMS_ORIGIN
 }
 
+export function resolveCmsAssetUrl(url?: string): string {
+  if (!url) return ''
+  if (url.startsWith('http://') || url.startsWith('https://') || url.startsWith('data:')) return url
+  if (url.startsWith('/api/assets/')) return `${cmsOrigin()}${url}`
+  if (url.startsWith('/')) return url
+  return `${cmsOrigin()}/api/assets/${url}`
+}
+
 /**
  * Reads a CMS collection (e.g. "gallery_items") from the SchoolPress content API
  * and returns its items mapped to the component's shape. Falls back to the
@@ -29,7 +45,7 @@ function cmsOrigin(): string {
 export function useCmsCollection<T>(
   name: string,
   fallback: T[],
-  mapItem: (entry: CmsCollectionEntry) => T
+  mapItem: (entry: CmsCollectionEntry, index?: number) => T
 ): T[] {
   const [items, setItems] = useState<T[]>(fallback)
   const mapRef = useRef(mapItem)
@@ -56,7 +72,7 @@ export function useCmsCollection<T>(
         const collection = (data.collections ?? {})[name]
         if (!cancelled) {
           if (collection && Array.isArray(collection.items)) {
-            setItems(collection.items.map((entry) => mapRef.current(entry as CmsCollectionEntry)))
+            setItems(collection.items.map((entry, idx) => mapRef.current(entry as CmsCollectionEntry, idx)))
           }
           // If collection doesn't exist in CMS response at all, keep the fallback
           // (CMS may not know about this collection yet)
@@ -78,4 +94,62 @@ export function useCmsCollection<T>(
   }, [name])
 
   return items
+}
+
+/**
+ * Returns a specific asset URL from the 'school_assets' collection matching by name or type.
+ * Falls back to the provided fallback URL if not found.
+ */
+export function useCmsAsset(nameOrType: string, fallbackUrl: string = ''): string {
+  const assets = useCmsCollection<CmsAssetItem>(
+    'school_assets',
+    [],
+    (entry) => ({
+      id: entry.id,
+      name: entry.data.name || '',
+      type: entry.data.type || '',
+      url: entry.data.url || '',
+      description: entry.data.description,
+    })
+  )
+
+  const normalized = nameOrType.trim().toLowerCase()
+  const found = assets.find((item) => {
+    const n = (item.name || '').trim().toLowerCase()
+    const t = (item.type || '').trim().toLowerCase()
+    return n === normalized || t === normalized || n.includes(normalized) || normalized.includes(n)
+  })
+
+  if (found?.url) {
+    return resolveCmsAssetUrl(found.url)
+  }
+  return fallbackUrl
+}
+
+/**
+ * Returns all assets from the 'school_assets' collection as a name/type -> URL lookup dictionary.
+ */
+export function useCmsAssets(): Record<string, string> {
+  const assets = useCmsCollection<CmsAssetItem>(
+    'school_assets',
+    [],
+    (entry) => ({
+      id: entry.id,
+      name: entry.data.name || '',
+      type: entry.data.type || '',
+      url: entry.data.url || '',
+      description: entry.data.description,
+    })
+  )
+
+  const map: Record<string, string> = {}
+  for (const item of assets) {
+    if (item.name && item.url) {
+      map[item.name] = resolveCmsAssetUrl(item.url)
+    }
+    if (item.type && item.url) {
+      map[item.type] = resolveCmsAssetUrl(item.url)
+    }
+  }
+  return map
 }

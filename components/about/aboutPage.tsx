@@ -1,3 +1,5 @@
+import { useCmsAsset } from "@/lib/useCmsCollection"
+const DEFAULT_PRINCIPAL_PHOTO = "https://schoolpress-cms.creoleaptech.workers.dev/api/assets/st-pius/principal.JPG"
 ﻿import React, { useState, useEffect, useRef } from 'react';
 import {
   Users,
@@ -84,6 +86,7 @@ interface House {
 }
 
 const AboutPage: React.FC = () => {
+  const principalPhoto = useCmsAsset("Principal Photo", DEFAULT_PRINCIPAL_PHOTO)
   // Primary and secondary colors
   const primaryColor = "from-blue-600 to-blue-800";
   const secondaryColor = "from-cyan-500 to-cyan-700";
@@ -511,9 +514,10 @@ const AboutPage: React.FC = () => {
                     {/* Photo Container */}
                     <div className="relative aspect-[3/4] rounded-[2rem] overflow-hidden mb-6 bg-gradient-to-br from-blue-100 to-amber-100">
                       <img
-                        src="https://schoolpress-cms.creoleaptech.workers.dev/api/assets/st-pius/principal.JPG"
+                        src={principalPhoto}
                         alt="Principal"
                         data-cms-src="about:principal:photo"
+                        data-cms-asset="Principal Photo"
                         className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
                       />
                       {/* Photo Overlay */}
