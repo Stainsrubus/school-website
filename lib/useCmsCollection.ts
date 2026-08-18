@@ -53,9 +53,13 @@ export function useCmsCollection<T>(
         const data = (await res.json()) as {
           collections?: Record<string, { items?: unknown[] }>
         }
-        const entries = (data.collections ?? {})[name]?.items ?? []
-        if (entries.length > 0 && !cancelled) {
-          setItems(entries.map((entry) => mapRef.current(entry as CmsCollectionEntry)))
+        const collection = (data.collections ?? {})[name]
+        if (!cancelled) {
+          if (collection && Array.isArray(collection.items)) {
+            setItems(collection.items.map((entry) => mapRef.current(entry as CmsCollectionEntry)))
+          }
+          // If collection doesn't exist in CMS response at all, keep the fallback
+          // (CMS may not know about this collection yet)
         }
       } catch {
         // CMS unreachable — keep the hardcoded fallback

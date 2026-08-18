@@ -22,15 +22,6 @@ const galleryItems = [
     image: "https://schoolpress-cms.creoleaptech.workers.dev/api/assets/st-pius/culturals2.jpeg",
   },
   {
-    id: 992,
-    category: "annual-day",
-    title: "Annual Day Celebration 2024-25",
-    date: "February 15, 2025",
-    location: "School Auditorium",
-    description: "Cultural performances, awards & vibrant celebrations",
-    image: "https://schoolpress-cms.creoleaptech.workers.dev/api/assets/st-pius/culturals2.jpeg",
-  },
-  {
     id: 993,
     category: "annual-day",
     title: "Annual Day Celebration 2024-25",
