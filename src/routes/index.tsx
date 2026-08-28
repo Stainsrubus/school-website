@@ -3,6 +3,7 @@ import { Suspense } from 'react'
 import HeroSection from '@/components/sections/hero-section'
 import AdmissionSection from '@/components/sections/admission-section'
 import FeaturesSection from '@/components/sections/features-section'
+import EventsSection from '@/components/sections/events-section'
 import AboutPage from '@/components/sections/about'
 import Testimonials from '@/components/sections/testimonials'
 import ContactSection from '@/components/sections/contact-section'
@@ -20,6 +21,7 @@ function Home() {
             <AboutPage />
             <AdmissionSection />
             <FeaturesSection />
+            <EventsSection />
             <Testimonials />
             <div id="form">
                 <ContactSection />
