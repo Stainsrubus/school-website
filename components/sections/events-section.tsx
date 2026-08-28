@@ -1,4 +1,4 @@
-import { useState } from "react"
+import { useState, useRef, useEffect, useCallback } from "react"
 import {
   Calendar,
   Clock,
@@ -77,6 +77,9 @@ const categoryBg: Record<string, string> = {
 
 export default function EventsSection() {
   const [activeFilter, setActiveFilter] = useState("All")
+  const [isPaused, setIsPaused] = useState(false)
+  const scrollRef = useRef<HTMLDivElement>(null)
+  const rafRef = useRef<number>(0)
 
   const events = useCmsCollection<EventItem>(
     "events",
@@ -104,6 +107,26 @@ export default function EventsSection() {
     activeFilter === "All"
       ? sortedEvents
       : sortedEvents.filter((e) => e.category === activeFilter)
+
+  const autoScroll = useCallback(() => {
+    const el = scrollRef.current
+    if (!el || isPaused) {
+      rafRef.current = requestAnimationFrame(autoScroll)
+      return
+    }
+    el.scrollLeft += 0.5
+    if (el.scrollLeft >= el.scrollWidth - el.clientWidth) {
+      el.scrollLeft = 0
+    }
+    rafRef.current = requestAnimationFrame(autoScroll)
+  }, [isPaused])
+
+  useEffect(() => {
+    rafRef.current = requestAnimationFrame(autoScroll)
+    return () => cancelAnimationFrame(rafRef.current)
+  }, [autoScroll])
+
+  if (sortedEvents.length === 0) return null
 
   return (
     <section className="py-20 bg-gradient-to-b from-slate-50 to-white dark:from-slate-950 dark:to-slate-900 relative overflow-hidden">
@@ -169,98 +192,101 @@ export default function EventsSection() {
           </motion.div>
         )}
 
-        {/* Events Grid */}
-        <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-          <AnimatePresence mode="popLayout">
-            {filteredEvents.map((event, index) => {
-              const gradient = categoryColors[event.category] || "from-blue-500 to-cyan-500"
-              const badgeClass = categoryBg[event.category] || "bg-slate-50 text-slate-700 border-slate-200 dark:bg-slate-800 dark:text-slate-300 dark:border-slate-700"
+        {/* Events Auto-Scroll Carousel */}
+        <div
+          ref={scrollRef}
+          onMouseEnter={() => setIsPaused(true)}
+          onMouseLeave={() => setIsPaused(false)}
+          className="flex gap-6 overflow-x-auto scroll-smooth pb-4 snap-x snap-mandatory [scrollbar-width:none] [-ms-overflow-style:none] [&::-webkit-scrollbar]:hidden"
+        >
+          {filteredEvents.map((event, index) => {
+            const gradient = categoryColors[event.category] || "from-blue-500 to-cyan-500"
+            const badgeClass = categoryBg[event.category] || "bg-slate-50 text-slate-700 border-slate-200 dark:bg-slate-800 dark:text-slate-300 dark:border-slate-700"
 
-              return (
-                <motion.div
-                  key={event.id}
-                  layout
-                  initial={{ opacity: 0, y: 30, scale: 0.95 }}
-                  animate={{ opacity: 1, y: 0, scale: 1 }}
-                  exit={{ opacity: 0, scale: 0.9 }}
-                  transition={{ duration: 0.4, delay: index * 0.05 }}
-                  viewport={{ once: true }}
-                  className="group relative"
-                >
-                  {/* Card glow */}
-                  <div className={`absolute inset-0 bg-gradient-to-br ${gradient} rounded-3xl blur-xl opacity-0 group-hover:opacity-10 transition-opacity duration-500`} />
+            return (
+              <motion.div
+                key={event.id}
+                layout
+                initial={{ opacity: 0, y: 30, scale: 0.95 }}
+                animate={{ opacity: 1, y: 0, scale: 1 }}
+                exit={{ opacity: 0, scale: 0.9 }}
+                transition={{ duration: 0.4, delay: index * 0.05 }}
+                viewport={{ once: true }}
+                className="group relative shrink-0 w-[340px] snap-start"
+              >
+                {/* Card glow */}
+                <div className={`absolute inset-0 bg-gradient-to-br ${gradient} rounded-3xl blur-xl opacity-0 group-hover:opacity-10 transition-opacity duration-500`} />
 
-                  <div className="relative bg-white dark:bg-slate-900 rounded-2xl border border-slate-100 dark:border-slate-800 shadow-sm hover:shadow-xl transition-all duration-500 overflow-hidden h-full flex flex-col">
-                    {/* Image or gradient header */}
-                    {event.image ? (
-                      <div className="relative h-48 overflow-hidden">
-                        <img
-                          src={resolveCmsAssetUrl(event.image)}
-                          alt={event.title}
-                          className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
-                        />
-                        <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
-                        {event.category && (
-                          <span className={`absolute top-3 left-3 inline-flex items-center px-3 py-1 rounded-full text-xs font-bold border ${badgeClass}`}>
-                            {event.category}
-                          </span>
-                        )}
-                      </div>
-                    ) : (
-                      <div className={`relative h-4 bg-gradient-to-r ${gradient}`} />
-                    )}
-
-                    <div className="p-5 flex-1 flex flex-col">
-                      {/* Date & Time row */}
-                      <div className="flex flex-wrap items-center gap-3 mb-3 text-sm text-slate-500 dark:text-slate-400">
-                        {event.date && (
-                          <span className="inline-flex items-center gap-1.5">
-                            <Calendar size={14} className="text-blue-500" />
-                            {event.date}
-                          </span>
-                        )}
-                        {event.time && (
-                          <span className="inline-flex items-center gap-1.5">
-                            <Clock size={14} className="text-cyan-500" />
-                            {event.time}
-                          </span>
-                        )}
-                      </div>
-
-                      {/* Title */}
-                      <h3 className="text-lg font-bold text-slate-900 dark:text-white mb-2 group-hover:text-blue-600 dark:group-hover:text-cyan-400 transition-colors line-clamp-2" data-cms={`event:${event.id}:title`}>
-                        {event.title}
-                      </h3>
-
-                      {/* Location */}
-                      {event.location && (
-                        <div className="flex items-center gap-1.5 text-sm text-slate-500 dark:text-slate-400 mb-3">
-                          <MapPin size={14} className="text-rose-500 shrink-0" />
-                          <span className="truncate">{event.location}</span>
-                        </div>
-                      )}
-
-                      {/* Description */}
-                      {event.description && (
-                        <p className="text-sm text-slate-600 dark:text-slate-400 leading-relaxed line-clamp-3 flex-1" data-cms={`event:${event.id}:description`}>
-                          {event.description}
-                        </p>
-                      )}
-
-                      {/* Category badge (only if no image) */}
-                      {!event.image && event.category && (
-                        <div className="mt-4">
-                          <span className={`inline-flex items-center px-3 py-1 rounded-full text-xs font-bold border ${badgeClass}`}>
-                            {event.category}
-                          </span>
-                        </div>
+                <div className="relative bg-white dark:bg-slate-900 rounded-2xl border border-slate-100 dark:border-slate-800 shadow-sm hover:shadow-xl transition-all duration-500 overflow-hidden h-full flex flex-col">
+                  {/* Image or gradient header */}
+                  {event.image ? (
+                    <div className="relative h-48 overflow-hidden">
+                      <img
+                        src={resolveCmsAssetUrl(event.image)}
+                        alt={event.title}
+                        className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
+                      {event.category && (
+                        <span className={`absolute top-3 left-3 inline-flex items-center px-3 py-1 rounded-full text-xs font-bold border ${badgeClass}`}>
+                          {event.category}
+                        </span>
                       )}
                     </div>
+                  ) : (
+                    <div className={`relative h-4 bg-gradient-to-r ${gradient}`} />
+                  )}
+
+                  <div className="p-5 flex-1 flex flex-col">
+                    {/* Date & Time row */}
+                    <div className="flex flex-wrap items-center gap-3 mb-3 text-sm text-slate-500 dark:text-slate-400">
+                      {event.date && (
+                        <span className="inline-flex items-center gap-1.5">
+                          <Calendar size={14} className="text-blue-500" />
+                          {event.date}
+                        </span>
+                      )}
+                      {event.time && (
+                        <span className="inline-flex items-center gap-1.5">
+                          <Clock size={14} className="text-cyan-500" />
+                          {event.time}
+                        </span>
+                      )}
+                    </div>
+
+                    {/* Title */}
+                    <h3 className="text-lg font-bold text-slate-900 dark:text-white mb-2 group-hover:text-blue-600 dark:group-hover:text-cyan-400 transition-colors line-clamp-2" data-cms={`event:${event.id}:title`}>
+                      {event.title}
+                    </h3>
+
+                    {/* Location */}
+                    {event.location && (
+                      <div className="flex items-center gap-1.5 text-sm text-slate-500 dark:text-slate-400 mb-3">
+                        <MapPin size={14} className="text-rose-500 shrink-0" />
+                        <span className="truncate">{event.location}</span>
+                      </div>
+                    )}
+
+                    {/* Description */}
+                    {event.description && (
+                      <p className="text-sm text-slate-600 dark:text-slate-400 leading-relaxed line-clamp-3 flex-1" data-cms={`event:${event.id}:description`}>
+                        {event.description}
+                      </p>
+                    )}
+
+                    {/* Category badge (only if no image) */}
+                    {!event.image && event.category && (
+                      <div className="mt-4">
+                        <span className={`inline-flex items-center px-3 py-1 rounded-full text-xs font-bold border ${badgeClass}`}>
+                          {event.category}
+                        </span>
+                      </div>
+                    )}
                   </div>
-                </motion.div>
-              )
-            })}
-          </AnimatePresence>
+                </div>
+              </motion.div>
+            )
+          })}
         </div>
 
         {/* View All Link */}
